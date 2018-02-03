@@ -2,7 +2,7 @@
 
 Students read chapters 1 and 2 in Sweigart. Some scripts in this folder are based on Sweigart’s &mdash; naturally, he has more examples than only these.
 
-We start running simple expressions in the interpreter:
+We start running simple expressions and statements in the interpreter:
 
 ```python
 >>> fruit = 'apple'
@@ -18,7 +18,7 @@ pear
 7
 ```
 
-Until about halfway through chapter 1, Sweigart has us using the interactive Python interpreter. Then he switches to writing a program in a file, which he assumes we will run in IDLE. However, we write our code in [Atom](https://atom.io/) and run it in Terminal (or PowerShell on Windows).
+Until about halfway through chapter 1, Sweigart has us using the interactive Python interpreter, as seen above. Then he switches to writing a program in a file, which he assumes we will run in IDLE. However, we write our code in [Atom](https://atom.io/) and run it in Terminal (or PowerShell on Windows).
 
 ## Do not use IDLE to run your scripts
 
