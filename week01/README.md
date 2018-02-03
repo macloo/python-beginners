@@ -56,6 +56,8 @@ Here’s how I ran it in Terminal:
 
 ## Chapter review: chapters 1 and 2
 
+These are the takeaways from the first two chapters.
+
 ### Chapter 1
 
 1. Use the interactive Python shell to enter basic math expressions and get results (math operators)
@@ -68,7 +70,7 @@ Here’s how I ran it in Terminal:
 8. Assign a value to a variable with `=`
 9. Rules for variable names: No spaces. Can use only letters, numbers, and the underscore (\_) character. Cannot begin with a number. (p. 20)
 10. Case sensitive
-11. Comments with 1
+11. Comments start with `#`
 12. `print()` function
 13. `input()` function — assign it to a variable: `answer = input()`
 14. `len()` function
