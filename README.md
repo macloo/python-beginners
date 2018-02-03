@@ -8,6 +8,11 @@ I adopted Sweigart’s text in 2017. I’m really pleased with the way he introd
 
 The one thing I dislike in Sweigart’s book is his assumption that we would be using IDLE. We write our code in [Atom](https://atom.io/) and run it in Terminal (or PowerShell on Windows).
 
+## One-time how-to documents
+
+* [Command Line Tips](http://bit.ly/mm-commandline) &mdash; How to navigate among your files and folders in the Terminal.
+* [Getting Started with Python 3](http://bit.ly/py3-quick-install) &mdash; How to install Python 3 and get it running.
+
 ## Week 01
 
 Students read chapters 1 and 2 in Sweigart. Some scripts in the **week01** folder are based on Sweigart’s &mdash; naturally, he has more examples than only these. See the README in the **week01** folder for more information.
