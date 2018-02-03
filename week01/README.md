@@ -16,7 +16,7 @@ Instead, you can use Atom, our trusted code editor. Code is code. You can write 
 
 Then, how do you run it? Never try to run a file at the `>>>` prompt. You need to be at the bash prompt (`$`) in Terminal, or the PowerShell prompt if you’re using Windows.
 
-It’s easiest if you are in the same directory where the `.py` file was saved. Use your `cd` command ([Command Line Tips(http://bit.ly/mm-commandline)) to get there. (I made a folder named `automate` for my files from the book.)
+It’s easiest if you are in the same directory where the `.py` file was saved. Use your `cd` command ([Command Line Tips](http://bit.ly/mm-commandline)) to get there. (I made a folder named `automate` for my files from the book.)
 
 At the bash prompt, type this (using your actual filename, of course)
 
