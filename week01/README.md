@@ -48,11 +48,11 @@ Here’s where that comes in the chapter:
 
 Here’s what the program looks like in Atom:
 
-<img src="images/atom.png" alt="Python code in Atom" width="50%">
+<img src="images/atom.png" alt="Python code in Atom" width="75%">
 
 Here’s how I ran it in Terminal:
 
-<img src="images/terminal.png" alt="Python 3 script running in Terminal" width="50%">
+<img src="images/terminal.png" alt="Python 3 script running in Terminal" width="60%">
 
 ## Chapter review: chapters 1 and 2
 
