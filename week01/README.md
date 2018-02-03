@@ -44,6 +44,8 @@ And it runs!
 
 Here’s where that comes in the chapter:
 
+<img src="images/contents.png" alt="Book contents" width="60%">
+
 ![Book contents](images/contents.png)
 
 Here’s what the program looks like in Atom:
