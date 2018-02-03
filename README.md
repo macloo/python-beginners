@@ -10,7 +10,7 @@ The one thing I dislike in Sweigart’s book is his assumption that we would be 
 
 ## Week 01
 
-Students read chapters 1 and 2 in Sweigart. Some scripts in the **week01** folder are based on Sweigart’s &mdash; naturally, he has more examples than only these.
+Students read chapters 1 and 2 in Sweigart. Some scripts in the **week01** folder are based on Sweigart’s &mdash; naturally, he has more examples than only these. See the README in the **week01** folder for more information.
 
 ## Week 02
 
