@@ -36,4 +36,4 @@ Here’s what the program looks like in Atom:
 
 Here’s how I ran it in Terminal:
 
-![Python 3 script running in Terminal](images/contents.png)
+![Python 3 script running in Terminal](images/terminal.png)
