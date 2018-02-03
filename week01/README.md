@@ -96,3 +96,7 @@ These are the takeaways from the first two chapters.
 10. The `random` module, from Python’s standard library
 11. Use the `import` statement to import this module
 12. Use `random.randint()`
+
+### Slides
+
+[Python Review 1](http://bit.ly/pythonrev1)
