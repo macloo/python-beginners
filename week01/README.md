@@ -44,17 +44,15 @@ And it runs!
 
 Here’s where that comes in the chapter:
 
-<img src="images/contents.png" alt="Book contents" width="60%">
-
-![Book contents](images/contents.png)
+<img src="images/contents.png" alt="Book contents" width="50%">
 
 Here’s what the program looks like in Atom:
 
-![Python code in Atom](images/atom.png)
+<img src="images/atom.png" alt="Python code in Atom" width="50%">
 
 Here’s how I ran it in Terminal:
 
-![Python 3 script running in Terminal](images/terminal.png)
+<img src="images/terminal.png" alt="Python 3 script running in Terminal" width="50%">
 
 ## Chapter review: chapters 1 and 2
 
