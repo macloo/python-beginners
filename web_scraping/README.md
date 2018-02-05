@@ -76,7 +76,7 @@ This is how you install *any* Python library that exists in the [Python Package 
 
 You should now be at the `>>>` prompt &mdash; the Python prompt.
 
-In Mac OS or Windows, type *one line at a time*:
+In Mac OS or Windows, type (or copy/paste) *one line at a time*:
 
 ```python
 from urllib.request import urlopen
@@ -92,3 +92,13 @@ print(bsObj.h1)
 4. Using the syntax of the BeautifulSoup library, you printed the first H1 element (including its tags) from that parsed value.
 
 The example comes from page 8 of Mitchell's book; the code is updated in her [GitHub repo](https://github.com/REMitchell/python-scraping) (chapter1) for the book, where we can find **updated code** that will no doubt appear in her 2nd edition.
+
+## Understanding BeautifulSoup
+
+It's very important to understand that many of the BeautifulSoup commands work on an *object*, which is not the same as a simple *string*. Throughout her book, Mitchell uses the variable name `bsObj` to remind us of that fact.
+
+Many programming languages include objects as a data type. Python does, JavaScript does, etc. An *object* is an even more powerful and complex data type than an *array* (JavaScript) or a *list* (Python) and can contain many other data types in a structured format.
+
+When you extract information from an *object* with a BeautifulSoup command, sometimes you get a simple string, and sometimes you get a Python *list* (which is very similar to an *array* in JavaScript). The way you treat that extracted information will be **different** depending on whether it is a string (*one* item) or a list (usually *more than one* item).
+
+*to be continued*
