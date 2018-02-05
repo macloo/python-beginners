@@ -58,6 +58,14 @@ PS> env\Scripts\activate.bat
 (env) mcadams scraping $
 ```
 
+When you are finished working in a **virtualenv**, you should *deactivate* it. The command is the same in Mac OS or Windows (DO **NOT** DO THIS NOW):
+
+```
+deactivate
+```
+
+You'll know it worked because `(env)` will no longer be at the far left side of your prompt.
+
 ### Install the BeautifulSoup library
 
 In Mac OS or Windows, at the bash prompt (Mac `$` or Windows `PS>`), type:
