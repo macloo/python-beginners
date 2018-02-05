@@ -19,4 +19,8 @@ Students read chapters 1 and 2 in Sweigart. Some scripts in the **week01** folde
 
 ## Week 02
 
-To come.
+Students read chapter 3 in Sweigart. *more to come*
+
+## Web scraping
+
+Students are introduced to web scraping with the BeautifulSoup library in the second week. See the README in the **web_scraping** folder for instructions to install BeautifulSoup.
