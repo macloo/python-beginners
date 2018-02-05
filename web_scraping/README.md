@@ -94,10 +94,10 @@ bsObj = BeautifulSoup(html, "html.parser")
 print(bsObj.h1)
 ```
 
-1. You imported two Python modules, `urlopen` and `BeautifulSoup`.
+1. You imported two Python modules, `urlopen` and `BeautifulSoup` (the first two lines).
 2. You used `urlopen` to copy the entire contents of the URL given into a new Python variable, `html`.
 3. You used `BeautifulSoup` to process the value of that variable (the contents of the file at that URL) through a built-in HTML parser (`html.parser` is not the only option for this). The result: All the HTML from the file is now in a BeautifulSoup object with the new Python variable name `bsObj`.
-4. Using the syntax of the BeautifulSoup library, you printed the first H1 element (including its tags) from that parsed value.
+4. Using the syntax of the BeautifulSoup library, you printed the first H1 element (including its tags) from that parsed value. Check out [the page on the web](http://www.pythonscraping.com/exercises/exercise1.html) to see what you scraped.
 
 The example comes from page 8 of Mitchell's book; the code is updated in her [GitHub repo](https://github.com/REMitchell/python-scraping) (chapter1) for the book, where we can find **updated code** that will no doubt appear in her 2nd edition.
 
