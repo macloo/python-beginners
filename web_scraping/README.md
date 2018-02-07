@@ -124,4 +124,18 @@ Many programming languages include objects as a data type. Python does, JavaScri
 
 When you extract information from an *object* with a BeautifulSoup command, sometimes you get a simple string, and sometimes you get a Python *list* (which is very similar to an *array* in JavaScript). The way you treat that extracted information will be **different** depending on whether it is a string (*one* item) or a list (usually *more than one* item).
 
+## How BeautifulSoup handles the object
+
+In the previous code, when this line ran:
+
+```python
+html = urlopen("http://www.pythonscraping.com/exercises/exercise1.html")
+```
+
+.. you copied the entire contents of a file into a new Python variable named `html`. The contents were stored as an *HTTPResponse object*. We can read the contents of that object like this:
+
+<img src="images/url_blob.png" alt="Results of html.read()">
+
+... but that's not going to be very usable, especially for a file with a lot more content in it.
+
 *to be continued*
