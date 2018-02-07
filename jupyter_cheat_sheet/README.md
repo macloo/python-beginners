@@ -39,3 +39,11 @@ This is a two-step process. First you need to save and close your work in the we
 Then, in the Terminal, press **Control-C** &mdash; NOT Command.
 
 Still in Terminal — type `y` (lowercase) and press Enter/Return.
+
+## Quit from your virtual environment
+
+**Deactivate** the *virtualenv* (at the bash prompt):
+
+```bash
+deactivate
+```
