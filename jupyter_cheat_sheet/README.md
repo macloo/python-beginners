@@ -8,7 +8,9 @@ We installed Jupyter in a Python virtual environment using these instructions:
 
 We created the *virtualenv* in a folder named `jupyter_work` and installed Jupyter there.
 
-## To launch Jupyter Notebook after that
+All of that is done ONLY ONCE.
+
+## To launch Jupyter Notebook
 
 `cd` into the folder (e.g. `jupyter_work`) where you set that up.
 
