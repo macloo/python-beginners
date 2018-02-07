@@ -4,6 +4,15 @@ We use this book: *Web Scraping with Python: Collecting Data from the Modern Web
 
 Python3 is used throughout this book.
 
+## Contents
+
+* [Setup for BeautifulSoup](#setup-for-beautifulsoup)
+    * [Create a directory and change into it](#create-a-directory-and-change-into-it)
+    * [Create a new virtualenv in that directory and activate it](#create-a-new-virtualenv-in-that-directory-and-activate-it)
+    * [Install the BeautifulSoup library](#install-the-beautifulsoup-library)
+    * [Test BeautifulSoup](#test-beautifulsoup)
+* [Understanding BeautifulSoup](#understanding-beautifulsoup)
+
 ## Setup for BeautifulSoup
 
 **BeautifulSoup** is a scraping library for Python. We want to run all our scraping projects in a virtual environment. Students have already installed both Python3 and virtualenv.
