@@ -21,6 +21,10 @@ Students read chapters 1 and 2 in Sweigart. Some scripts in the **week01** folde
 
 Students read chapter 3 in Sweigart. *more to come*
 
+## Jupyter Cheat Sheet
+
+Students use Jupyter Notebook to complete several assignments. The cheat sheet is helpful after Jupyter Notebook has been installed and they need to launch it, save their work, and close it correctly.
+
 ## Web scraping
 
 Students are introduced to web scraping with the BeautifulSoup library in the second week. See the README in the **web_scraping** folder for instructions to install BeautifulSoup.
