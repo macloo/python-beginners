@@ -1,6 +1,6 @@
 # Python Beginners
 
-Used in conjunction with the book [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), by Al Sweigart (2015).
+Used in conjunction with the book [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), by Al Sweigart (2015). There is a link to download his code under "Additional Content" on that page.
 
 Since 2012, I have been teaching Python to journalism students. I used to use a set of tutorials called *Learn Python the Hard Way*. I’ve been trying to find a new set of instructions suitable for my students, whose previous experience with programming is recent and limited to client-side JavaScript.
 
