@@ -13,7 +13,7 @@ Python3 is used throughout this book.
     * [Test BeautifulSoup](#test-beautifulsoup)
 * [Understanding BeautifulSoup](#understanding-beautifulsoup)
     * [How BeautifulSoup handles the object](#how-beautifulsoup-handles-the-object)
-    * [Finding elements with a particular class](#finding-elements-with-a-particular-class)
+    * [Finding elements that have a particular class](#finding-elements-that-have-a-particular-class)
     * [Finding all vs. finding one](#finding-all-vs-finding-one)
 
 ## Setup for BeautifulSoup
@@ -108,7 +108,7 @@ print(bsObj.h1)
 
 1. You imported two Python modules, `urlopen` and `BeautifulSoup` (the first two lines).
 2. You used `urlopen` to copy the entire contents of the URL given into a new Python variable, `html`.
-3. You used `BeautifulSoup` to process the value of that variable (the contents of the file at that URL) through a built-in HTML parser (`html.parser` is not the only option for this). The result: All the HTML from the file is now in a BeautifulSoup object with the new Python variable name `bsObj`.
+3. You used `BeautifulSoup` to process the value of that variable (the contents of the file at that URL) through a built-in HTML parser (`html.parser` is not the only option for this; `html5lib` is more robust and can be installed with *pip*). The result: All the HTML from the file is now in a BeautifulSoup object with the new Python variable name `bsObj`.
 4. Using the syntax of the BeautifulSoup library, you printed the first H1 element (including its tags) from that parsed value. Check out [the page on the web](http://www.pythonscraping.com/exercises/exercise1.html) to see what you scraped.
 
 If it works, you'll see:
@@ -147,7 +147,7 @@ When you transform that *HTTPResponse object* into a *BeautifulSoup object*, wit
 bsObj = BeautifulSoup(html, "html.parser")
 ```
 
-### Finding elements with a particular class
+### Finding elements that have a particular class
 
 Deciding the best way to extract what you want from a large HTML file requires you to dig around in the source before you write the Python/BeautifulSoup commands. In many cases, you'll see that everything you want has the same **CSS class** on it. After creating a *BeautifulSoup object* (here, as before, it is in the variable `bsObj`), this line will create a Python *list* (you can think of it as an *array*) containing all the `<td>` elements that have the class `city`.
 
@@ -180,8 +180,6 @@ Naturally, you don't need to loop through that result &mdash; the variable `phon
 print( phone_number.get_text() )
 ```
 
-* Searching for tags by attributes
-* Working with lists of tags
-* Parse tree navigation
+Notice that you're always using `bsObj`. Review above if you've forgotten where that came from.
 
-*to be continued*
+There's a lot more to learn about BeautifulSoup, and we'll be using Mitchell's book for that.
