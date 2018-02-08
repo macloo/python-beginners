@@ -14,7 +14,7 @@ Python3 is used throughout this book.
 * [Understanding BeautifulSoup](#understanding-beautifulsoup)
     * [How BeautifulSoup handles the object](#how-beautifulsoup-handles-the-object)
     * [Finding elements with a particular class](#finding-elements-with-a-particular-class)
-    * [Finding all vs. finding one](#finding-all-vs.-finding-one)
+    * [Finding all vs. finding one](#finding-all-vs-finding-one)
 
 ## Setup for BeautifulSoup
 
