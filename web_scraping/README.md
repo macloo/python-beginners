@@ -12,6 +12,7 @@ Python3 is used throughout this book.
     * [Install the BeautifulSoup library](#install-the-beautifulsoup-library)
     * [Test BeautifulSoup](#test-beautifulsoup)
 * [Understanding BeautifulSoup](#understanding-beautifulsoup)
+    * [What is the BeautifulSoup object?](#what-is-the-beautifulsoup-object)
     * [How BeautifulSoup handles the object](#how-beautifulsoup-handles-the-object)
     * [Finding elements that have a particular class](#finding-elements-that-have-a-particular-class)
     * [Finding all vs. finding one](#finding-all-vs-finding-one)
@@ -42,29 +43,29 @@ cd Documents/python/scraping
 
 Create a new **virtualenv** there (this is done only once).
 
-**Mac OS**
+**Mac OS/bash**
 ```bash
 $ virtualenv --python=/usr/local/bin/python3 env
 ```
 
-**Windows**
+**Windows PowerShell**
 ```bash
 PS> virtualenv --python=C:\Python36\python.exe env
 ```
 
 Activate the **virtualenv**:
 
-**Mac OS**
+**Mac OS/bash**
 ```bash
 $ source env/bin/activate
 ```
 
-**Windows**
+**Windows PowerShell**
 ```bash
 PS> env\Scripts\activate.bat
 ```
 
-**Important:** You should now see `(env)` at the far left side of your prompt. This indicates that the **virtualenv** is active. Example (Mac OS):
+**Important:** You should now see `(env)` at the far left side of your prompt. This indicates that the **virtualenv** is active. Example (Mac OS/bash):
 
 ```bash
 (env) mcadams scraping $
@@ -80,7 +81,7 @@ You'll know it worked because `(env)` will no longer be at the far left side of 
 
 ### Install the BeautifulSoup library
 
-In Mac OS or Windows, at the bash prompt (Mac `$` or Windows `PS>`), type:
+In Mac OS or Windows, at the `$` bash prompt (or Windows `PS>`), type:
 
 ```bash
 pip install beautifulsoup4
@@ -121,6 +122,14 @@ The example comes from page 8 of Mitchell's book; the code is updated in her [Gi
 
 ## Understanding BeautifulSoup
 
+BeautifulSoup is a Python library that enables us to extract information from web pages and even entire websites.
+
+We use BeautifulSoup commands to create a well-structured data *object* (more about objects below) from which we can extract, for example, everything with an `<li>` tag, or everything with `class="book-title"`.
+
+After extracting the desired information, we can use other Python commands (and libraries) to write the data into a database, CSV file, or other usable format.
+
+### What is the BeautifulSoup object?
+
 It's very important to understand that many of the BeautifulSoup commands work on an *object*, which is not the same as a simple *string*. Throughout her book, Mitchell uses the variable name `bsObj` to remind us of that fact.
 
 Many programming languages include objects as a data type. Python does, JavaScript does, etc. An *object* is an even more powerful and complex data type than an *array* (JavaScript) or a *list* (Python) and can contain many other data types in a structured format.
@@ -155,7 +164,7 @@ Deciding the best way to extract what you want from a large HTML file requires y
 city_list = bsObj.findAll( "td", {"class":"city"} )
 ```
 
-Maybe there were 10 cities in that HTML file. Maybe there were 10,000. No matter how many, they are now in a *list* (in the variable `city_list`), and you can search them, print them, write them out to a database or a JSON file &mdash; whatever you like. Often you will want to perform the same actions on each item in the list, so you will use a *for-loop*:
+Maybe there were 10 cities in `<td>` tags in that HTML file. Maybe there were 10,000. No matter how many, they are now in a *list* (in the variable `city_list`), and you can search them, print them, write them out to a database or a JSON file &mdash; whatever you like. Often you will want to perform the same actions on each item in the list, so you will use a *for-loop*:
 
 ```python
 for city in city_list:
