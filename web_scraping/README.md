@@ -13,6 +13,8 @@ Python3 is used throughout this book.
     * [Test BeautifulSoup](#test-beautifulsoup)
 * [Understanding BeautifulSoup](#understanding-beautifulsoup)
     * [How BeautifulSoup handles the object](#how-beautifulsoup-handles-the-object)
+    * [Finding elements with a particular class](#finding-elements-with-a-particular-class)
+    * [Finding all vs. finding one](#finding-all-vs.-finding-one)
 
 ## Setup for BeautifulSoup
 
@@ -125,7 +127,7 @@ Many programming languages include objects as a data type. Python does, JavaScri
 
 When you extract information from an *object* with a BeautifulSoup command, sometimes you get a simple string, and sometimes you get a Python *list* (which is very similar to an *array* in JavaScript). The way you treat that extracted information will be **different** depending on whether it is a string (*one* item) or a list (usually *more than one* item).
 
-## How BeautifulSoup handles the object
+### How BeautifulSoup handles the object
 
 In the previous code, when this line ran:
 
@@ -145,7 +147,7 @@ When you transform that *HTTPResponse object* into a *BeautifulSoup object*, wit
 bsObj = BeautifulSoup(html, "html.parser")
 ```
 
-### Finding all the elements with a class
+### Finding elements with a particular class
 
 Deciding the best way to extract what you want from a large HTML file requires you to dig around in the source before you write the Python/BeautifulSoup commands. In many cases, you'll see that everything you want has the same **CSS class** on it. After creating a *BeautifulSoup object* (here, as before, it is in the variable `bsObj`), this line will create a Python *list* (you can think of it as an *array*) containing all the `<td>` elements that have the class `city`.
 
@@ -162,7 +164,21 @@ for city in city_list:
 
 `get_text()` is a handy BeautifulSoup method that will extract the text &mdash; and only the text &mdash; from the item. If instead you wrote just `print(city)`, you'd get the `<td>` and any other tags inside them as well.
 
+### Finding all vs. finding one
 
+The BeautifulSoup `findAll()` method you just saw always produces a *list*. If you know there will be only one item of the kind you want in a file, you should use the `find()` method instead.
+
+For example, maybe you are scraping the address and phone number from every page in a large website. There is only one phone number on the page, and it is enclosed in a pair of tags with the attribute `id="call"`. One line of your code gets the phone number from the current page:
+
+```python
+phone_number = bsObj.find(id="call")
+```
+
+Naturally, you don't need to loop through that result &mdash; the variable `phone_number` will contain only a string, including any HTML tags. To test what the text alone will look like, just print it using `get_text()` to strip out the tags.
+
+```python
+print( phone_number.get_text() )
+```
 
 * Searching for tags by attributes
 * Working with lists of tags
