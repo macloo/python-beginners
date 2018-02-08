@@ -150,7 +150,7 @@ When you extract information from an *object* with a BeautifulSoup command, some
 In the previous code, when this line ran:
 
 ```python
-html = urlopen("http://www.pythonscraping.com/exercises/exercise1.html")
+html = urlopen("https://weimergeeks.com/examples/scraping/example1.html")
 ```
 
 ... you copied the entire contents of a file into a new Python variable named `html`. The contents were stored as an *HTTPResponse object*. We can read the contents of that object like this:
@@ -159,7 +159,7 @@ html = urlopen("http://www.pythonscraping.com/exercises/exercise1.html")
 
 ... but that's not going to be very usable, or useful &mdash; especially for a file with a lot more content in it.
 
-When you transform that *HTTPResponse object* into a *BeautifulSoup object*, with the following line, you create an object from which you can extract *any HTML element* and the text *within* any HTML element.
+When you transform that *HTTPResponse object* into a *BeautifulSoup object* &mdash; with the following line &mdash; you create a well-structured object from which you can extract *any HTML element* and the text *within* any HTML element.
 
 ```python
 bsObj = BeautifulSoup(html, "html.parser")
@@ -204,7 +204,7 @@ Notice that you're always using `bsObj`. Review above if you've forgotten where 
 
 ### Finding the contents of a particular attribute
 
-One last example: You've made a BeautifulSoup object from a page that has dozens of images on it. You want to capture the location of each image on that page. This requires two steps:
+One last example: You've made a BeautifulSoup object from a page that has dozens of images on it. You want to capture the path to each image file on that page (perhaps so that you can download all the images). This requires two steps:
 
 ```python
 image_list = bsObj.findAll('img')
