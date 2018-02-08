@@ -18,6 +18,7 @@ Python3 is used throughout this book.
     * [How BeautifulSoup handles the object](#how-beautifulsoup-handles-the-object)
     * [Finding elements that have a particular class](#finding-elements-that-have-a-particular-class)
     * [Finding all vs. finding one](#finding-all-vs-finding-one)
+    * [Finding the contents of a particular attribute](#finding-the-contents-of-a-particular-attribute)
 
 ## Setup for BeautifulSoup
 
@@ -158,6 +159,8 @@ When you transform that *HTTPResponse object* into a *BeautifulSoup object*, wit
 bsObj = BeautifulSoup(html, "html.parser")
 ```
 
+Let's look at a few examples of what BeautifulSoup can do.
+
 ### Finding elements that have a particular class
 
 Deciding the best way to extract what you want from a large HTML file requires you to dig around in the source before you write the Python/BeautifulSoup commands. In many cases, you'll see that everything you want has the same **CSS class** on it. After creating a *BeautifulSoup object* (here, as before, it is in the variable `bsObj`), this line will create a Python *list* (you can think of it as an *array*) containing all the `<td>` elements that have the class `city`.
@@ -192,5 +195,21 @@ print( phone_number.get_text() )
 ```
 
 Notice that you're always using `bsObj`. Review above if you've forgotten where that came from.
+
+### Finding the contents of a particular attribute
+
+One last example: You've made a BeautifulSoup object from a page that has dozens of images on it. You want to capture the location of each image on that page. This requires two steps:
+
+```python
+image_list = bsObj.findAll('img')
+for image in image_list:
+    print(image.attrs['src'])
+```
+
+First, you make a Python *list* containing all the `img` elements that exist in the object.
+
+Second, you loop through that list and print the contents of the `src` attribute from each `img` tag in the list.
+
+We do not need `get_text()` in this case, because the contents of the `src` attribute are nothing but text. There are never tags inside the `src` attribute.
 
 There's a lot more to learn about BeautifulSoup, and we'll be using Mitchell's book for that.
