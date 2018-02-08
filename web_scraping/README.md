@@ -12,6 +12,7 @@ Python3 is used throughout this book.
     * [Install the BeautifulSoup library](#install-the-beautifulsoup-library)
     * [Test BeautifulSoup](#test-beautifulsoup)
 * [Understanding BeautifulSoup](#understanding-beautifulsoup)
+    * [How BeautifulSoup handles the object](#how-beautifulsoup-handles-the-object)
 
 ## Setup for BeautifulSoup
 
@@ -132,10 +133,29 @@ In the previous code, when this line ran:
 html = urlopen("http://www.pythonscraping.com/exercises/exercise1.html")
 ```
 
-.. you copied the entire contents of a file into a new Python variable named `html`. The contents were stored as an *HTTPResponse object*. We can read the contents of that object like this:
+... you copied the entire contents of a file into a new Python variable named `html`. The contents were stored as an *HTTPResponse object*. We can read the contents of that object like this:
 
 <img src="images/url_blob.png" alt="Results of html.read()">
 
-... but that's not going to be very usable, especially for a file with a lot more content in it.
+... but that's not going to be very usable, or useful &mdash; especially for a file with a lot more content in it.
+
+When you transform that *HTTPResponse object* into a *BeautifulSoup object*, with the following line, you create an object from which you can extract *any HTML element* and the text *within* any HTML element.
+
+```python
+bsObj = BeautifulSoup(html, "html.parser")
+```
+
+### Finding all the elements with a class
+
+Deciding the best way to extract what you want from a large HTML file requires you to dig around in the source before you write the Python/BeautifulSoup commands. In many cases, you'll see that everything you want has the same **CSS class** on it. After creating a *BeautifulSoup object* (here, as before, it is in the variable `bsObj`), this line will create a Python *list* (you can think of it as an *array*) containing all the `<td>` elements that have the class `city`.
+
+```python
+city_list = bsObj.findAll( "td", {"class":"city"} )
+```
+
+
+* Searching for tags by attributes
+* Working with lists of tags
+* Parse tree navigation 
 
 *to be continued*
