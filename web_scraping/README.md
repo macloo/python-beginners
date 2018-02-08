@@ -1,4 +1,4 @@
-# Web Scraping
+# Introduction to Web Scraping
 
 We use this book: *Web Scraping with Python: Collecting Data from the Modern Web,* by Ryan Mitchell (O’Reilly, 2015). A new 2nd edition of this will be published in 2018 but is not yet available, so we must use the 1st edition.
 
@@ -105,7 +105,7 @@ In Mac OS or Windows, type (or copy/paste) *one line at a time*:
 ```python
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-html = urlopen("http://www.pythonscraping.com/exercises/exercise1.html")
+html = urlopen("https://weimergeeks.com/examples/scraping/example1.html")
 bsObj = BeautifulSoup(html, "html.parser")
 print(bsObj.h1)
 ```
@@ -113,15 +113,21 @@ print(bsObj.h1)
 1. You imported two Python modules, `urlopen` and `BeautifulSoup` (the first two lines).
 2. You used `urlopen` to copy the entire contents of the URL given into a new Python variable, `html`.
 3. You used `BeautifulSoup` to process the value of that variable (the contents of the file at that URL) through a built-in HTML parser (`html.parser` is not the only option for this; `html5lib` is more robust and can be installed with *pip*). The result: All the HTML from the file is now in a BeautifulSoup object with the new Python variable name `bsObj`.
-4. Using the syntax of the BeautifulSoup library, you printed the first H1 element (including its tags) from that parsed value. Check out [the page on the web](http://www.pythonscraping.com/exercises/exercise1.html) to see what you scraped.
+4. Using the syntax of the BeautifulSoup library, you printed the first H1 element (including its tags) from that parsed value. Check out [the page on the web](https://weimergeeks.com/examples/scraping/example1.html) to see what you scraped.
 
 If it works, you'll see:
 
 ```python
-<h1>An Interesting Title</h1>
+<h1>We Are Learning About Web Scraping!</h1>
 ```
 
-The example comes from page 8 of Mitchell's book; the code is updated in her [GitHub repo](https://github.com/REMitchell/python-scraping) (chapter1) for the book, where we can find **updated code** that will no doubt appear in her 2nd edition.
+The example is based on the one on page 8 of Mitchell's book; the code is updated in her [GitHub repo](https://github.com/REMitchell/python-scraping) (chapter1) for the book, where we can find **updated code** that will no doubt appear in her 2nd edition.
+
+The command `bsObj.h1` would work the same way for any HTML tag (if it exists in the file). Instead of printing it, you might stash it in a variable:
+
+```python
+heading = bsObj.h1
+```
 
 ## Understanding BeautifulSoup
 
@@ -212,4 +218,4 @@ Second, you loop through that list and print the contents of the `src` attribute
 
 We do not need `get_text()` in this case, because the contents of the `src` attribute are nothing but text. There are never tags inside the `src` attribute.
 
-There's a lot more to learn about BeautifulSoup, and we'll be using Mitchell's book for that.
+There's a lot more to learn about BeautifulSoup, and we'll be using Mitchell's book for that. You can also [read the docs](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
