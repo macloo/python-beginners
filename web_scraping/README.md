@@ -4,6 +4,8 @@ We use this book: *Web Scraping with Python: Collecting Data from the Modern Web
 
 Python3 is used throughout this book.
 
+**Note:** This document assumes you have already installed Python3, *pip*, and *virualenv*. If not, refer to [these instructions](http://bit.ly/install-python3-jupyter).
+
 ## Contents
 
 * [Setup for BeautifulSoup](#setup-for-beautifulsoup)
