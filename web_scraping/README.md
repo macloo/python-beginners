@@ -153,9 +153,19 @@ Deciding the best way to extract what you want from a large HTML file requires y
 city_list = bsObj.findAll( "td", {"class":"city"} )
 ```
 
+Maybe there were 10 cities in that HTML file. Maybe there were 10,000. No matter how many, they are now in a *list* (in the variable `city_list`), and you can search them, print them, write them out to a database or a JSON file &mdash; whatever you like. Often you will want to perform the same actions on each item in the list, so you will use a *for-loop*:
+
+```python
+for city in city_list:
+    print( city.get_text() )
+```
+
+`get_text()` is a handy BeautifulSoup method that will extract the text &mdash; and only the text &mdash; from the item. If instead you wrote just `print(city)`, you'd get the `<td>` and any other tags inside them as well.
+
+
 
 * Searching for tags by attributes
 * Working with lists of tags
-* Parse tree navigation 
+* Parse tree navigation
 
 *to be continued*
