@@ -1,4 +1,4 @@
-# Week 01
+# Week 01: Starting Python
 
 Students read chapters 1 and 2 in Sweigart. Some scripts in this folder are based on Sweigart’s &mdash; naturally, he has more examples than only these.
 
