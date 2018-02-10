@@ -22,11 +22,11 @@ This is true for many functions we use from imported libraries, such as Beautifu
 print( varname.get_text() )
 ```
 
-... and it neatly prints only the text content from inside an HTML element (such as `title` or `li`) that is stored in `varname`. The variable `varname` contains the HTML tags (possibly quite a lot of tags), but the BeautifulSoup function `get_text()` removes them neatly, giving us just text. How does `get_text()` do that? *We don’t need to know.* That’s the beauty of a function as a black box: It just works.
+... and it prints only the text content from inside an HTML element (such as `title` or `li`) that is stored in `varname`. The variable `varname` contains the HTML tags (possibly quite a lot of tags), but the BeautifulSoup function `get_text()` removes them neatly, giving us just text. How does `get_text()` do that? *We don’t need to know.* That’s the beauty of a function as a black box: It just works.
 
 We don’t need to know how a toaster toasts bread to get toast out of it. We put in two pieces of bread (the *arguments* we pass into a function), and toast is *returned* after the function runs.
 
-## Building functions for everything
+## Building functions for every task in a program
 
 Near the end of chapter 3, Sweigart gives us a program that (oddly enough) does not include any functions. Let’s *refactor* his program to make it more modular, using functions.
 
@@ -50,7 +50,9 @@ Near the end of chapter 3, Sweigart gives us a program that (oddly enough) does 
 
 **Build the main function:**
 
-If you base your main function around your pseudo code, you should be able to make it very modular. *Modular* can mean each function accomplishes one task. It’s not sensible to write a function that contains only one line, so don’t take this too literally.
+If you build your main function around your pseudo code, you should be able to make it very modular. *Modular* can mean each function accomplishes one task. It’s not sensible to write a function that contains only one line, so don’t take this too literally.
+
+Let’s begin by including in the main function only what seems absolutely necessary. Leave out anything that might get complicated.
 
 ```python
 import random
@@ -63,12 +65,13 @@ def guess_number():
 
     # tell user if they won or not
 
+    # this function must tell us the outcome, so: message
     return message
 ```
 
-“Take guesses from user and check each guess” is two tasks, but you will want to *loop* to guess and then check each guess against the correct answer. You can’t sensibly spit that into two separate functions.
+“Take guesses from user and check each guess” is two tasks, but you will want to *loop* to ask the user to guess, capture the guess, and then check the guess against the correct answer. You can’t sensibly spit that into two separate functions.
 
-Let’s name the two secondary functions and what they return before we write them:
+Let’s *name* the two secondary functions and what they return before we write them:
 
 ```python
 import random
@@ -87,9 +90,9 @@ def guess_number():
     return message
 ```
 
-Now we know what we have to get out of the `take_guesses()` function: The number of guesses taken. If they were all used without a correct answer, we know the player failed.
+Now we know what we have to get out of the `take_guesses()` function: The number of guesses taken. If all guesses were used without a correct answer, we know the player failed.
 
-**Think about this:** Knowing what you want to *return* helps you write a better function. Don’t just print things and throw them away. If you *return* something, you can save it in a variable.
+**Think about this:** Knowing what you want to *return* helps you write a better function. Don’t just print things and throw them away. If you *return* something, you can store it in a variable.
 
 Get started like this:
 
@@ -101,11 +104,11 @@ def take_guesses(secret_number):
         # ask user for a guess, a number
         # if it's too high, tell them
         # if it's too low, tell them
-        # if it's correct, break
-    return guesses
+        # if it's correct, return which guess this is
+    return None
 ```
 
-If they use all six guesses, the loop ends, and you know they never guessed the correct number. If they guessed correctly, you can tell them how many tries they took. That’s why you return a number, or the `None` value. Below is the completed guessing function.
+If they use all six guesses, the loop ends, and you know they never guessed the correct number. You return the `None` value. If they guessed correctly, you return a number: how many tries it took.  Below is the completed guessing function.
 
 ```python
 # compare user input to the secret number
@@ -113,7 +116,7 @@ def take_guesses(num):
     # give them 6 guesses
     for i in range(1, 7):
         print("Take a guess.")
-        # user enters a number
+        # user enters a number - change string input to integer 
         guess = int( input() )
         if guess < num:
             print("Your guess is too low.")
