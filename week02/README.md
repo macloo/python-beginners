@@ -77,15 +77,18 @@ def guess_number():
     # get random number
     secret_number = random.randint(1, 20)
     print("I'm thinking of a number between 1 and 20.")
+
     # take guesses from user and check each guess
     guesses = take_guesses(secret_number)
+
     # tell user if they won or not
     message = tell_result(guesses, secret_number)
+
     return message
 ```
 
 Now we know what we have to get out of the `take_guesses()` function: The number of guesses taken. If they were all used without a correct answer, we know the player failed.
 
-Think about this: Knowing what you want to *return* helps you write a better function. Don't just print things and throw them away. If you *return* something, you can save it in a variable.
+**Think about this:** Knowing what you want to *return* helps you write a better function. Don't just print things and throw them away. If you *return* something, you can save it in a variable.
 
-*more to come* 
+*more to come*
