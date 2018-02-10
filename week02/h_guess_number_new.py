@@ -26,7 +26,7 @@ def take_guesses(num):
         elif guess > num:
             print("Your guess is too high.")
         else:
-            # if guess is correct, return number of guesses they took
+            # if guess is correct
             return i
     # if they are wrong all times and loop ended -
     return None

@@ -82,7 +82,7 @@ def guess_number():
     guesses = take_guesses(secret_number)
 
     # tell user if they won or not
-    message = tell_result(guesses, secret_number)
+    message = tell_result(guesses)
 
     return message
 ```
@@ -90,5 +90,41 @@ def guess_number():
 Now we know what we have to get out of the `take_guesses()` function: The number of guesses taken. If they were all used without a correct answer, we know the player failed.
 
 **Think about this:** Knowing what you want to *return* helps you write a better function. Don't just print things and throw them away. If you *return* something, you can save it in a variable.
+
+Get started like this:
+
+```python
+# compare user input to the secret number
+def take_guesses(secret_number):
+    # give them 6 guesses
+    for i in range(1, 7):
+        # ask user for a guess, a number
+        # if it's too high, tell them
+        # if it's too low, tell them
+        # if it's correct, break
+    return guesses
+```
+
+If they use all six guesses, the loop ends, and you know they never guessed the correct number. If they guessed correctly, you can tell them how many tries they took. That's why you return a number, or the `None` value. Below is the completed guessing function.
+
+```python
+# compare user input to the secret number
+def take_guesses(num):
+    # give them 6 guesses
+    for i in range(1, 7):
+        print("Take a guess.")
+        # user enters a number 
+        guess = int( input() )
+        if guess < num:
+            print("Your guess is too low.")
+        elif guess > num:
+            print("Your guess is too high.")
+        else:
+            # if guess is correct, return number of guesses they took
+            return i
+    # if they are wrong all times and loop ended -
+    return None
+```
+
 
 *more to come*
