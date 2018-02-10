@@ -32,7 +32,7 @@ Near the end of chapter 3, Sweigart gives us a program that (oddly enough) does 
 
 **Problem to be solved:** Create a game in which a user gets six tries to guess a random number.
 
-**Pseudo code:**
+### Pseudo code
 
 1. Get a random number.
 2. Ask player to guess it.
@@ -40,7 +40,7 @@ Near the end of chapter 3, Sweigart gives us a program that (oddly enough) does 
 4. Repeat until either the guess is right or the player runs out of tries.
 5. Tell the player the result.
 
-**How to start:**
+### How to start
 
 ```python
 # get random number
@@ -48,7 +48,7 @@ Near the end of chapter 3, Sweigart gives us a program that (oddly enough) does 
 # tell user the result
 ```
 
-**Build the main function:**
+### Build the main function
 
 If you build your main function around your pseudo code, you should be able to make it very modular. *Modular* can mean each function accomplishes one task. It’s not sensible to write a function that contains only one line, so don’t take this too literally.
 
@@ -94,9 +94,9 @@ Now we know what we have to get out of the `take_guesses()` function: The number
 
 **Think about this:** Knowing what you want to *return* helps you write a better function. Don’t just print things and throw them away. If you *return* something, you can store it in a variable.
 
-**Build a secondary function:**
+### Build a secondary function
 
-Get started like this:
+Get started like this &mdash; writing out what you need to do:
 
 ```python
 # compare user input to the secret number
@@ -110,7 +110,7 @@ def take_guesses(secret_number):
     return None
 ```
 
-If they use all six guesses, the loop ends, and you know they never guessed the correct number. You return the `None` value. If they guessed correctly, you return a number: how many tries it took.  Below is the completed guessing function.
+If they use all six guesses, the loop ends, and you know they never guessed the correct number. You return the `None` value. If they guessed correctly, you return a number: how many tries it took. Below is the completed guessing function.
 
 ```python
 # compare user input to the secret number
@@ -133,4 +133,36 @@ def take_guesses(num):
 
 A great benefit to building modular functions is that you can test them by themselves. [Try out the `take_guesses()` function here.](https://repl.it/@macloo/random-guessing)
 
-*more to come*
+### Build another secondary function
+
+Your `take_guesses()` function does the real work of handling the guesses and the comparisons, but it never tells the user anything. That can be done in a separate function. It will return a message (a *string*) for the user.
+
+```python
+# tell user if they won or not
+message = tell_result(guesses)
+```
+
+To know whether the user ever guessed the secret number, you need to pass in the value from the previous function (the parameter `guesses`). That will be either a number form 1 to 6, or the value `None`. “It will be either this or that” should tip you off that an *if-statement* will work here!
+
+```python
+def tell_result(guesses):
+    if guesses == None:
+        # tell them they never got it right
+    else:
+        # tell them they guessed the secret number
+    return message
+```
+
+If you think about the message that will be written out for the user to read, you might realize the loser would like to know what the secret number was, and the winner might like to know how many tries were used. Add another parameter to the function (to pass in the secret number along with the number of guesses), and you’ve got it.
+
+```python
+def tell_result(guesses, number):
+    if guesses == None:
+        m = "Sorry, you used all your tries. "
+        m += "The secret number was " + str(number) + "."
+    else:
+        m = "Good job! You guessed the number in " + str(guesses) + " tries!"
+    return m
+```
+
+The file *guess_number_new.py* contains the final, complete program.
