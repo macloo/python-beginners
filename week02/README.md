@@ -94,6 +94,8 @@ Now we know what we have to get out of the `take_guesses()` function: The number
 
 **Think about this:** Knowing what you want to *return* helps you write a better function. Don’t just print things and throw them away. If you *return* something, you can store it in a variable.
 
+**Build a secondary function:**
+
 Get started like this:
 
 ```python
@@ -116,7 +118,7 @@ def take_guesses(num):
     # give them 6 guesses
     for i in range(1, 7):
         print("Take a guess.")
-        # user enters a number - change string input to integer 
+        # user enters a number - change string input to integer
         guess = int( input() )
         if guess < num:
             print("Your guess is too low.")
@@ -129,5 +131,6 @@ def take_guesses(num):
     return None
 ```
 
+A great benefit to building modular functions is that you can test them by themselves. [Try out the `take_guesses()` function here.](https://repl.it/@macloo/random-guessing)
 
 *more to come*
