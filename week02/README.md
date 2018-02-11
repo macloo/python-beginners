@@ -36,7 +36,9 @@ It keeps the larger job &mdash; the complete program &mdash; from overwhelming y
 
 ## Chapter review: chapter 3
 
-These are the takeaways from this chapter.
+These are the takeaways from this chapter. Slides below.
+
+### Chapter 3
 
 1. The `def` statement (how and where to use it)
 2. *When* is the code in a function executed? (Know the difference between *defining* a function and *running* it.)
@@ -59,3 +61,7 @@ These are the takeaways from this chapter.
     e. Four rules, p. 70
 8. Functions as “black boxes”: Describes a function with *parameters* (it takes *arguments*) and a `return` statement. Something goes into it (arguments) and something comes out of it (whatever is returned).
 9. Exception handling (also called error handling): `try`/`except` pattern
+
+### Slides
+
+[Python Review 2](http://bit.ly/pythonrev2)
