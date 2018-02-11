@@ -19,7 +19,9 @@ Students read chapters 1 and 2 in Sweigart. Some scripts in the **week01** folde
 
 ## Week 02
 
-Students read chapter 3 in Sweigart. *more to come*
+Students read chapter 3 in Sweigart. See the README in the **week02** folder for more information.
+
+Writing modular code is not only a good practice; it also helps you to write functions you can test reliably and reuse in future work. See **modular-code** in the **week02** folder for more information.
 
 ## Jupyter Cheat Sheet
 
