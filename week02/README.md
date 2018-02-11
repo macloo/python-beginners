@@ -16,6 +16,8 @@ Students can now write and save their Python3 code in files.
 
 Sweigart notes that many functions operate as “black boxes”: This describes a function with parameters (it takes arguments) and a `return` statement. Something goes into it (arguments) and something comes out of it (whatever is returned). You don’t need to know how it works; you just need to know what it does.
 
+View the example file in this folder: *a_black_box.py*
+
 This is true for many functions we use from imported libraries, such as BeautifulSoup (for web scraping). We run a function such as this:
 
 ```python
