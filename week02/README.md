@@ -43,22 +43,22 @@ These are the takeaways from this chapter. Slides below.
 1. The `def` statement (how and where to use it)
 2. *When* is the code in a function executed? (Know the difference between *defining* a function and *running* it.)
 3. Parameters, arguments: Where are these, in a function?
-    a. How do they work when you *define* the function?
-    b. How do they work when you *run* the function? (Note: Instead of run, we may say *call* or *execute* the function. All the same meaning.)
+    - How do they work when you *define* the function?
+    - How do they work when you *run* the function? (Note: Instead of run, we may say *call* or *execute* the function. All the same meaning.)
 4. The `return` keyword (used in a function)
 5. The `NoneType` data type: value is `None`
-    a. This will be important in scraping! If you get an error that says something does not work because it cannot be applied to `NoneType`, it means something returned `None` when you were expecting another value. You can also see `None` used explicitly in Mitchell’s error-handling script [here](https://github.com/REMitchell/python-scraping/blob/master/chapter1/3-exceptionHandling.py).
-    b. “Python adds `return None` to the end of any function definition with no `return` statement.” (p. 65) In other words, a function with no `return` statement returns `None`.
-    c. An empty `return` statement also returns `None`.
+    - This will be important in scraping! If you get an error that says something does not work because it cannot be applied to `NoneType`, it means something returned `None` when you were expecting another value. You can also see `None` used explicitly in Mitchell’s error-handling script [here](https://github.com/REMitchell/python-scraping/blob/master/chapter1/3-exceptionHandling.py).
+    - “Python adds `return None` to the end of any function definition with no `return` statement.” (p. 65) In other words, a function with no `return` statement returns `None`.
+    - An empty `return` statement also returns `None`.
 6. Keyword arguments: You can forget this for the time being
 7. Scope of variables: **Important!**
-    a. Any variable has *local* scope or *global* scope. It cannot have both.
-    b. A local variable exists only *inside* a function. It cannot be transmitted outside the function (although its *value* can — via `return`).
-    c. A global variable exists *outside* any function. It may be used inside a function.
-    d. Sometimes you will make a mistake about the scope of a variable, and then your answers or results will not be correct.
-        i. “It is a **bad habit** to rely on global variables as your programs get larger and larger.” (p. 67)
-        ii. “To simplify your life, **avoid using** local variables that have the same name as a global variable or another local variable.” (p. 69)
-    e. Four rules, p. 70
+    - Any variable has *local* scope or *global* scope. It cannot have both.
+    - A local variable exists only *inside* a function. It cannot be transmitted outside the function (although its *value* can — via `return`).
+    - A global variable exists *outside* any function. It may be used inside a function.
+    - Sometimes you will make a mistake about the scope of a variable, and then your answers or results will not be correct.
+        - “It is a **bad habit** to rely on global variables as your programs get larger and larger.” (p. 67)
+        - “To simplify your life, **avoid using** local variables that have the same name as a global variable or another local variable.” (p. 69)
+    - Four rules, p. 70
 8. Functions as “black boxes”: Describes a function with *parameters* (it takes *arguments*) and a `return` statement. Something goes into it (arguments) and something comes out of it (whatever is returned).
 9. Exception handling (also called error handling): `try`/`except` pattern
 
