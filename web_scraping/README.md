@@ -121,6 +121,14 @@ If it works, you'll see:
 <h1>We Are Learning About Web Scraping!</h1>
 ```
 
+If you got an error about SSL, quit Python (`quit()` or Command-D) and enter this at the bash prompt:
+
+```bash
+/Applications/Python\ 3.6/Install\ Certificates.command
+```
+
+Then return to the Python prompt and retry the five lines above.
+
 The example is based on the one on page 8 of Mitchell's book; the code is updated in her [GitHub repo](https://github.com/REMitchell/python-scraping) (chapter1) for the book, where we can find **updated code** that will no doubt appear in her 2nd edition.
 
 The command `bsObj.h1` would work the same way for any HTML tag (if it exists in the file). Instead of printing it, you might stash it in a variable:
