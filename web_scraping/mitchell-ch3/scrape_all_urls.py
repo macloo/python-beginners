@@ -12,7 +12,8 @@ bsObj = BeautifulSoup(html, "html.parser")
 filename = 'myfile.txt'
 
 def capture_urls(filename, bsObj):
-    # create and open the file for writing
+    # create and open the file for writing - note, with 'w' this will
+    # delete all contents of the file if it already exists
     myfile = open(filename, 'w')
 
     # get all <a> elements
@@ -23,7 +24,7 @@ def capture_urls(filename, bsObj):
             # write one href into the text file - \n is newline
             myfile.write(link.attrs['href'] + "\n")
 
-    # close and save the file
+    # close and save the file after loop ends
     myfile.close()
 
 # call the function
