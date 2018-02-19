@@ -64,7 +64,7 @@ The index: 3 The item: elephant
 
 You don't need to loop through a list to find out if a particular item exists there. See Sweigart page 87 for details. He also shows you how to simply assign list items to variables (pages 87-88).
 
-## Augmented Assignment Operators
+### Augmented assignment operators
 
 I have no clue why this is in the middle of the lists chapter, but you should know that in Python we cannot increment a value with `++` as we can in JavaScript.
 
@@ -83,7 +83,7 @@ We can, however, use a shortened form instead of `x = x + 1` to increment a valu
 
 The same technique works with `-`, `*`, `\`, and `%` (modulus).
 
-## Methods, and finding things in lists
+### Methods, and finding things in lists
 
 In our web scraping exercises, we have been using a BeautifulSoup *method* that works on a string: `variable.get_text()`
 
@@ -126,7 +126,7 @@ The `sort()` method will only work if your list items are all strings or all num
 
 Note that by using the `sort()` method, we changed the list. The old order cannot be regained. We destroyed all the old indexes. Originally, `water_list[0]` was `'lake'`. Now it is `'Atlantic'`.
 
-## Tuples and immutability
+### Tuples and immutability
 
 Sweigart explains the difference between mutable and immutable data types and then goes on to introduce tuples (pronounced *too-puls*). A tuple might look like a list at first glance, but it's not &mdash; and it doesn't behave like a list, either.
 
@@ -134,7 +134,7 @@ A tuple can contain one or more items, like a list, but the items cannot be chan
 
 Lists are *mutable*, and that means we can change and reorder their contents at any time.
 
-## Lists and references
+### Lists and references
 
 Another important thing to know about Python lists is that you can't simply duplicate one. You might think, “Oh, I'm going to change the contents of `my_list`, so I'll make a copy of it as a backup.” This is not going to do what you probably expect:
 
@@ -143,7 +143,7 @@ Another important thing to know about Python lists is that you can't simply dupl
 >>> foobar = my_list
 >>> print(foobar)
 ['cat', 'bat', 'rat']
->>> # you think you have a copy of my_list in foobar - you are wrong 
+>>> # you think you have a copy of my_list in foobar - you are wrong
 >>> my_list.append('aardvark')
 >>> my_list.append('zebra')
 >>> my_list.remove('rat')
@@ -156,3 +156,5 @@ Another important thing to know about Python lists is that you can't simply dupl
 ```
 
 Sweigart explains this at the end of his chapter 4.
+
+### Checklist for chapter 4
