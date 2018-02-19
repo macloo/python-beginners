@@ -128,7 +128,7 @@ The `sort()` method will only work if your list items are all strings or all num
 
 Note that by using the `sort()` method, we changed the list. The old order cannot be regained. We destroyed all the old indexes. Originally, `water_list[0]` was `'lake'`. Now it is `'Atlantic'`.
 
-There is a *method* Sweigart dod not cover, and it's very handy: `pop()`. We can put an index inside the parentheses, and then the item at that index will be removed, permanently, from the list. If no index is specified, `pop()` removes *and returns* the *last* item in the list. Here's how it works:
+There is a *method* Sweigart did not cover, and it's very handy: `pop()`. We can put an index inside the parentheses, and then the item at that index will be removed, permanently, from the list. If no index is specified, `pop()` removes *and returns* the *last* item in the list. Note that leaving the parentheses empty is *the most common way* to use `pop()`. Here's how it works:
 
 ```python
 >>> print(water_list)
@@ -145,6 +145,8 @@ ocean
 lake
 >>>
 ```
+
+[Here are all of the methods of Python lists.](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
 
 ### Tuples and immutability
 
@@ -192,6 +194,6 @@ Sweigart explains this at the end of his chapter 4. Both `my_list` and `foobar` 
     * `append()`
     * `remove()`
     * `sort()`
-    * `pop()` *not in Sweigart; see above* 
+    * `pop()` *not in Sweigart; see above*
 10. The differences between a Python list and a tuple
 11. You can't simply make a copy of a list in the way you might expect (know how to look up the *correct way* to make a copy if you need to do so)
