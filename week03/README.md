@@ -128,6 +128,24 @@ The `sort()` method will only work if your list items are all strings or all num
 
 Note that by using the `sort()` method, we changed the list. The old order cannot be regained. We destroyed all the old indexes. Originally, `water_list[0]` was `'lake'`. Now it is `'Atlantic'`.
 
+There is a *method* Sweigart dod not cover, and it's very handy: `pop()`. We can put an index inside the parentheses, and then the item at that index will be removed, permanently, from the list. If no index is specified, `pop()` removes *and returns* the *last* item in the list. Here's how it works:
+
+```python
+>>> print(water_list)
+['Atlantic', 'Hudson', 'Ontario', 'lake', 'ocean', 'river']
+>>> water_list.pop()
+'river'
+>>> next_item = water_list.pop()
+>>> another_item = water_list.pop()
+>>> print(water_list)
+['Atlantic', 'Hudson', 'Ontario']
+>>> print(next_item)
+ocean
+>>> print(another_item)
+lake
+>>>
+```
+
 ### Tuples and immutability
 
 Sweigart explains the difference between mutable and immutable data types and then goes on to introduce tuples (pronounced *too-puls*). A tuple might look like a list at first glance, but it's not &mdash; and it doesn't behave like a list, either.
@@ -163,9 +181,9 @@ Sweigart explains this at the end of his chapter 4. Both `my_list` and `foobar` 
 
 1. Create a new list
 2. Get the value of one item in a list using its index
-3. Make a double-decker list (lists inside a list) and access the items in the onner lists.
+3. Make a double-decker list (lists inside a list) and access the items in the inner lists.
 4. Use slices to get multiple items from a list all at once
-5. Use `len()` to get number of items in a list
+5. Use `len()` to get the number of items in a list
 6. Use `del()` to delete an item from a list
 7. Loop through a list two different ways (one way uses `range()` and the other does not)
 8. Increment a value using `+=`
@@ -174,5 +192,6 @@ Sweigart explains this at the end of his chapter 4. Both `my_list` and `foobar` 
     * `append()`
     * `remove()`
     * `sort()`
+    * `pop()` *not in Sweigart; see above* 
 10. The differences between a Python list and a tuple
 11. You can't simply make a copy of a list in the way you might expect (know how to look up the *correct way* to make a copy if you need to do so)
