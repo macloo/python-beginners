@@ -83,6 +83,45 @@ We can, however, use a shortened form instead of `x = x + 1` to increment a valu
 
 The same technique works with `-`, `*`, `\`, and `%` (modulus).
 
-## Methods
+## Methods, and finding things in lists
 
-More to comes
+In our web scraping exercises, we have been using a BeautifulSoup *method* that works on a string: `variable.get_text()`
+
+A *method* is a function (e.g. `get_text()`), but it must be *called on* a *value*. In the `variable.get_text()` example, `variable` contains some text string that includes HTML tags we want to get rid of. Calling `get_text()` on `variable` returns the text without any HTML tags.
+
+Sweigart shows us the *method* `index()`: If `spam` is a Python list and that list contains an item with the value `"hello"`, then `spam.index('hello')` will return the index number of that item.
+
+It's useful to know that if the list *does not* contain that value, then the *method* `index()` will return a `ValueError`. This is useful because (like any error) `ValueError` could be used in a `try`/`except` combo. When you are scraping, that can be very useful indeed.
+
+Other list methods include `append()` and `insert()`.
+
+```python
+>>> my_list = ['cat', 'bat', 'rat', 'elephant']
+>>> my_list.append('rhino')
+>>> print(my_list)
+['cat', 'bat', 'rat', 'elephant', 'rhino']
+```
+
+The `append()` method is used often in web scraping.
+
+Earlier in the chapter, we saw `del spam[2]` &mdash; this deletes the item with **index** 2 from the list `spam`. Note how different that is from the `remove()` method:
+
+```python
+>>> my_list = ['cat', 'bat', 'rat', 'elephant', 'rhino']
+>>> my_list.remove('bat')
+>>> print(my_list)
+['cat', 'rat', 'elephant', 'rhino']
+>>>
+```
+
+The `sort()` method will only work if your list items are all strings or all numbers. Also, strings that begin with an uppercase letter will be sorted separately from strings that begin with a lowercase letter.
+
+```python
+>>> water_list = ['lake', 'Ontario', 'river', 'Hudson', 'ocean', 'Atlantic']
+>>> water_list.sort()
+>>> print(water_list)
+['Atlantic', 'Hudson', 'Ontario', 'lake', 'ocean', 'river']
+>>>
+```
+
+Note that by using the `sort()` method, we changed the list. The old order cannot be regained. We destroyed all the old indexes. Originally, `water_list[0]` was `'lake'`. Now it is `'Atlantic'`.
