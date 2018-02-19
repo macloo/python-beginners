@@ -246,7 +246,35 @@ Compare that with this:
 >>>
 ```
 
-Everything else in chapter 8 can be considered background information. Make a mental note about “pretty print,” though (page 185) &mdash; there will come a time when you're glad you remember it exists.
+Everything else in chapter 8 can be considered background information. Make a mental note about “pretty print,” though (page 185) &mdash; there will come a time when you'll be glad you remember it exists.
+
+There's a method Sweigart does not cover, `seek()`. This comes in handy if you have a file open for reading and you have come to the bottom of it (perhaps by calling `readlines()`). Calling `seek(0)` on the File object returns to the *top* of the file so you can read or search its contents again.
+
+```python
+>>> myfile = open('temp.txt')
+>>> file_lines = myfile.readlines()
+>>> # next line: nothing happens
+>>> print( myfile.readline() )
+
+>>> myfile.seek(0)
+0
+>>> # next line: try it again
+>>> print( myfile.readline() )
+hello my little file
+
+>>> myfile.close()
+>>>
+```
+
+### An alternative way to open a file
+
+This opens a File object (`f`) for appending, writes to it, closes it and saves it (without using `close()`). [Read more about it here.](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+
+```python
+with open('myfile.txt', 'a') as f:
+	words = "I would not like to eat any spam."
+	f.write(words)
+```
 
 ### Review of key points from chapter 8
 
