@@ -197,3 +197,68 @@ Sweigart explains this at the end of his chapter 4. Both `my_list` and `foobar` 
     * `pop()` *not in Sweigart; see above*
 10. The differences between a Python list and a tuple
 11. You can't simply make a copy of a list in the way you might expect (know how to look up the *correct way* to make a copy if you need to do so)
+
+## Reading and writing files with Python
+
+Python can access files on your computer. It can create new text files and write into them. It can also read text files and copy things from them.
+
+In Sweigart’s chapter 8, we are mainly interested in pages 180–183. Nevertheless, his section under “Files and File Paths” contains useful information, and we will certainly use `import os` in some of our scraping work.
+
+Most students will benefit from a review of “Absolute vs. Relative Paths” (page 175).
+
+`os.path.isfile()` can be very useful if your program needs to check for the existence of a file in the current directory on your computer:
+
+```python
+filename = "my_data.txt"
+# check if that filename is already in use
+if ( os.path.isfile(filename) ):
+    # ask user for a new filename if the other name exists
+    filename = input("What should the filename be? ")
+```
+
+Sweigart explains the `readlines()` method (pages 182-183), but he does not cover the `readline()` method, which reads exactly *one* line at a time. These two different methods come in handy for solving different problems.
+
+```python
+>>> myfile = open('temp.txt', 'w')
+>>> myfile.write('hello my little file\n')
+21
+>>> myfile.write('goodbye my little file\n')
+23
+>>> myfile.close()
+>>> myfile = open('temp.txt')
+>>> print( myfile.readline() )
+hello my little file
+
+>>> print( myfile.readline() )
+goodbye my little file
+
+>>> myfile.close()
+>>>
+```
+
+Compare that with this:
+
+```python
+>>> myfile = open('temp.txt')
+>>> print( myfile.readlines() )
+['hello my little file\n', 'goodbye my little file\n']
+>>> myfile.close()
+>>>
+```
+
+Everything else in chapter 8 can be considered background information. Make a mental note about “pretty print,” though (page 185) &mdash; there will come a time when you're glad you remember it exists.
+
+### Review of key points from chapter 8
+
+1. “Call the `open()` function to return a File object” (Sweigart, page 181)
+2. “Call the `read()` or `write()` method on the File object” (same)
+3. “Close the file by calling the `close()` method on the File object” (same); this also *saves* the file
+4. Distinguish between the File object and the contents of the file
+5. Write filenames *without* path information when the file is in the same directory as your Python program
+6. Call the `readlines()` method to create a **list** from a file with line breaks
+7. The difference between the `readline()` method and the `readlines()` method
+8. The difference between *write* mode (`'w'`) and *append* mode (`'a'`) with `open()`
+
+## Slides for Sweigart chapters 8 and 4
+
+[Slide deck](http://bit.ly/pythonrev3)
