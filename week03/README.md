@@ -125,3 +125,34 @@ The `sort()` method will only work if your list items are all strings or all num
 ```
 
 Note that by using the `sort()` method, we changed the list. The old order cannot be regained. We destroyed all the old indexes. Originally, `water_list[0]` was `'lake'`. Now it is `'Atlantic'`.
+
+## Tuples and immutability
+
+Sweigart explains the difference between mutable and immutable data types and then goes on to introduce tuples (pronounced *too-puls*). A tuple might look like a list at first glance, but it's not &mdash; and it doesn't behave like a list, either.
+
+A tuple can contain one or more items, like a list, but the items cannot be changed. They cannot be sorted into order, and they cannot be deleted or removed. Perhaps most surprising, you cannot even add a new item to a tuple. Once it is made, a tuple is *immutable*.
+
+Lists are *mutable*, and that means we can change and reorder their contents at any time.
+
+## Lists and references
+
+Another important thing to know about Python lists is that you can't simply duplicate one. You might think, “Oh, I'm going to change the contents of `my_list`, so I'll make a copy of it as a backup.” This is not going to do what you probably expect:
+
+```python
+>>> my_list = ['cat', 'bat', 'rat']
+>>> foobar = my_list
+>>> print(foobar)
+['cat', 'bat', 'rat']
+>>> # you think you have a copy of my_list in foobar - you are wrong 
+>>> my_list.append('aardvark')
+>>> my_list.append('zebra')
+>>> my_list.remove('rat')
+>>> my_list.sort()
+>>> print(my_list)
+['aardvark', 'bat', 'cat', 'zebra']
+>>> print(foobar)
+['aardvark', 'bat', 'cat', 'zebra']
+>>>
+```
+
+Sweigart explains this at the end of his chapter 4.
