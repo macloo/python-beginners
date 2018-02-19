@@ -20,9 +20,11 @@ print(my_list[1])
 # bat will be printed
 ```
 
-Slices provide a way to get several consecutive items from a list all at once; see Sweigart pages 82-83.
+This next bit is pretty sophisticated, but you will probably use it: We can put **lists *inside* of lists**. When we do, we can access the list items with index numbers as usual, but you'll need to use one index to access a list (in the list of lists) and a *second* index to access an item inside that list. See Sweigart page 81 for this. It's like a double-decker list.
 
-The length of a list (just like the length of a string) can be found with `len()`:
+**Slices** provide a way to get several consecutive items from a list all at once; see Sweigart pages 82-83. He calls it the multiple assignment trick.
+
+The **length** of a list (just like the length of a string) can be found with `len()`:
 
 ```python
 >>> my_list = ['cat', 'bat', 'rat', 'elephant']
@@ -155,6 +157,22 @@ Another important thing to know about Python lists is that you can't simply dupl
 >>>
 ```
 
-Sweigart explains this at the end of his chapter 4.
+Sweigart explains this at the end of his chapter 4. Both `my_list` and `foobar` are simply *references* to the list, which exists elsewhere in memory. To make a real copy that is independent of the original, you have to use other means.
 
-### Checklist for chapter 4
+### Review of key points from chapter 4
+
+1. Create a new list
+2. Get the value of one item in a list using its index
+3. Make a double-decker list (lists inside a list) and access the items in the onner lists.
+4. Use slices to get multiple items from a list all at once
+5. Use `len()` to get number of items in a list
+6. Use `del()` to delete an item from a list
+7. Loop through a list two different ways (one way uses `range()` and the other does not)
+8. Increment a value using `+=`
+9. Use the following *methods* correctly:
+    * `index()`
+    * `append()`
+    * `remove()`
+    * `sort()`
+10. The differences between a Python list and a tuple
+11. You can't simply make a copy of a list in the way you might expect (know how to look up the *correct way* to make a copy if you need to do so)
