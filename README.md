@@ -29,7 +29,7 @@ Students read chapters 4 and 8 in Sweigart. See the README in the **week03** fol
 
 Chapter 4 covers just about everything one needs to know about Python lists. The README highlights some of the methods, etc., we will use most often.
 
-Chapter 8 covers reading and writing files with Python, and the innformation we need most often is on pages 180-183. There are a couple of things not covered that I have explained in the README.
+Chapter 8 covers reading and writing files with Python. The information we need most often is on pages 180-183. There are a couple of things not covered that I have explained in the README.
 
 ## Jupyter Cheat Sheet
 
@@ -41,4 +41,4 @@ Students are introduced to web scraping with the BeautifulSoup library in the se
 
 ### Mitchell, chapter 3
 
-The README in the [mitchell-ch3](/macloo/python-beginners/tree/master/web_scraping/mitchell-ch3) folder supplements chapter 3 in *Web Scraping with Python*, by Ryan Mitchell. The chapter is very challenging for beginners, so here are a couple of `.py` files and examples to ease the way. 
+The README in the [mitchell-ch3](https://github.com/macloo/python-beginners/tree/master/web_scraping/mitchell-ch3) folder supplements chapter 3 in *Web Scraping with Python*, by Ryan Mitchell. The chapter is very challenging for beginners, so here are a couple of `.py` files and examples to ease the way.
