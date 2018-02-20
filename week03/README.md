@@ -246,6 +246,8 @@ Compare that with this:
 >>>
 ```
 
+Notice that the *newline character* (`\n`) is included above. You can strip that out with the string method `.strip()` &mdash; it removes spaces and newline characters (\n) at both the start and the end of a string.
+
 Everything else in chapter 8 can be considered background information. Make a mental note about “pretty print,” though (page 185) &mdash; there will come a time when you'll be glad you remember it exists.
 
 There's a method Sweigart does not cover, `seek()`. This comes in handy if you have a file open for reading and you have come to the bottom of it (perhaps by calling `readlines()`). Calling `seek(0)` on the File object returns to the *top* of the file so you can read or search its contents again.
