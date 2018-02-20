@@ -19,15 +19,15 @@ Students read chapters 1 and 2 in Sweigart. Some scripts in the **week01** folde
 
 ## Week 02
 
-Students read chapter 3 in Sweigart. See the README in the **week02** folder for more information.
+Students read chapter 3, “Functions,” in Sweigart. See the README in the **week02** folder for more information.
 
-Writing modular code is not only a good practice; it also helps you to write functions you can test reliably and reuse in future work. See **modular-code** in the **week02** folder for more information.
+Writing modular code is not only a good practice; it also helps you to write functions you can test reliably and reuse in future work. See [modular-code](https://github.com/macloo/python-beginners/tree/master/week02/modular-code) in the **week02** folder for more information.
 
 ## Week 03
 
 Students read chapters 4 and 8 in Sweigart. See the README in the **week03** folder for more information.
 
-Chapter 4 covers just about everything one needs to know about Python lists. The README highlights some of the methods, etc., we will use most often.
+Chapter 4 covers just about everything one needs to know about Python lists. The README highlights some of the methods, etc., we will use most often, including some things Sweigart does not cover.
 
 Chapter 8 covers reading and writing files with Python. The information we need most often is on pages 180-183. There are a couple of things not covered that I have explained in the README.
 
