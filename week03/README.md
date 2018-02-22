@@ -246,7 +246,21 @@ Compare that with this:
 >>>
 ```
 
-Notice that the *newline character* (`\n`) is included above. You can strip that out with the string method `.strip()` &mdash; it removes spaces and newline characters (\n) at both the start and the end of a string.
+Notice that the *newline character* (`\n`) is included above. You can **strip** that out with the string method `.strip()` &mdash; it removes spaces at both the start and the end of a string. If you want `.strip()` to remove other characters, put them inside the prentheses: `.strip(\t\n)` will remove both tabs (`\t`) and newlines (`\n`) but not spaces.
+
+```python
+>>> my_string = "   Hello, little    foobar  !!!     "
+>>> print(my_string)
+   Hello, little    foobar  !!!     
+>>> print(len(my_string))
+36
+>>> my_string = my_string.strip()
+>>> print(my_string)
+Hello, little    foobar  !!!
+>>> print(len(my_string))
+28
+>>>
+```
 
 Everything else in chapter 8 can be considered background information. Make a mental note about “pretty print,” though (page 185) &mdash; there will come a time when you'll be glad you remember it exists.
 
