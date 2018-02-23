@@ -56,6 +56,8 @@ bsObj = BeautifulSoup(req.text, "html5lib")
 
 Notice that I replaced our usual `"html.parser"` with `"html5lib"`. Mitchell used `"lxml"` instead. More about **parsers** below.
 
+**I did not need to use Selenium at all to scrape that forum site.**
+
 You can see the actual headers your web browser is sending if you go to [this page](https://www.whatismybrowser.com/detect/what-http-headers-is-my-browser-sending).
 
 ## Timing matters
@@ -89,3 +91,7 @@ bsObj = BeautifulSoup(html, "html.parser")
 **html5lib** is a Python library for parsing HTML. You can read about the differences among Python parsers in this [Stack Overflow post](https://stackoverflow.com/questions/45494505/python-difference-between-lxml-and-html-parser-and-html5lib-with-beautifu). The short answer: Sometimes one parser works better than another. **lxml** is a faster parser than **html5lib**, so if you are churning through a gazillion pages, that might make **lxml** a better choice. **html5lib** is much better at reading badly formatted HTML, however.
 
 See the BeautifulSoup docs: [Differences between parsers](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#differences-between-parsers).
+
+## When all else fails
+
+“If you keep getting blocked by websites and you don’t know why, here’s a checklist you can use ...” (Mitchell, page 186).
