@@ -6,7 +6,7 @@ After chapter 3, Mitchell covers a wide variety of scraping methods and situatio
 
 To come.
 
-## Account for hard-to-scrape sites with Selenium and HTTP headers
+## Tackle hard-to-scrape sites with Selenium and HTTP headers
 
 Sometimes you have to do more so that a website will allow you to scrape it. These two techniques are often necessary, together or separately.
 
@@ -14,7 +14,7 @@ Sometimes you have to do more so that a website will allow you to scrape it. The
 
 Mitchell discusses Selenium in **chapter 10**. We can use Selenium together with BeautifulSoup when BeautifulSoup alone is unable to get the contents we want from a web page. Two situations where this comes up: (1) JavaScript is writing the contents into the page after it opens; and (2) contents are not available until you click a button, fill a form, open a menu, etc.
 
-The Selenium documentation is not easy to use. **Use this:** [Getting started with Selenium](http://bit.ly/selenium-intro). You will need to install [Selenium](https://www.seleniumhq.org/) and also a driver for the web browser you want to use (Chrome is good).
+The Selenium documentation is not easy to use. **Use this:** [Getting started with Selenium](http://bit.ly/selenium-intro). You will need to install [Selenium](https://www.seleniumhq.org/) and also a driver for the web browser you want to use (Chrome is good). These are covered in the “Getting Started” doc.
 
 When you examine the test scripts (linked to gists in the “Getting Started” doc and also found in this repo), notice that after doing the `driver` stuff, this line creates an `html` variable just like we have been doing all along with BeautifulSoup:
 
@@ -24,11 +24,15 @@ html = driver.page_source
 
 Once you have that, you can proceed as usual with a `bsObj` and BeautifulSoup scraping. You do not need to use `driver` and “an entirely new set of selectors” as Mitchell does.
 
-Mitchell uses [PhantomJS](https://github.com/ariya/phantomjs) instead of a physical browser. Note that “it does require a download and installation to use and cannot be installed with pip” (p. 152).
+Mitchell uses [PhantomJS](https://github.com/ariya/phantomjs) instead of a physical browser. Note that “it does require a download and installation to use and cannot be installed with pip” (p. 152). This is NOT covered in the “Getting Started” doc, which assumes you will use Chrome and *chromedriver*, not PhantomJS.
+
+If you're still having trouble scraping a page even after adding Selenium to your Python script, the culprit might be a timing issue. See pages 154-155 in Mitchell for an explanation of an *implicit wait* and the use of `expected_conditions`, a Selenium module. She further discusses *locators* and how to use them to wait for an element that has not yet appeared on the page. Look at how the page behaves when you access it normally, yourself, to determine whether to add this kind of code to your script.
+
+Also see the “Timing matters” section below.
 
 ### Sending HTTP headers in your script
 
-Mitchell discusses headers in **chapter 12**. You'll install [Requests](http://docs.python-requests.org/en/master/), a Python library, and you'll discover your own user agent at [WhatIsMyBrowser.com](https://www.whatismybrowser.com/). Find your web browser’s user agent at the bottom of that page.
+Mitchell discusses headers in **chapter 12**. You'll install [Requests](http://docs.python-requests.org/en/master/), a Python library, and you'll discover your own user agent at [WhatIsMyBrowser.com](https://www.whatismybrowser.com/). Find your web browser’s **user agent** at the bottom of that page.
 
 Mitchell's sample script for sending header information is [here](https://github.com/REMitchell/python-scraping/blob/master/chapter12/1-headers.py). She uses it to go to WhatIsMyBrowser.com, but that's just an example.
 
@@ -51,3 +55,19 @@ bsObj = BeautifulSoup(req.text, "html5lib")
 ```
 
 Notice that I replaced our usual `"html.parser"` with `"html5lib"`. Mitchell used `"lxml"` instead. More about **parsers** below.
+
+## Timing matters
+
+This one line tells your Python script to pause for 3 seconds:
+
+```python
+time.sleep(3)
+```
+
+Mitchell explains this in chapter 12. We must import Python's `time` module if we want to use `time.sleep()` (see the [docs](https://docs.python.org/3/library/time.html#time.sleep)).
+
+You will need to think carefully about the best place to insert this line in your code. You are not likely to need it when you are initially testing your code line by line to write your scraper script, but once you are ready to run the completed script on dozens or hundreds of web pages, then you must add some sleep time &mdash; as Mitchell cautions us, it's very bad to overload or overwork a website by making a scraper that runs too fast.
+
+## Parsers
+
+mmm
