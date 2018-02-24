@@ -2,6 +2,17 @@
 
 Students read chapters 4 and 8 in Sweigart. They also continue to learn about web scraping; that is covered in a separate part of this repo.
 
+* [Python lists](#python-lists)
+  * [Augmented assignment operators](#augmented-assignment-operators)
+  * [Methods, and finding things in lists](#methods-and-finding-things-in-lists)
+  * [Tuples and immutability](#tuples-and-immutability)
+  * [Lists and references](#lists-and-references)
+  * [Review of key points from chapter 4](#review-of-key-points-from-chapter-4)
+* [Reading and writing files with Python](#reading-and-writing-files-with-python)
+  * [An alternative way to open a file](#an-alternative-way-to-open-a-file)
+  * [Review of key points from chapter 8](#review-of-key-points-from-chapter-8)
+* [Slides for Sweigart chapters 8 and 4](#slides-for-sweigart-chapters-8-and-4)
+
 ## Python lists
 
 Python lists are very similar to JavaScript arrays. However, in Python, an **array** is a different thing, and we will be using lists, not arrays. [Read this if you're curious about the difference.](https://www.pythoncentral.io/the-difference-between-a-list-and-an-array/)
