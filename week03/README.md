@@ -2,6 +2,8 @@
 
 Students read chapters 4 and 8 in Sweigart. They also continue to learn about web scraping; that is covered in a separate part of this repo.
 
+## Contents 
+
 * [Python lists](#python-lists)
   * [Augmented assignment operators](#augmented-assignment-operators)
   * [Methods, and finding things in lists](#methods-and-finding-things-in-lists)
