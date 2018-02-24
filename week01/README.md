@@ -2,7 +2,20 @@
 
 Students read chapters 1 and 2 in Sweigart. Some scripts in this folder are based on Sweigart’s &mdash; naturally, he has more examples than only these.
 
-We start running simple expressions and statements in the interpreter:
+This is the students' first look at Python. We use only Python 3.
+
+## Contents
+
+* [Interactively learning Python](#interactively-learning-python)
+* [Do not use IDLE to run your scripts](#do-not-use-idle-to-run-your-scripts)
+* [Chapter review: chapters 1 and 2](#chapter-review-chapters-1-and-2)
+    * [Chapter 1](#chapter-1)
+    * [Chapter 2](#chapter-2)
+    * [Slides](#slides)
+
+## Interactively learning Python
+
+We start running simple expressions and statements in the interactive Python interpreter (type `python3` at the bash prompt, `$`):
 
 ```python
 >>> fruit = 'apple'
@@ -28,7 +41,7 @@ In the middle of chapter 1 in [Automate the Boring Stuff with Python](http://aut
 
 Do not use IDLE. We are never using IDLE.
 
-Instead, you can use Atom, our trusted code editor. Code is code. You can write any code in Atom. Instead of saving the file with a `.html` or `.js` extension, we save it with a `.py` extension when it is a Python file.
+Instead, you can use [Atom](https://atom.io/), our trusted code editor. Code is code. You can write any code in Atom. Instead of saving the file with a `.html` or `.js` extension, we save it with a `.py` extension when it is a Python file.
 
 Then, how do you run it? Never try to run a file at the `>>>` prompt. You need to be at the bash prompt (`$`) in Terminal, or the PowerShell prompt if you’re using Windows.
 

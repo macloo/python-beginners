@@ -6,6 +6,8 @@ Python3 is used throughout this book.
 
 **Note:** This document assumes you have already installed Python3, *pip*, and *virualenv*. If not, refer to [these instructions](http://bit.ly/install-python3-jupyter).
 
+This document covers our second week in this section of the course. It's our second week with Python, and our first week with scraping.
+
 ## Contents
 
 * [Setup for BeautifulSoup](#setup-for-beautifulsoup)
@@ -19,6 +21,11 @@ Python3 is used throughout this book.
     * [Finding elements that have a particular class](#finding-elements-that-have-a-particular-class)
     * [Finding all vs. finding one](#finding-all-vs-finding-one)
     * [Finding the contents of a particular attribute](#finding-the-contents-of-a-particular-attribute)
+
+See also, elsewhere in this repo:
+
+* [mitchell-ch3](https://github.com/macloo/python-beginners/tree/master/web_scraping/mitchell-ch3) &mdash; Mitchell chapter 3: More web scraping. This covers our third week's assigned reading.
+* [more-from-mitchell](https://github.com/macloo/python-beginners/tree/master/web_scraping/more-from-mitchell) &mdash;  More from Mitchell: Web scraping beyond the basics. This covers our fourth week's assigned reading.
 
 ## Setup for BeautifulSoup
 

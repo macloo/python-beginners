@@ -1,6 +1,17 @@
 # Week 02: Python functions
 
-Students read chapter 3 in Sweigart. They also begin to learn about web scraping; that is covered in a separate part of this repo.
+Students read chapter 3 in Sweigart. They also begin to learn about web scraping; that is covered in a separate part of this repo: [web_scraping](https://github.com/macloo/python-beginners/tree/master/web_scraping).
+
+## Contents
+
+* [Write and run a Python script](#write-and-run-a-python-script)
+* [Using parameters and returns in functions](#using-parameters-and-returns-in-functions)
+* [Building functions for each task in a program](#building-functions-for-each-task-in-a-program)
+* [Chapter review: chapter 3](#chapter-review-chapter-3)
+   * [Key points from chapter 3](#key-points-from-chapter-3)
+   * [Slides](#slides)
+
+## Write and run a Python script
 
 Now we start writing functions in Python3. We’ll write files in [Atom](https://atom.io/) and save them with the `.py` extension.
 
@@ -11,6 +22,8 @@ python3 foobar.py
 ```
 
 Students can now write and save their Python3 code in files.
+
+You do not need to be in your *virtualenv* to do this, but it's okay if you are.
 
 ## Using parameters and returns in functions
 
@@ -40,7 +53,7 @@ It keeps the larger job &mdash; the complete program &mdash; from overwhelming y
 
 These are the takeaways from this chapter. Slides below.
 
-### Chapter 3
+### Key points from chapter 3
 
 1. The `def` statement (how and where to use it)
 2. *When* is the code in a function executed? (Know the difference between *defining* a function and *running* it.)
