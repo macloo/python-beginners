@@ -30,8 +30,8 @@ c.writerow(['title', 'team', 'position', 'birthday', 'birthplace', 'twitter'])
 4. After this, you will need a *for-loop* that:
    * Gets a URL, opens it,
    * Finds data items in the page, using BeautifulSoup, and saves each item into its own variable,
-   * Puts all the variables into a list (square brackets again), and
-   * Writes the list to a row in the CSV.
+   * Puts all the variables into a **list** (square brackets again), and
+   * Writes the **list** to a **row** in the CSV.
 5. After the loop is finished, close the file to which you have written everything.
 
 ```python
