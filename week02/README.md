@@ -43,7 +43,7 @@ We don’t need to know how a toaster toasts bread to get toast out of it. We pu
 
 ## Building functions for each task in a program
 
-Near the end of chapter 3, Sweigart gives us a program that (oddly enough) does not include any functions. In the folder named *modular-code*, we will walk through how to convert that program into a collection of three modular functions.
+Near the end of chapter 3, Sweigart gives us a program that (oddly enough) does not include any functions. In the folder named [modular-code](https://github.com/macloo/python-beginners/tree/master/week02/modular-code), we will walk through how to convert that program into a collection of three modular functions.
 
 *Modular* can mean that each function accomplishes *one* task. It’s not sensible to write a function that contains only one line, so don’t take this too literally. However, writing a lot of small, short functions gives you an easy way to test and perfect each part of your program in a very manageable way.
 

@@ -47,7 +47,7 @@ Then, how do you run it? Never try to run a file at the `>>>` prompt. You need t
 
 It’s easiest if you are in the same directory where the `.py` file was saved. Use your `cd` command ([Command Line Tips](http://bit.ly/mm-commandline)) to get there.
 
-At the bash prompt, type this (using your actual filename, of course)
+At the bash prompt, type this (using your actual filename, of course):
 
 ```bash
 python3 myfilename.py

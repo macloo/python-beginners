@@ -1,8 +1,8 @@
 # Week 03: Python lists; reading and writing files
 
-Students read chapters 4 and 8 in Sweigart. They also continue to learn about web scraping; that is covered in a separate part of this repo.
+Students read chapters 4 and 8 in Sweigart. They also continue to learn about web scraping; that is covered in a separate part of this repo: [web_scraping](https://github.com/macloo/python-beginners/tree/master/web_scraping).
 
-## Contents 
+## Contents
 
 * [Python lists](#python-lists)
   * [Augmented assignment operators](#augmented-assignment-operators)
