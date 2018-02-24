@@ -37,7 +37,7 @@ Students use Jupyter Notebook to complete several assignments. The cheat sheet i
 
 ## Web scraping
 
-Students are introduced to web scraping with the BeautifulSoup library in the second week. See the README in the **web_scraping** folder for instructions to install BeautifulSoup.
+Students are introduced to web scraping with the BeautifulSoup library in the second week. See the README in the [web_scraping](https://github.com/macloo/python-beginners/tree/master/web_scraping) folder for instructions to install BeautifulSoup, as well as some basic uses of this scraping library.
 
 ### Mitchell, chapter 3
 
