@@ -10,7 +10,9 @@ In chapter 5, Mitchell discusses several ways to *store* the data we scrape.
 
 If you have a CSV file, you can open it in Excel. You can also fairly easily transfer it into a table in a MySQL database. Sometimes writing your data to a plain-text file is good enough, but often it will be much better to write to a CSV.
 
-Mitchell's [scrapeCsv.py](https://github.com/REMitchell/python-scraping/blob/master/chapter5/3-scrapeCsv.py) file shows you how to create a CSV from scratch with Python. However, in scraping we would have data (taken from a web page) that we want to write into a CSV. Here's some code I used in a project:
+Mitchell's [scrapeCsv.py](https://github.com/REMitchell/python-scraping/blob/master/chapter5/3-scrapeCsv.py) file shows you how to scrape from a Wikipedia table and write its contents into a CSV.
+
+Here's some code I used in a project:
 
 ```python
 import csv
@@ -23,21 +25,27 @@ c.writerow(['title', 'team', 'position', 'birthday', 'birthplace', 'twitter'])
 ```
 
 1. `csv` is a built-in Python library, so there's nothing to download or install. You already have it, but you must import it.
-2. The lines above are done only once in your script. That first **row** is the row of column headings, the first line in the CSV file.
-3. After this, you will write a *for-loop* that:
+2. `open()` has some options you have not seen before now. They are explained [here](https://docs.python.org/3/library/functions.html#open).
+3. The lines above are done only once in your script. That first **row** contains the column headings, the first line in the CSV file.
+4. After this, you will need a *for-loop* that:
    * Gets a URL, opens it,
-   * Finds data in the page, saves each item into its own variable,
+   * Finds data items in the page, using BeautifulSoup, and saves each item into its own variable,
    * Puts all the variables into a list (square brackets again), and
    * Writes the list to a row in the CSV.
- 4. When the loop is finished, close the CSV file.
+5. After the loop is finished, close the file to which you have written everything.
 
 ```python
+# close the file
 csvfile.close()
 ```
 
-The only special CSV commands you need are `import csv`, `csv.writer()`, and `.writerow()`. You have already used `.open()` and `.close()` for text files; those are just Python file commands (see [week03](https://github.com/macloo/python-beginners/tree/master/week03) in this repo). Everything you do in the numbered list above is Python and BeautifulSoup, except `.writerow()`, which should appear only once in the loop block.
+The only special CSV commands you need are `import csv`, `csv.writer()`, and `.writerow()`. You have already used `.open()` and `.close()` for text files; those are just Python file commands (see [week03](https://github.com/macloo/python-beginners/tree/master/week03) in this repo).
+
+Everything you do in the numbered list above is Python and BeautifulSoup, except `.writerow()`, which should appear only once in the loop block.
 
 The challenge is to set up your data items in order, so they match up with your CSV's *column headings,* and append them to a list in that order. When you call `.writerow()`, each item has to be in the correct order.
+
+It's always wise to use some *exception handling* (`try`/`except`) in the loop code, because otherwise, if an item returns an error, it will crash your script.
 
 ## Tackle hard-to-scrape sites with Selenium and HTTP headers
 
