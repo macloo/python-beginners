@@ -8,11 +8,11 @@ In chapter 5, Mitchell discusses several ways to *store* the data we scrape.
 
 ### Storing data to CSV files
 
-If you have a CSV file, you can open it in Excel. You can also fairly easily transfer it into a table in a MySQL database. Sometimes writing your data to a plain-text file is good enough, but often it will be much better to write to a CSV.
+If you have a CSV file, you can open it in Excel. You can also fairly easily transfer it into a table in a MySQL database. Sometimes writing **your scraped data** to a plain-text file is good enough, but often it will be much better to write it to a CSV.
 
 Mitchell's [scrapeCsv.py](https://github.com/REMitchell/python-scraping/blob/master/chapter5/3-scrapeCsv.py) file shows you how to scrape from a Wikipedia table and write its contents into a CSV.
 
-Here's some code I used in a project:
+Here's some of the code I used in a [project](https://github.com/macloo/web-scraper-steps) to scrape information about U.S. soccer players. It creates a Python CSV object, which is used to write strings into a properly formatted CSV file:
 
 ```python
 import csv
@@ -25,14 +25,14 @@ c.writerow(['title', 'team', 'position', 'birthday', 'birthplace', 'twitter'])
 ```
 
 1. `csv` is a built-in Python library, so there's nothing to download or install. You already have it, but you must import it.
-2. `open()` has some options you have not seen before now. They are explained [here](https://docs.python.org/3/library/functions.html#open).
-3. The lines above are done only once in your script. That first **row** contains the column headings, the first line in the CSV file.
-4. After this, you will need a *for-loop* that:
+2. Python's file `open()` function has some options you have not seen before now. They are explained [here](https://docs.python.org/3/library/functions.html#open).
+3. The lines above appear only *once* in your script. That first **row** contains the column headings, the first line in the CSV file.
+4. After this code, you will need a *for-loop* that:
    * Gets a URL, opens it,
    * Finds data items in the page, using BeautifulSoup, and saves each item into its own variable,
    * Puts all the variables into a **list** (square brackets again), and
-   * Writes the **list** to a **row** in the CSV.
-5. After the loop is finished, close the file to which you have written everything.
+   * Writes the **list** to a **row** in the CSV, using the same pattern seen above to write the column headings row.
+5. After the loop is finished, close the file to which you have written everything (see below).
 
 ```python
 # close the file
@@ -41,9 +41,9 @@ csvfile.close()
 
 The only special CSV commands you need are `import csv`, `csv.writer()`, and `.writerow()`.
 
-You have already used `.open()` and `.close()` for text files; those are just Python file commands (see [week03](https://github.com/macloo/python-beginners/tree/master/week03) in this repo).
+You have already used `open()` and `.close()` for text files; those are just Python file commands (see [week03](https://github.com/macloo/python-beginners/tree/master/week03) in this repo).
 
-Everything you do in the numbered list above is Python and BeautifulSoup, except `.writerow()`, which will appear only once in the loop block. The loop collects the items for one row, so it writes *only one* row.
+Everything you do in the numbered list above is Python and BeautifulSoup, except `.writerow()`, which will appear only once *in the loop block.* The for-loop collects the items for one row, so it writes *only one* row.
 
 The challenge is to set up your data items in order, so they match up with your CSV's *column headings,* and append them to a list in that order. When you call `.writerow()`, each item has to be in the correct order.
 
@@ -51,7 +51,7 @@ It's always wise to use some *exception handling* (`try`/`except`) in the loop c
 
 ## Tackle hard-to-scrape sites with Selenium and HTTP headers
 
-Sometimes you have to do more so that a website will allow you to scrape it. These two techniques are often necessary, together or separately.
+Sometimes you have to do more so that a website will allow you to scrape it. These **two techniques** are often necessary, together or separately.
 
 ### Selenium, to automate the browser
 
@@ -59,7 +59,7 @@ Mitchell discusses Selenium in **chapter 10**. We can use Selenium together with
 
 The Selenium documentation is not easy to use. **Use this:** [Getting started with Selenium](http://bit.ly/selenium-intro). You will need to install [Selenium](https://www.seleniumhq.org/) and also a driver for the web browser you want to use (Chrome is good). These are covered in the “Getting Started” doc.
 
-When you examine the test scripts (linked to gists in the “Getting Started” doc and also found in this repo), notice that after doing the `driver` stuff, this line creates an `html` variable just like we have been doing all along with BeautifulSoup:
+When you examine the test scripts (linked to gists in the “Getting Started” doc and also found in this repo), notice that after doing the `driver` stuff, this line creates an `html` variable just like we have been doing all along with our BeautifulSoup scrapers:
 
 ```python
 html = driver.page_source
