@@ -4,11 +4,11 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
 
-# my path is '/Users/mcadams/Documents/python/python-beginners'
+# my path is '/Users/mcadams/Documents/python/'
 # yours will be different
 
 
-driver = webdriver.Chrome('/Users/mcadams/Documents/python/python-beginners/chromedriver')
+driver = webdriver.Chrome('/Users/mcadams/Documents/python/chromedriver')
 driver.get('https://www.rottentomatoes.com/browse/dvd-streaming-all');
 
 # page_source is a variable created by Selenium - it holds all the HTML
