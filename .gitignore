@@ -12,3 +12,6 @@ Thumbs.db
 
 # folders to be ignored
 env/
+
+# Selenim WebDriver
+chromedriver
