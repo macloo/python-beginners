@@ -113,11 +113,13 @@ You can find this code in *scrape_a_few_pages.py* in this repo. Run it and see w
 
 ## Next steps
 
-The file *scrape_all_urls.py* in this repo demonstrates how to scrape all the links from one Wikipedia page (note: ALL of the links, not just links for the article pages) and write them into a text file.
+The file *scrape_all_urls.py* in this repo demonstrates how to scrape all the links from one Wikipedia page (note: ALL of the links, not just links for the article pages) and write them into a text file. You should run this file and make sure you understand how it works. You can change the URL in `html = urlopen()` to scrape URLs from *any* Wikipedia page.
 
-As we move forward, you’ll find that many or most scraping projects have two stages: First, we collect the URLs of all the pages from which we need to scrape data. Second, we loop through the URLs, creating a BeautifulSoup object for a page, extracting the data we desire, and then moving on to the next page, and so on.
+As we move forward, you’ll find that many or most scraping projects have two stages: First, we collect the URLs of all the pages from which we need to scrape data. Second, we loop through the URLs: (1) creating a BeautifulSoup object for a page; (2) extracting the data we desire; and then (3) moving on to the next page, and so on &mdash; for as many pages as we need to scrape.
 
 This means we will usually be writing one Python script to scrape the URLs, and another, separate Python script to scrape data from each page.
+
+Or we might write two separate *functions,* but have both of them in one `.py` file.
 
 Mitchell's pages 41-45 contain useful ideas, but don't worry about her code there &mdash; you will not be making Google!
 
