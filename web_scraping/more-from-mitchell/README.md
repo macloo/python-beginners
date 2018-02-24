@@ -39,9 +39,11 @@ c.writerow(['title', 'team', 'position', 'birthday', 'birthplace', 'twitter'])
 csvfile.close()
 ```
 
-The only special CSV commands you need are `import csv`, `csv.writer()`, and `.writerow()`. You have already used `.open()` and `.close()` for text files; those are just Python file commands (see [week03](https://github.com/macloo/python-beginners/tree/master/week03) in this repo).
+The only special CSV commands you need are `import csv`, `csv.writer()`, and `.writerow()`.
 
-Everything you do in the numbered list above is Python and BeautifulSoup, except `.writerow()`, which should appear only once in the loop block.
+You have already used `.open()` and `.close()` for text files; those are just Python file commands (see [week03](https://github.com/macloo/python-beginners/tree/master/week03) in this repo).
+
+Everything you do in the numbered list above is Python and BeautifulSoup, except `.writerow()`, which will appear only once in the loop block. The loop collects the items for one row, so it writes *only one* row.
 
 The challenge is to set up your data items in order, so they match up with your CSV's *column headings,* and append them to a list in that order. When you call `.writerow()`, each item has to be in the correct order.
 
