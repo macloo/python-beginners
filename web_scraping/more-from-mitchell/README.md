@@ -4,7 +4,40 @@ After chapter 3, Mitchell covers a wide variety of scraping methods and situatio
 
 ## Reading and writing files as CSVs
 
-To come.
+In chapter 5, Mitchell discusses several ways to *store* the data we scrape.
+
+### Storing data to CSV files
+
+If you have a CSV file, you can open it in Excel. You can also fairly easily transfer it into a table in a MySQL database. Sometimes writing your data to a plain-text file is good enough, but often it will be much better to write to a CSV.
+
+Mitchell's [scrapeCsv.py](https://github.com/REMitchell/python-scraping/blob/master/chapter5/3-scrapeCsv.py) file shows you how to create a CSV from scratch with Python. However, in scraping we would have data (taken from a web page) that we want to write into a CSV. Here's some code I used in a project:
+
+```python
+import csv
+# open new file for writing -
+csvfile = open("mls_players.csv", 'w', newline='', encoding='utf-8')
+# make a new variable, c, for Python's CSV writer object -
+c = csv.writer(csvfile)
+# write the header row in the CSV - note the square brackets - important!
+c.writerow(['title', 'team', 'position', 'birthday', 'birthplace', 'twitter'])
+```
+
+1. `csv` is a built-in Python library, so there's nothing to download or install. You already have it, but you must import it.
+2. The lines above are done only once in your script. That first **row** is the row of column headings, the first line in the CSV file.
+3. After this, you will write a *for-loop* that:
+   * Gets a URL, opens it,
+   * Finds data in the page, saves each item into its own variable,
+   * Puts all the variables into a list (square brackets again), and
+   * Writes the list to a row in the CSV.
+ 4. When the loop is finished, close the CSV file.
+
+```python
+csvfile.close()
+```
+
+The only special CSV commands you need are `import csv`, `csv.writer()`, and `.writerow()`. You have already used `.open()` and `.close()` for text files; those are just Python file commands (see [week03](https://github.com/macloo/python-beginners/tree/master/week03) in this repo). Everything you do in the numbered list above is Python and BeautifulSoup, except `.writerow()`, which should appear only once in the loop block.
+
+The challenge is to set up your data items in order, so they match up with your CSV's *column headings,* and append them to a list in that order. When you call `.writerow()`, each item has to be in the correct order.
 
 ## Tackle hard-to-scrape sites with Selenium and HTTP headers
 
