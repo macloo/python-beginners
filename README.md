@@ -42,3 +42,7 @@ Students are introduced to web scraping with the BeautifulSoup library in the se
 ### Mitchell, chapter 3
 
 The README in the [mitchell-ch3](https://github.com/macloo/python-beginners/tree/master/web_scraping/mitchell-ch3) folder supplements chapter 3 in *Web Scraping with Python*, by Ryan Mitchell. The chapter is very challenging for beginners, so here are a couple of `.py` files and examples to ease the way.
+
+### Mitchell, the rest of the book
+
+The README in the [more-from-mitchell](https://github.com/macloo/python-beginners/tree/master/web_scraping/more-from-mitchell) folder highlights the points we cover in our third week with *Web Scraping with Python*, by Ryan Mitchell. We don’t have time to read the entire book, so we need to jump around and get acquainted with some common scraping problems and their solutions.
