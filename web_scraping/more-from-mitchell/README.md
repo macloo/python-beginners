@@ -41,9 +41,9 @@ The only special CSV commands you need are `import csv`, `csv.writer()`, and `.w
 
 You have already used `open()` and `.close()` for text files; those are just Python file commands (see [week03](https://github.com/macloo/python-beginners/tree/master/week03) in this repo).
 
-Everything you do in the numbered list above is Python and BeautifulSoup, except `.writerow()`, which will appear only once *in the loop block.* The for-loop collects the items for one row, so it writes *only one* row.
+Everything you do in the for-loop above is Python and BeautifulSoup, except `.writerow()`, which will appear only once *in the loop block.* The for-loop collects the items for one row, so it writes *only one* row.
 
-The challenge is to set up your data items in order, so they match up with your CSV's *column headings,* and append them to a list in that order. When you call `.writerow()`, each item has to be in the correct order.
+The challenge is to set up your data items in order, so they match up with your CSV's *column headings,* and append them to a list in that order. When you call `.writerow()`, each item has to be in the correct order. Don’t forget that `.writerow()` takes a **list** as its argument. It throws an error if you pass it a string.
 
 It's always wise to use some *exception handling* (`try`/`except`) in the loop code, because otherwise, if an item returns an error, it will crash your script.
 
