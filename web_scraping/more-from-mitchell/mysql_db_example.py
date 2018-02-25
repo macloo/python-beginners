@@ -1,6 +1,6 @@
 # first install PyMySQL with - pip install PyMySQL
 # start XAMPP and start all services - NOTE: not XAMPP-VM
-# this does not work with XAMPP-VM, bit does work with plain XAMPP
+# this does not work with XAMPP-VM, but does work with plain XAMPP
 # see https://github.com/PyMySQL/PyMySQL
 
 import pymysql.cursors
@@ -32,7 +32,7 @@ try:
 
     with conn.cursor() as cursor:
         # read a single record that exists in the database
-        # note, this is a record in MY local databse, not yours 
+        # note, this is a record in MY local databse, not yours
         sql = "SELECT `name`, `shout` FROM `shouts` WHERE `date`=%s"
         cursor.execute(sql, ('01:26:00 pm 01-22-2018',))
         result = cursor.fetchone()
