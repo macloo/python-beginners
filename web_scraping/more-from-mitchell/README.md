@@ -47,6 +47,10 @@ The challenge is to set up your data items in order, so they match up with your 
 
 It's always wise to use some *exception handling* (`try`/`except`) in the loop code, because otherwise, if an item returns an error, it will crash your script.
 
+## Writing data into, reading from a MySQL database
+
+The script *mysql_db_example.py* reads from and writes to my local database (named *myshoutbox*) if XAMPP (not XAMPP-VM) is running. Note that I was not able to get this working on XAMPP-VM.
+
 ## Sending email with Python
 
 Are you asking yourself why email is in chapter 5, which is about storing data you have scraped? It's because you can write a Python script that sends you email when new data (of your choosing) becomes available. See [How to Break News While You Sleep](https://source.opennews.org/en-US/articles/how-break-news-while-you-sleep/) for an example of this.
