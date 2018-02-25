@@ -59,6 +59,8 @@ The *send_email.py* script in this repo differs from Mitchell's &mdash; it uses 
 
 The “Christmas” email script Mitchell describes would need to be running 24/7 in order to work. You could not run it that way from your laptop, because your laptop is sometimes closed and offline. You could, however, run it from a desktop computer, a Raspberry Pi, or a cloud server such as Heroku.
 
+Note that you can also **send text messages** (SMS) with Python; see Sweigart, pages 380-383. His chapter 16 is all about sending email and texts.
+
 ## Tackle hard-to-scrape sites with Selenium and HTTP headers
 
 Sometimes you have to do more so that a website will allow you to scrape it. These **two techniques** are often necessary, together or separately.
