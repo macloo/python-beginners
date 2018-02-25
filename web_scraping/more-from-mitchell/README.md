@@ -2,11 +2,9 @@
 
 After chapter 3, Mitchell covers a wide variety of scraping methods and situations. Every website or document you scrape will be different. Your tasks each time are to figure out how to scrape the particular target and how to get the data you want from it.
 
-## Reading and writing files as CSVs
+## Writing files as CSVs (storing data)
 
 In chapter 5, Mitchell discusses several ways to *store* the data we scrape.
-
-### Storing data to CSV files
 
 If you have a CSV file, you can open it in Excel. You can also fairly easily transfer it into a table in a MySQL database. Sometimes writing **your scraped data** to a plain-text file is good enough, but often it will be much better to write it to a CSV.
 
@@ -48,6 +46,14 @@ Everything you do in the numbered list above is Python and BeautifulSoup, except
 The challenge is to set up your data items in order, so they match up with your CSV's *column headings,* and append them to a list in that order. When you call `.writerow()`, each item has to be in the correct order.
 
 It's always wise to use some *exception handling* (`try`/`except`) in the loop code, because otherwise, if an item returns an error, it will crash your script.
+
+## Sending email with Python
+
+Are you asking yourself why email is in chapter 5, which is about storing data you have scraped? It's because you can write a Python script that sends you email when new data (of your choosing) becomes available. See [How to Break News While You Sleep](https://source.opennews.org/en-US/articles/how-break-news-while-you-sleep/) for an example of this.
+
+The *send_email.py* script in this repo differs from Mitchell's &mdash; it uses a Gmail account to send the email. Thus you *do not* need to set up an SMTP client on your server or local machine.
+
+The “Christmas” email script Mitchell describes would need to be running 24/7 in order to work. You could not run it that way from your laptop, because your laptop is sometimes closed and offline. You could, however, run it from a desktop computer, a Raspberry Pi, or a cloud server such as Heroku.
 
 ## Tackle hard-to-scrape sites with Selenium and HTTP headers
 
