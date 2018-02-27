@@ -2,6 +2,18 @@
 
 After chapter 3, Mitchell covers a wide variety of scraping methods and situations. Every website or document you scrape will be different. Your tasks each time are to figure out how to scrape the particular target and how to get the data you want from it.
 
+## Contents
+
+* [Writing files as CSVs (storing data)](#writing-files-as-csvs-storing-data)
+* [Writing data into, reading from a MySQL database](#writing-data-into-reading-from-a-mysql-database)
+* [Sending email with Python](#sending-email-with-python)
+* [Tackle hard-to-scrape sites with Selenium and HTTP headers](#tackle-hard-to-scrape-sites-with-selenium-and-http-headers)
+    * [Selenium, to automate the browser](#selenium-to-automate-the-browser)
+    * [Sending HTTP headers in your script](#sending-http-headers-in-your-script)
+* [Timing matters](#timing-matters)
+* [Parsers](#parsers)
+* [When all else fails](#when-all-else-fails)
+
 ## Writing files as CSVs (storing data)
 
 In chapter 5, Mitchell discusses several ways to *store* the data we scrape.
