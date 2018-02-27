@@ -27,6 +27,11 @@ See also, elsewhere in this repo:
 * [mitchell-ch3](https://github.com/macloo/python-beginners/tree/master/web_scraping/mitchell-ch3) &mdash; Mitchell chapter 3: More web scraping. This covers our third week's assigned reading.
 * [more-from-mitchell](https://github.com/macloo/python-beginners/tree/master/web_scraping/more-from-mitchell) &mdash;  More from Mitchell: Web scraping beyond the basics. This covers our fourth week's assigned reading.
 
+BeautifulSoup documentation:
+
+* [A nicely formatted PDF](https://media.readthedocs.org/pdf/beautiful-soup-4/latest/beautiful-soup-4.pdf)
+* [The official docs](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+
 ## Setup for BeautifulSoup
 
 **BeautifulSoup** is a scraping library for Python. We want to run all our scraping projects in a virtual environment. Students have already installed both Python3 and virtualenv.
