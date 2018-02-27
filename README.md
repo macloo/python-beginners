@@ -17,15 +17,21 @@ The one thing I dislike in Sweigart’s book is his assumption that we would be 
 
 Students read chapters 1 and 2 in Sweigart. Some scripts in the **week01** folder are based on Sweigart’s &mdash; naturally, he has more examples than only these. See the README in the [week01](https://github.com/macloo/python-beginners/tree/master/week01) folder for more information.
 
+Example files in this folder cover if-statements, for-loops, while-loops, and `random.randint`. Also (very basic): `print()`, `input()`, `len()`.
+
 ## Week 02
 
 Students read chapter 3, “Functions,” in Sweigart. See the README in the [week02](https://github.com/macloo/python-beginners/tree/master/week02) folder for more information.
+
+Example files in this folder cover functions, arguments, the `return` statement, scope of variables, and exception handling: `try`/`except`.
 
 Writing modular code is not only a good practice; it also helps you to write functions you can test reliably and reuse in future work. See [modular-code](https://github.com/macloo/python-beginners/tree/master/week02/modular-code) in the **week02** folder for more information.
 
 ## Week 03
 
 Students read chapters 4 and 8 in Sweigart. See the README in the [week03](https://github.com/macloo/python-beginners/tree/master/week03) folder for more information.
+
+Example files in this folder cover loops and lists, and how to open, read, and close files.
 
 Chapter 4 covers just about everything one needs to know about **Python lists**. The README highlights some of the methods, etc., we will use most often, including some things Sweigart does not cover.
 
