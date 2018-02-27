@@ -15,25 +15,25 @@ The one thing I dislike in Sweigart’s book is his assumption that we would be 
 
 ## Week 01
 
-Students read chapters 1 and 2 in Sweigart. Some scripts in the **week01** folder are based on Sweigart’s &mdash; naturally, he has more examples than only these. See the README in the **week01** folder for more information.
+Students read chapters 1 and 2 in Sweigart. Some scripts in the **week01** folder are based on Sweigart’s &mdash; naturally, he has more examples than only these. See the README in the [week01](https://github.com/macloo/python-beginners/tree/master/week01) folder for more information.
 
 ## Week 02
 
-Students read chapter 3, “Functions,” in Sweigart. See the README in the **week02** folder for more information.
+Students read chapter 3, “Functions,” in Sweigart. See the README in the [week02](https://github.com/macloo/python-beginners/tree/master/week02) folder for more information.
 
 Writing modular code is not only a good practice; it also helps you to write functions you can test reliably and reuse in future work. See [modular-code](https://github.com/macloo/python-beginners/tree/master/week02/modular-code) in the **week02** folder for more information.
 
 ## Week 03
 
-Students read chapters 4 and 8 in Sweigart. See the README in the **week03** folder for more information.
+Students read chapters 4 and 8 in Sweigart. See the README in the [week03](https://github.com/macloo/python-beginners/tree/master/week01) folder for more information.
 
-Chapter 4 covers just about everything one needs to know about Python lists. The README highlights some of the methods, etc., we will use most often, including some things Sweigart does not cover.
+Chapter 4 covers just about everything one needs to know about **Python lists**. The README highlights some of the methods, etc., we will use most often, including some things Sweigart does not cover.
 
-Chapter 8 covers reading and writing files with Python. The information we need most often is on pages 180-183. There are a couple of things not covered that I have explained in the README.
+Chapter 8 covers **reading and writing files** with Python. The information we need most often is on pages 180-183. There are a couple of things not covered that I have explained in the README.
 
 ## Jupyter Cheat Sheet
 
-Students use Jupyter Notebook to complete several assignments. The cheat sheet is helpful after Jupyter Notebook has been installed and they need to launch it, save their work, and close it correctly.
+Students use Jupyter Notebook to complete several assignments. The [cheat sheet(https://github.com/macloo/python-beginners/tree/master/jupyter_cheat_sheet)] is helpful after Jupyter Notebook has been installed and they need to launch it, save their work, and close it correctly.
 
 ## Web scraping
 
@@ -43,6 +43,12 @@ Students are introduced to web scraping with the BeautifulSoup library in the se
 
 The README in the [mitchell-ch3](https://github.com/macloo/python-beginners/tree/master/web_scraping/mitchell-ch3) folder supplements chapter 3 in *Web Scraping with Python*, by Ryan Mitchell. The chapter is very challenging for beginners, so here are a couple of `.py` files and examples to ease the way.
 
+Example files are included for scraping all URLs from a page, and for scraping the same data items from numerous pages, using a list of URLs. 
+
 ### Mitchell, the rest of the book
 
 The README in the [more-from-mitchell](https://github.com/macloo/python-beginners/tree/master/web_scraping/more-from-mitchell) folder highlights the points we cover in our third week with *Web Scraping with Python*, by Ryan Mitchell. We don’t have time to read the entire book, so we need to jump around and get acquainted with some common scraping problems and their solutions.
+
+This section includes using Selenium, HTTP headers, writing scraped data to CSV files, the sleep timer in Python, and parsers.
+
+Example files are included for writing scraped data to CSV files and to a MySQL database, using Selenium, and sending email from a Python script.
