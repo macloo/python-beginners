@@ -25,7 +25,7 @@ Writing modular code is not only a good practice; it also helps you to write fun
 
 ## Week 03
 
-Students read chapters 4 and 8 in Sweigart. See the README in the [week03](https://github.com/macloo/python-beginners/tree/master/week01) folder for more information.
+Students read chapters 4 and 8 in Sweigart. See the README in the [week03](https://github.com/macloo/python-beginners/tree/master/week03) folder for more information.
 
 Chapter 4 covers just about everything one needs to know about **Python lists**. The README highlights some of the methods, etc., we will use most often, including some things Sweigart does not cover.
 
@@ -33,7 +33,7 @@ Chapter 8 covers **reading and writing files** with Python. The information we n
 
 ## Jupyter Cheat Sheet
 
-Students use Jupyter Notebook to complete several assignments. The [cheat sheet(https://github.com/macloo/python-beginners/tree/master/jupyter_cheat_sheet)] is helpful after Jupyter Notebook has been installed and they need to launch it, save their work, and close it correctly.
+Students use Jupyter Notebook to complete several assignments. The [cheat sheet](https://github.com/macloo/python-beginners/tree/master/jupyter_cheat_sheet) is helpful after Jupyter Notebook has been installed and they need to launch it, save their work, and close it correctly.
 
 ## Web scraping
 
@@ -43,7 +43,7 @@ Students are introduced to web scraping with the BeautifulSoup library in the se
 
 The README in the [mitchell-ch3](https://github.com/macloo/python-beginners/tree/master/web_scraping/mitchell-ch3) folder supplements chapter 3 in *Web Scraping with Python*, by Ryan Mitchell. The chapter is very challenging for beginners, so here are a couple of `.py` files and examples to ease the way.
 
-Example files are included for scraping all URLs from a page, and for scraping the same data items from numerous pages, using a list of URLs. 
+Example files are included for scraping all URLs from a page, and for scraping the same data items from numerous pages, using a list of URLs.
 
 ### Mitchell, the rest of the book
 
