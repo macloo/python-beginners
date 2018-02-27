@@ -31,6 +31,10 @@ Chapter 4 covers just about everything one needs to know about **Python lists**.
 
 Chapter 8 covers **reading and writing files** with Python. The information we need most often is on pages 180-183. There are a couple of things not covered that I have explained in the README.
 
+## Week 04
+
+Students read chapters 5 and 7 in Sweigart. See the README in the [week04](https://github.com/macloo/python-beginners/tree/master/week04) folder for more information.
+
 ## Jupyter Cheat Sheet
 
 Students use Jupyter Notebook to complete several assignments. The [cheat sheet](https://github.com/macloo/python-beginners/tree/master/jupyter_cheat_sheet) is helpful after Jupyter Notebook has been installed and they need to launch it, save their work, and close it correctly.
