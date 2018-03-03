@@ -104,15 +104,29 @@ Flask includes a built-in web server, for development use. What you've done is:
 
 ## Deconstruct the code in a small Flask app
 
-```python, lineNo
+```python
 from flask import Flask
 app = Flask(__name__)
+```
 
+**The first line** is a typical Python import statement. Flask is a Python library, and it must be imported. As always, *case matters,* so note the lowercase *f* and the uppercase *F*. (We are importing the *Flask* class from the *flask* module, and they are two different things.)
+
+**The second line,** which is new to you, begins with a new variable, `app`, which will be used in every Flask app. The value of that new variable, `Flask(__name__)`, is a new *object* that inherits from the class *Flask* &mdash; meaning that it gets all the attributes and methods built into that class, which we have imported.
+
+`__name__` is a built-in variable in Python. Python has many double-underscore entities, and they always have this pattern: two underscores, a word, and two underscores. These double underscore entities are referred to with the slang *dunder* &mdash; for `__name__`, we can say “dunder name.”
+
+What does `__name__` do? Every Python module has a *name,* and `__name__` used *in a module* contains the name of *that* module. The value of `__name__` is not always the filename, as demonstrated in a common Python statement:
+
+```python
+if __name__ == '__main__':
+```
+
+When that statement returns `True`, it means the program (the file) is being *run by itself,* and was not imported.
+
+`app = Flask(__name__)` creates a Flask application object, `app`, in the current Python module. A Python *module* is just a Python file, *filename.py.*
+
+```python
 @app.route("/")
 def hello():
     return "Hello World!"
 ```
-
-The first line is a typical Python import statement. Flask is a Python library, and it must be imported. As always, *case matters,* so note the lowercase *f* and the uppercase *F*. (We are importing the *Flask* class from the *flask* module, and they are two different things.)
-
-The second line, which is new to you, begins with a new variable, `app`, which will be used in every Flask app. The value of that new variable, `Flask(__name__)`, is a new *object* that inherits from the class *Flask* &mdash; meaning that it gets all the attributes and methods built into that class. Imagine we could clone Wonder Woman or Superman. The clone has all the same powers and attributes of the superhero, but the clone can be modified so that does certain things under certain conditions.
