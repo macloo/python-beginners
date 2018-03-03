@@ -104,7 +104,7 @@ Flask includes a built-in web server, for development use. What you've done is:
 
 ## Deconstruct the code in a small Flask app
 
-```python, lineNo
+```python lineNo=1
 from flask import Flask
 app = Flask(__name__)
 
