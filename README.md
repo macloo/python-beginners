@@ -62,3 +62,7 @@ The README in the [more-from-mitchell](https://github.com/macloo/python-beginner
 This section includes using Selenium, HTTP headers, writing scraped data to CSV files, the sleep timer in Python, and parsers.
 
 Example files are included for writing scraped data to CSV files and to a MySQL database, using Selenium, and sending email from a Python script.
+
+## Flask
+
+Students are introduced to Flask, a Python web framework, in the fifth week. See the README in the [flask](https://github.com/macloo/python-beginners/tree/master/flask) folder for details.
