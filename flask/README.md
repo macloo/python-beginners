@@ -104,6 +104,8 @@ Flask includes a built-in web server, for development use. What you've done is:
 
 ## Deconstruct the code in a small Flask app
 
+### Import Flask and create an application object
+
 ```python
 from flask import Flask
 app = Flask(__name__)
@@ -125,8 +127,30 @@ When that statement returns `True`, it means the program (the file) is being *ru
 
 `app = Flask(__name__)` creates a Flask application object, `app`, in the current Python module. A Python *module* is just a Python file, *filename.py.*
 
+### Add a route
+
+This next part of your first Flask app is what does the work.
+
 ```python
 @app.route("/")
 def hello():
     return "Hello World!"
 ```
+
+It consists of two parts: the decorator and the function that is “decorated.”
+
+A decorator begins with `@` and is a unique feature of the Python language. It *modifies the function that follows it.* Let that sink in.
+
+`@app.route("/")` is a decorator.
+
+* Remember that `app` is a Flask application object. It has all the methods and attributes of the *Flask* class, and one of those is `route()`, which expects to be used in exactly this way &mdash; in a decorator.
+* The contents of the parentheses are a path &mdash; a partial URL.
+* Your Flask application will perform different actions depending on which URL is sent to it. `"/"` is the root of the website, the top, the home page. `@app.route('/index')` indicates a URL such as `localhost:5000/index` or (on a live server) `https://mydomain.com/index`. Note that there is no file there &mdash; no `.html`.
+* The action that will be performed at that URL depends on what is written in the *function* that immediately follows the *decorator.*
+
+```python
+def hello():
+    return "Hello World!"
+```
+
+All this function does is return a simple string: `"Hello World!"`
