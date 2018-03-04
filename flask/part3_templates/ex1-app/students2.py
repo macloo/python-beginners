@@ -1,3 +1,5 @@
+# two templates are used in this app 
+
 from flask import Flask, render_template
 app = Flask(__name__)
 

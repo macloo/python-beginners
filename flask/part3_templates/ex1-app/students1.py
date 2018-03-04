@@ -1,3 +1,5 @@
+# no templates in this app - see students2.py 
+
 from flask import Flask
 app = Flask(__name__)
 

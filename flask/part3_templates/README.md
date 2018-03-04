@@ -102,7 +102,7 @@ def student(idnum):
     return render_template('student.html', id=idnum)
 ```
 
-The complete code for this app is in the folder [flask/part3/ex1-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex1-app). To run it, `cd` into the `ex1-app` directory and type this at the bash prompt (`$`) in Terminal:
+The complete code for this app is in the folder [flask/part3_templates/ex1-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex1-app). To run it, `cd` into the `ex1-app` directory and type this at the bash prompt (`$`) in Terminal:
 
 ```bash
 python students2.py
