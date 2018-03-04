@@ -105,4 +105,6 @@ The benefit might not be apparent when only one variable is inserted into the st
 personal = '<p>Dear {} {}, We are pleased to inform you that your {} has been awarded {}.</p>'.format(title, name, relative, award)
 ```
 
+Imagine that a query to a database has been made, and the values of `title`, `name`, `relative` and `award` are, respectively, `Ms.`, `Smith`, `daughter` and `the Gator Greatness Prize`. In that case, the *value* of the variable `personal` would be: `<p>Dear Ms. Smith, We are pleased to inform you that your daughter has been awarded the Gator Greatness Prize.</p>`
+
 More details: [How To Use String Formatters in Python 3](https://www.digitalocean.com/community/tutorials/how-to-use-string-formatters-in-python-3)
