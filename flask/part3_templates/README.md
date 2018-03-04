@@ -22,7 +22,7 @@ my-flask-app
 2. That folder contains two folders, specifically named *static* and *templates*.
    * The *static* folder contains assets used by the templates, including CSS files, JavaScript files, and images. In the example, we have only one asset file, *main.css*. Note that it's inside a *css* folder that's inside the *static* folder.
    * The *templates* folder contains only templates. These have an `.html` extension. As we will see, they contain more than just regular HTML.
-3. In addition to the *static* and *templates* folders, this app folder also contains `.py` files. Note that these must be *outside* the two folders.
+3. In addition to the *static* and *templates* folders, this app also contains `.py` files. Note that these must be *outside* the two folders named *static* and *templates*.
 
 The templates will not work if this folder structure is not exactly as described above. Your app folder can be named anything (not only *my-flask-app*), but the *static* and *templates* folders must be named and organized as shown above.
 
@@ -102,7 +102,7 @@ def student(idnum):
     return render_template('student.html', id=idnum)
 ```
 
-The complete code for this app is in the folder [flask/part3/ex1-app](https://github.com/macloo/python-beginners/tree/master/flask/part3/ex1-app). To run it, `cd` into the `ex1-app` directory and type this at the bash prompt (`$`) in Terminal:
+The complete code for this app is in the folder [flask/part3/ex1-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex1-app). To run it, `cd` into the `ex1-app` directory and type this at the bash prompt (`$`) in Terminal:
 
 ```bash
 python students2.py
@@ -110,4 +110,4 @@ python students2.py
 
 ## The “base” template
 
-Because we have two templates, I'm going to add a base template named *base.html* to the *templates* folder
+Because we have two templates, I'm going to add a base template named *base.html* to the *templates* folder.
