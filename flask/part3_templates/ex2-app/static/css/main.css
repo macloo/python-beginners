@@ -1,0 +1,68 @@
+* { box-sizing: border-box; }
+
+/*
+  Google fonts are loaded in base.html, in the templates folder:
+  'Source Sans Pro'
+  'Droid Serif'
+*/
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 100%;
+    color: #000;
+    background: #ccc;
+    margin: 0;
+}
+
+#container {
+    margin: 2em auto;
+    max-width: 740px;
+    padding: 2em 4em;
+    background: #fff;
+}
+
+h1, h2 {
+    font-family: 'Droid Serif', serif;
+    font-size: 3em;
+    margin: 0;
+    padding-bottom: 1em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+p, li {
+    font-size: 1.4em;
+}
+
+img {
+	display: block;
+	margin: auto;
+	max-width: 100%;
+}
+
+/* links */
+
+a {
+    color: #00c;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0cc;
+    text-decoration: underline;
+}
+
+/* media queries */
+
+@media (max-width: 800px) {
+    body {
+        background: #fff;
+    }
+    #container {
+        margin: 0;
+        width: 100%;
+        padding: 2em;
+    }
+}

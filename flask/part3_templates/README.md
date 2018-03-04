@@ -108,6 +108,43 @@ The complete code for this app is in the folder [flask/part3_templates/ex1-app](
 python students2.py
 ```
 
-## The “base” template
+## Using a “base” template
 
-Because we have two templates, I'm going to add a base template named *base.html* to the *templates* folder.
+A great time-saving feature of templates in Flask: We can tremendously shorten and streamline multiple template files by creating *one base template* that contains all the standard HTML. I have a base template named *base.html* in the *templates* folder in the [second version of the students app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app).
+
+Inside the `<body>` in the file, you'll see this:
+
+```html
+{% block content %}
+{% endblock %}
+```
+
+Each of those two lines is a Jinja2 directive. Jinja2 is the [template engine](http://jinja.pocoo.org/docs/2.10/templates/) used by Flask. If you've used PHP, you should be able to understand pretty quickly have these directives work.
+
+**block label** (in this case, the label is *content*; it can be anything) signifies the start of inserted material. If you have more than one **block** in your template, make sure each block has a unique label. The block labels must *match* what is used in the dependent templates that use this one.
+
+**endblock** signifies the end of inserted material.
+
+Using this *base.html* template, we can trim our *index.html* template down to only this:
+
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Welcome to the student records Flask example!</h1>
+
+<ul>
+    <li><a href="student/778-73-1993">Student Ramos</a></li></p>
+    <li><a href="student/578-92-7338">Student Thomas</a></li></p>
+</ul>
+
+{% endblock %}
+```
+
+That's the entire contents of the file. Note the following two important points:
+
+* `{% extends 'base.html' %}` matches the exact filename of our base template, which is in the same *templates* folder.
+* `{% block content %}` matches the exact label in the block in the base template. If, for example, it were *block foobar* in the template, it would need to also be *block foobar* here.
+
+The only difference between the [flask/part3_templates/ex1-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex1-app) example app and the  [flask/part3_templates/ex2-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app) example app is the addition of the *base.html* template file in the second example.
