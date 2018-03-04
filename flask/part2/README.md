@@ -2,6 +2,15 @@
 
 You've seen a very, very simple Flask app in the [Flask introduction](https://github.com/macloo/python-beginners/tree/master/flask). Let's step it up a little.
 
+## Contents
+
+* [Your second Flask app](#your-second-flask-app)
+* [About routes](#about-routes)
+* [Running your Flask apps](#running-your-flask-apps)
+* [String formatters in Python](#string-formatters-in-python)
+
+## Your second Flask app
+
 Here is your second small Flask app:
 
 ```python
@@ -109,3 +118,5 @@ personal = '<p>Dear {} {}, We are pleased to inform you that your {} has
 Imagine that a query to a database has been made, and the values of `title`, `name`, `relative` and `award` are, respectively, `Ms.`, `Smith`, `daughter` and `the Gator Greatness Prize`. In that case, the *value* of the variable `personal` would be: `<p>Dear Ms. Smith, We are pleased to inform you that your daughter has been awarded the Gator Greatness Prize.</p>`
 
 More details: [How To Use String Formatters in Python 3](https://www.digitalocean.com/community/tutorials/how-to-use-string-formatters-in-python-3)
+
+You're ready now to move on to [flask/part3](https://github.com/macloo/python-beginners/tree/master/flask/part3).

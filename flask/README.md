@@ -8,6 +8,17 @@ We will install Flask in a new Python3 virtual environment. Students have alread
 
 [Install Python3, virtualenv, Jupyter](http://bit.ly/install-python3-jupyter)
 
+## Contents
+
+* [Setup for Flask](#setup-for-flask)
+    * [Create a directory and change into it](#create-a-directory-and-change-into-it)
+    * [Create a new virtualenv in that directory and activate it](#create-a-new-virtualenv-in-that-directory-and-activate-it)
+    * [Install Flask](#install-flask)
+    * [Test Flask](#test-flask)
+* [Deconstruct the code in a small Flask app](#deconstruct-the-code-in-a-small-flask-app)
+    * [Import Flask and create an application object](#import-flask-and-create-an-application-object)
+    * [Add a route and some action](#add-a-route-and-some-action)
+
 ## Setup for Flask
 
 ### Create a directory and change into it
