@@ -5,7 +5,7 @@ from data import PEOPLE
 app = Flask(__name__)
 
 # from data import PEOPLE - above - imports PEOPLE, a list, from data.py
-# DATA is a Python list containing 100 Python dictionaries
+# PEOPLE is a Python list containing 100 Python dictionaries
 # each dictionary contains data for 1 student
 
 
