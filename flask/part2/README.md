@@ -37,10 +37,11 @@ Now we have two routes, not one. The first route, for `'/'`, is not very differe
 
 This script demonstrates the following:
 
-* The URL in the browser causes a Python function to run. Remember, the *path* is specified in the decorator &mdash; `@app.route('/')`. The function immediately after the decorator is called when that path is sent to the server.
+* The URL in the browser causes a Python function to run. Remember, the *path* is specified in the decorator &mdash; `@app.route('/')`. The function *immediately after* the decorator is called when that path is sent to the server.
 * The link written in the `hello()` function opens the URL specified in `@app.route('/user/<name>')`: `localhost:5000/user/Albert`
 * The path can have a dynamic component &mdash; in this case, `<name>`. The function after `@app.route('/user/<name>')` takes the *value* of `name` from the HTTP request (the path sent to the server) and uses that value in the function.
 * The string `"Albert"` from the URL is used in the function `user()` to write dynamically in the browser window.
+* You can change the name value in the browser's address bar, refresh/reload, and the contents of the window will change accordingly.
 
 ## Running your Flask apps
 
@@ -53,8 +54,10 @@ if __name__ == '__main__':
 
 This enables you to launch Flask's built-in server and run the app simply by typing `python filename.py` at the bash (`$`) prompt in Terminal.
 
-* `if __name__ == '__main__':` returns `True` when the program (the file) is being *run by itself,* and was not imported.
+* `if __name__ == '__main__':` <br>
+   This returns `True` when the program (the file) is being *run by itself,* and was not imported.
 
-* `app.run()` &mdash; `app` is the Flask application object you created with `app = Flask(__name__)`. It has all the methods and attributes of the *Flask* class, and one of those is `run()`.
+* `app.run()` <br>
+  `app` is the Flask application object you created with `app = Flask(__name__)`. It has all the methods and attributes of the *Flask* class, and one of those is `run()`.
 
 * `debug=True` is very useful when you're developing, because with it, any errors that occur will be written out in the browser.
