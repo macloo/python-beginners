@@ -173,4 +173,4 @@ def foobar():
 
 There's nothing wrong with this, but it's not necessary. Use it if you like it.
 
-You're ready now to move on to [flask/part2](https://github.com/macloo/python-beginners/tree/master/flask/part3).
+You're ready now to move on to [flask/part2](https://github.com/macloo/python-beginners/tree/master/flask/part2).
