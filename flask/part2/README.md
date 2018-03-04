@@ -51,15 +51,15 @@ This example doesn't have an immediate practical use, but just wait for [part3](
 
 Here are three examples of routes with their matching URLs on `localhost` and on a live server:
 
-* @app.route('/') <br>
+* `@app.route('/')` <br>
    localhost:5000/ <br>
    mydomain.com/
 
-* @app.route('/sports') <br>
+* `@app.route('/sports')` <br>
    localhost:5000/sports <br>
    mydomain.com/sports
 
-* @app.route('/students/<id>') <br>
+* `@app.route('/students/<id>')` <br>
   localhost:5000/students/9876-4321 <br>
   mydomain.com/students/9876-4321 <br>
   (Note that `9876-4321` would likely be passed in by a user's action, e.g. she selected that ID from a drop-down menu.)
