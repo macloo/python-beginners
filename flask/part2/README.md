@@ -25,7 +25,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-Now we have two routes, not one. The first route, for `'/'`, is not very different from our first Flask app. The second route, for `'/user/<name>'`, is doing something new.
+Now we have **two routes,** not one. The first route, for `'/'`, is not very different from our first Flask app. The second route, for `'/user/<name>'`, is doing something new.
 
 1. Copy this code into a new file named `hello2.py` and run it at the bash (`$`) prompt with:
 
@@ -33,19 +33,38 @@ Now we have two routes, not one. The first route, for `'/'`, is not very differe
    python hello2.py
    ```
 
-   **Note:** With the final two lines in this script, we do not need the longer command we ran in in the introduction.
+   **Note:** Because of the final two lines in this script, we do not need the longer command we ran in in the introduction. Now you're running this file in exactly the same way you've run every other `.py` file, in your *virtualenv.*
 
-2. In your browser, type `localhost:5000` into the address bar.
+2. In your browser, type `localhost:5000` into the address bar. Press Return/Enter, and the app runs.
 
 This script demonstrates the following:
 
-* The URL in the browser causes a Python function to run. Remember, the *path* is specified in the decorator &mdash; `@app.route('/')`. The function *immediately after* the decorator is called when that path is sent to the server.
-* The link written in the `hello()` function opens the URL specified in `@app.route('/user/<name>')`: `localhost:5000/user/Albert`
+* The URL in the browser causes a Python function to run. Remember, the *path* is specified in the decorator &mdash; `@app.route('/')`. The function *immediately after* the decorator (`hello()`) is called when that path is requested from the server.
+* Clicking the link written in the `hello()` function opens the URL specified in `@app.route('/user/<name>')`: `localhost:5000/user/Albert`
 * The path can have a dynamic component &mdash; in this case, `<name>`. The function after `@app.route('/user/<name>')` takes the *value* of `name` from the HTTP request (the path sent to the server) and uses that value in the function.
-* The string `"Albert"` from the URL is used in the function `user()` to write dynamically in the browser window.
-* You can change the name value in the browser's address bar, refresh/reload, and the contents of the window will change accordingly.
+* The string `"Albert"` from the URL is used in the function `user()` to write dynamically in the browser window. Note that `<name>` in the **route** matches `name` in the function; that is necessary for it to work.
+* You can change the `name` value in the browser's address bar, refresh/reload, and the contents of the window will change accordingly. Try it!
 
 This example doesn't have an immediate practical use, but just wait for [part3](https://github.com/macloo/python-beginners/tree/master/flask/part3).
+
+## About routes
+
+Here are three examples of routes with their matching URLs on `localhost` and on a live server:
+
+* @app.route('/')
+   localhost:5000/
+   mydomain.com/
+
+* @app.route('/sports')
+   localhost:5000/sports
+   mydomain.com/sports
+
+* @app.route('/students/<id>')
+  localhost:5000/students/9876-4321
+  mydomain.com/students/9876-4321
+  (Note that `9876-4321` would likely be passed in by a user's action, e.g. she selected that ID from a drop-down menu.)
+
+The path or URL shown for `localhost` or the live server does not open a web page; it causes the associated Python function to be executed.
 
 ## Running your Flask apps
 
@@ -59,7 +78,7 @@ if __name__ == '__main__':
 This enables you to launch Flask's built-in server and run the app simply by typing `python filename.py` at the bash (`$`) prompt in Terminal.
 
 * `if __name__ == '__main__':` <br>
-   This returns `True` when the program (the file) is being *run by itself,* and was not imported.
+   This returns `True` when the program (the file) is being *run by itself,* and was not imported. The double-underscore entities are specific pre-defined variables in Python, as explained in the [introduction](https://github.com/macloo/python-beginners/tree/master/flask).
 
 * `app.run()` <br>
   `app` is the Flask application object you created with `app = Flask(__name__)`. It has all the methods and attributes of the *Flask* class, and one of those is `run()`.
