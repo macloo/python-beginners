@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Select Students</title>
+  <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Source+Sans+Pro" rel="stylesheet">
+
+	<!-- note the special href for files in the Flask "static" folder -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+</head>
+<body>
+
+<div id="container">
+
+	<h1>Welcome to the student records Flask example!</h1>
+
+	<ul>
+	    <li><a href="student/778-73-1993">Student Ramos</a></li></p>
+	    <li><a href="student/578-92-7338">Student Thomas</a></li></p>
+	</ul>
+
+</div>
+
+</body>
+</html>
