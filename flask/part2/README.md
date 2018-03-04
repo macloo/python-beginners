@@ -2,6 +2,8 @@
 
 You've seen a very, very simple Flask app in the [introduction](https://github.com/macloo/python-beginners/tree/master/flask). Let's step it up a little.
 
+Here is your second small Flask app:
+
 ```python
 from flask import Flask
 app = Flask(__name__)
@@ -43,6 +45,8 @@ This script demonstrates the following:
 * The string `"Albert"` from the URL is used in the function `user()` to write dynamically in the browser window.
 * You can change the name value in the browser's address bar, refresh/reload, and the contents of the window will change accordingly.
 
+This example doesn't have an immediate practical use, but just wait for [part3](https://github.com/macloo/python-beginners/tree/master/flask/part3).
+
 ## Running your Flask apps
 
 In most cases, the last lines in your Flask app script will be:
@@ -61,3 +65,25 @@ This enables you to launch Flask's built-in server and run the app simply by typ
   `app` is the Flask application object you created with `app = Flask(__name__)`. It has all the methods and attributes of the *Flask* class, and one of those is `run()`.
 
 * `debug=True` is very useful when you're developing, because with it, any errors that occur will be written out in the browser.
+
+## String formatters in Python
+
+This might be the first time you have seen a string formatter used.
+
+```python
+personal = '<h1>Hello, {}!</h1>'.format(name)
+```
+
+This has nothing to do with Flask; it's just a normal part of Python3. It's the alternative to writing:
+
+```python
+personal = '<h1>Hello, ' + name + '!</h1>'
+```
+
+The benefit might not be apparent when only one variable is inserted into the string, as seen here, but string formatters are great when you have to insert multiple variables &mdash; they save you from typing all those quotation marks and plus signs!
+
+```python
+personal = '<p>Dear {} {}, We are pleased to inform you that your {} has been awarded {}.</p>'.format(title, name, relative, award)
+```
+
+More details: [How To Use String Formatters in Python 3](https://www.digitalocean.com/community/tutorials/how-to-use-string-formatters-in-python-3)
