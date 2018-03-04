@@ -151,7 +151,7 @@ The only difference between the [ex1-app](https://github.com/macloo/python-begin
 
 ## Example 3: The real power of templates is revealed
 
-Now you'll see how to write 100 web pages with no actual HTML files. Well, except for the two template files you already have.
+Now you'll see how to write 100 web pages with no actual HTML files. Well, except for the three template files you already have.
 
 We are building on the  [ex2-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app) example app, discussed above.
 
@@ -173,3 +173,13 @@ gets the following details about ONE student: name, address, photo
 * We have added two new Python functions (no Flask code in these):
    * get_all_students()
    * get_student()
+
+The goal is to provide a list of all students (last names only) with an `<a href="">` that contains the student's ID number. When we click any student's name, a new URL opens, showing us details and a photo for just that one student.
+
+The ID number is used in the link because it is sure to be unique, unlike a name. We have been using a number in the route `@app.route('/student/<idnum>')` all along.
+
+The complete code for this app is in the folder [ex3-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex3-app). To run the final, complete app, `cd` into the `ex3-app` directory and type this at the bash prompt (`$`) in Terminal:
+
+```bash
+python students4.py
+```
