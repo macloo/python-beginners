@@ -1,6 +1,6 @@
 # Part 2: Baby Steps with Flask
 
-You've seen a very, very simple Flask app in the [introduction](https://github.com/macloo/python-beginners/tree/master/flask). Let's step it up a little.
+You've seen a very, very simple Flask app in the [Flask introduction](https://github.com/macloo/python-beginners/tree/master/flask). Let's step it up a little.
 
 Here is your second small Flask app:
 
@@ -51,17 +51,17 @@ This example doesn't have an immediate practical use, but just wait for [part3](
 
 Here are three examples of routes with their matching URLs on `localhost` and on a live server:
 
-* @app.route('/')
-   localhost:5000/
+* @app.route('/') <br>
+   localhost:5000/ <br>
    mydomain.com/
 
-* @app.route('/sports')
-   localhost:5000/sports
+* @app.route('/sports') <br>
+   localhost:5000/sports <br>
    mydomain.com/sports
 
-* @app.route('/students/<id>')
-  localhost:5000/students/9876-4321
-  mydomain.com/students/9876-4321
+* @app.route('/students/<id>') <br>
+  localhost:5000/students/9876-4321 <br>
+  mydomain.com/students/9876-4321 <br>
   (Note that `9876-4321` would likely be passed in by a user's action, e.g. she selected that ID from a drop-down menu.)
 
 The path or URL shown for `localhost` or the live server does not open a web page; it causes the associated Python function to be executed.
@@ -78,7 +78,7 @@ if __name__ == '__main__':
 This enables you to launch Flask's built-in server and run the app simply by typing `python filename.py` at the bash (`$`) prompt in Terminal.
 
 * `if __name__ == '__main__':` <br>
-   This returns `True` when the program (the file) is being *run by itself,* and was not imported. The double-underscore entities are specific pre-defined variables in Python, as explained in the [introduction](https://github.com/macloo/python-beginners/tree/master/flask).
+   This returns `True` when the program (the file) is being *run by itself,* and was not imported. The double-underscore entities are specific pre-defined variables in Python, as explained in the [Flask introduction](https://github.com/macloo/python-beginners/tree/master/flask).
 
 * `app.run()` <br>
   `app` is the Flask application object you created with `app = Flask(__name__)`. It has all the methods and attributes of the *Flask* class, and one of those is `run()`.
