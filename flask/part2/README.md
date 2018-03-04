@@ -34,3 +34,8 @@ Now we have two routes, not one. The first route, for `'/'`, is not very differe
    **Note:** With the final two lines in this script, we do not need the longer command we ran in in the introduction.
 
 2. In your browser, type `localhost:5000` into the address bar.
+
+This script demonstrates the following:
+
+* The URL in the browser causes a Python function to run. Remember, the *path* is specified in the decorator &mdash; `@app.route('/')`. The function immediately after the decorator is called when that path is sent to the server.
+* The path can have a dynamic component &mdash; in this case, `<name>`. The function after `@app.route('/user/<name>')` takes the *value* of `name` from the HTTP request (the path sent to the server) and uses that value in the function.
