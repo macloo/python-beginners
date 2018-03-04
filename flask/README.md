@@ -127,7 +127,7 @@ When that statement returns `True`, it means the program (the file) is being *ru
 
 `app = Flask(__name__)` creates a Flask application object, `app`, in the current Python module. A Python *module* is just a Python file, *filename.py.*
 
-### Add a route
+### Add a route and some action
 
 This next part of your first Flask app is what does the work.
 
@@ -139,7 +139,7 @@ def hello():
 
 It consists of two parts: the decorator and the function that is “decorated.”
 
-A decorator begins with `@` and is a unique feature of the Python language. It *modifies the function that follows it.* Let that sink in.
+A **decorator** begins with `@` and is a unique feature of the Python language. It *modifies the function that follows it.* Let that sink in.
 
 `@app.route("/")` is a decorator.
 
@@ -153,4 +153,22 @@ def hello():
     return "Hello World!"
 ```
 
-All this function does is return a simple string: `"Hello World!"`
+All this function does is return a simple string: `"Hello World!"` Our Flask app performs this action when the server is running, the app is running, and we open `localhost:5000` in the browser.
+
+Note that there does not need to be any relationship between the decorator and the function except proximity:
+
+```python
+@app.route("/")
+def hello():
+    return "Hello World!"
+```
+
+Often people writing a Flask app use the same word for the route and the function, like so:
+
+```python
+@app.route("/foobar")
+def foobar():
+    return "Hello World!"
+```
+
+There's nothing wrong with this, but it's not necessary.
