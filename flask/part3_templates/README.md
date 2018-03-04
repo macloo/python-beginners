@@ -26,7 +26,7 @@ my-flask-app
 
 The templates will not work if this folder structure is not exactly as described above. Your app folder can be named anything (not only *my-flask-app*), but the *static* and *templates* folders must be named and organized as shown above.
 
-## Get started with templates
+## Example 1: Get started with templates
 
 We'll start with a small Flask app similar to the one explained in [flask/part2](https://github.com/macloo/python-beginners/tree/master/flask/part2).
 
@@ -108,7 +108,7 @@ The complete code for this app is in the folder [flask/part3_templates/ex1-app](
 python students2.py
 ```
 
-## Using a “base” template
+## Example 2: Using a “base” template
 
 A great time-saving feature of templates in Flask: We can tremendously shorten and streamline multiple template files by creating *one base template* that contains all the standard HTML. I have a base template named *base.html* in the *templates* folder in the [second version of the students app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app).
 
@@ -148,3 +148,11 @@ That's the entire contents of the file. Note the following two important points:
 * `{% block content %}` matches the exact label in the block in the base template. If, for example, it were *block foobar* in the template, it would need to also be *block foobar* here.
 
 The only difference between the [flask/part3_templates/ex1-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex1-app) example app and the  [flask/part3_templates/ex2-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app) example app is the addition of the *base.html* template file in the second example.
+
+## Example 3: The real power of templates is revealed
+
+Now you'll see how to write 100 web pages with no actual HTML files. Well, except for the two template files you already have.
+
+We are building on the  [flask/part3_templates/ex2-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app) example app, discussed above.
+
+Now, in the third version &mdash; the  [flask/part3_templates/ex3-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app) example app &mdash; we will make our two templates much more useful by enabling them to use data read from a separate file, *data.py*.

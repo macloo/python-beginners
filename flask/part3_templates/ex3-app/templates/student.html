@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h1>{{ name }}</h1>
+
+	<p><strong>Student number:</strong> {{ id }}</p>
+
+	<p><strong>Address:</strong> {{ address }}</p>
+
+	<img src="{{ photo }}" alt="Student photo">
+
+	<p><a href="/">Return to the list</a> to select a different student.</p>
+
+	<!-- Note that id, name, address and photo were all sent to this template
+	 	 by a route. The values came from the idnum in the HTTP request to
+		 the web browser.
+		 -->
+
+{% endblock %}
