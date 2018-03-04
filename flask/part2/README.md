@@ -54,7 +54,7 @@ This script demonstrates the following:
 * The string `"Albert"` from the URL is used in the function `user()` to write dynamically in the browser window. Note that `<name>` in the **route** matches `name` in the function; that is necessary for it to work.
 * You can change the `name` value in the browser's address bar, refresh/reload, and the contents of the window will change accordingly. Try it!
 
-This example doesn't have an immediate practical use, but just wait for [part3](https://github.com/macloo/python-beginners/tree/master/flask/part3).
+This example doesn't have an immediate practical use, but just wait for [part3](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates).
 
 ## About routes
 
@@ -119,4 +119,4 @@ Imagine that a query to a database has been made, and the values of `title`, `na
 
 More details: [How To Use String Formatters in Python 3](https://www.digitalocean.com/community/tutorials/how-to-use-string-formatters-in-python-3)
 
-You're ready now to move on to [flask/part3](https://github.com/macloo/python-beginners/tree/master/flask/part3).
+You're ready now to move on to [flask/part3_templates](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates).
