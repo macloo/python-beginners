@@ -171,4 +171,4 @@ def foobar():
     return "Hello World!"
 ```
 
-There's nothing wrong with this, but it's not necessary.
+There's nothing wrong with this, but it's not necessary. Use it if you like it.
