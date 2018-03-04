@@ -119,7 +119,7 @@ Inside the `<body>` in the file, you'll see this:
 {% endblock %}
 ```
 
-Each of those two lines is a Jinja2 directive. Jinja2 is the [template engine](http://jinja.pocoo.org/docs/2.10/templates/) used by Flask. If you've used PHP, you should be able to understand pretty quickly have these directives work.
+Each of those two lines is a Jinja2 directive. Jinja2 is the [template engine](http://jinja.pocoo.org/docs/2.10/templates/) used by Flask. If you've used PHP, you should be able to understand pretty quickly how these directives work.
 
 **block label** (in this case, the label is *content*; it can be anything) signifies the start of inserted material. If you have more than one **block** in your template, make sure each block has a unique label. The block labels must *match* what is used in the dependent templates that use this one.
 
@@ -147,12 +147,29 @@ That's the entire contents of the file. Note the following two important points:
 * `{% extends 'base.html' %}` matches the exact filename of our base template, which is in the same *templates* folder.
 * `{% block content %}` matches the exact label in the block in the base template. If, for example, it were *block foobar* in the template, it would need to also be *block foobar* here.
 
-The only difference between the [flask/part3_templates/ex1-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex1-app) example app and the  [flask/part3_templates/ex2-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app) example app is the addition of the *base.html* template file in the second example.
+The only difference between the [ex1-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex1-app) example app and the  [ex2-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app) example app is the addition of the *base.html* template file in the second example.
 
 ## Example 3: The real power of templates is revealed
 
 Now you'll see how to write 100 web pages with no actual HTML files. Well, except for the two template files you already have.
 
-We are building on the  [flask/part3_templates/ex2-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app) example app, discussed above.
+We are building on the  [ex2-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app) example app, discussed above.
 
-Now, in the third version &mdash; the  [flask/part3_templates/ex3-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app) example app &mdash; we will make our two templates much more useful by enabling them to use data read from a separate file, *data.py*.
+Now, in the third version &mdash; the  [ex3-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex3-app) example app &mdash; we will make our two templates much more useful by enabling them to use data read from a separate file, *data.py*. That file contains information (name, ID, address, etc.) about 100 students (not real people).
+
+Instead of working with the whole file while working out the bugs, the *students3.py* file uses just two records from the dataset. In addition to the list named DATA, two new functions have been added. These functions are outside the routes, but they are called *in* the routes.
+
+```
+get_all_students() --> used in index()
+makes a list of all students in the dataset
+
+get_student()      --> used in student()
+gets the following details about ONE student: name, address, photo
+```
+
+* We still have only two routes in our Flask app.
+* We still have only two templates, plus the base template.
+* We have added data about two students in *students3.py*.
+* We have added two new Python functions (no Flask code in these):
+   * get_all_students()
+   * get_student()
