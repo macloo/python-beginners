@@ -102,7 +102,8 @@ personal = '<h1>Hello, ' + name + '!</h1>'
 The benefit might not be apparent when only one variable is inserted into the string, as seen here, but string formatters are great when you have to insert multiple variables &mdash; they save you from typing all those quotation marks and plus signs!
 
 ```python
-personal = '<p>Dear {} {}, We are pleased to inform you that your {} has been awarded {}.</p>'.format(title, name, relative, award)
+personal = '<p>Dear {} {}, We are pleased to inform you that your {} has
+   been awarded {}.</p>'.format(title, name, relative, award)
 ```
 
 Imagine that a query to a database has been made, and the values of `title`, `name`, `relative` and `award` are, respectively, `Ms.`, `Smith`, `daughter` and `the Gator Greatness Prize`. In that case, the *value* of the variable `personal` would be: `<p>Dear Ms. Smith, We are pleased to inform you that your daughter has been awarded the Gator Greatness Prize.</p>`
