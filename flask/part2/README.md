@@ -1,6 +1,6 @@
 # Part 2: Baby Steps with Flask
 
-You've seen a very, very simple Flask app in the [Flask introduction](https://github.com/macloo/python-beginners/tree/master/flask). Let's step it up a little.
+You've seen a very, very simple Flask app in the [Flask introduction](../). Let's step it up a little.
 
 ## Contents
 
@@ -54,7 +54,7 @@ This script demonstrates the following:
 * The string `"Albert"` from the URL is used in the function `user()` to write dynamically in the browser window. Note that `<name>` in the **route** matches `name` in the function; that is necessary for it to work.
 * You can change the `name` value in the browser's address bar, refresh/reload, and the contents of the window will change accordingly. Try it!
 
-This example doesn't have an immediate practical use, but just wait for [part3](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates).
+This example doesn't have an immediate practical use, but just wait for [part3](../part3_templates).
 
 ## About routes
 
@@ -87,7 +87,7 @@ if __name__ == '__main__':
 This enables you to launch Flask's built-in server and run the app simply by typing `python filename.py` at the bash (`$`) prompt in Terminal.
 
 * `if __name__ == '__main__':` <br>
-   This returns `True` when the program (the file) is being *run by itself,* and was not imported. The double-underscore entities are specific pre-defined variables in Python, as explained in the [Flask introduction](https://github.com/macloo/python-beginners/tree/master/flask).
+   This returns `True` when the program (the file) is being *run by itself,* and was not imported. The double-underscore entities are specific pre-defined variables in Python, as explained in the [Flask introduction](../).
 
 * `app.run()` <br>
   `app` is the Flask application object you created with `app = Flask(__name__)`. It has all the methods and attributes of the *Flask* class, and one of those is `run()`.
@@ -119,4 +119,4 @@ Imagine that a query to a database has been made, and the values of `title`, `na
 
 More details: [How To Use String Formatters in Python 3](https://www.digitalocean.com/community/tutorials/how-to-use-string-formatters-in-python-3)
 
-You're ready now to move on to [flask/part3_templates](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates).
+You're ready now to move on to [flask/part3_templates](../part3_templates).
