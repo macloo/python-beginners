@@ -234,4 +234,5 @@ The variables are inserted where needed as placeholders in *double curly braces*
 
 I hope the final app in *students4.py* has demonstrated clearly why using templates in Flask is well worth the effort required to learn.
 
-* [Flask template documentation](http://jinja.pocoo.org/docs/2.10/templates/) &mdash; all the commands for the Jinja2 syntax are here.
+* [Flask template documentation](http://jinja.pocoo.org/docs/2.10/templates/) &mdash; all the commands for the Jinja2 template syntax are here.
+* [Welcome to Jinja2](http://jinja.pocoo.org/docs/2.10/) &mdash; everyhting about Jinja2.
