@@ -1,6 +1,6 @@
 # Part 3: Templates in Flask
 
-In the [Flask introduction](../../) and in [flask/part2](../part2), we wrote some HTML directly in the Flask app script. This is very awkward, so naturally, Flask provides a better way to store the HTML (and CSS) you will want your Flask functions to generate.
+In the [Flask introduction](../../../flask) and in [flask/part2](../part2), we wrote some HTML directly in the Flask app script. This is very awkward, so naturally, Flask provides a better way to store the HTML (and CSS) you will want your Flask functions to generate.
 
 ## Contents
 
