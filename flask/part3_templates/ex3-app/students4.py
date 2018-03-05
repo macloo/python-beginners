@@ -3,6 +3,7 @@
 from flask import Flask, render_template
 from data import PEOPLE
 app = Flask(__name__)
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 # from data import PEOPLE - above - imports PEOPLE, a list, from data.py
 # PEOPLE is a Python list containing 100 Python dictionaries
