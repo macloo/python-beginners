@@ -8,17 +8,23 @@
 
     <ul>
     {% for item in student_list %}
-        <li><a href="student/{{ item[0] }}">{{ item[1] }}</a></li>
+        <li><a href="{{ url_for( 'student', idnum=item[0] ) }}">{{ item[1] }}</a></li>
     {% endfor %}
     </ul>
 
 <!-- Note that student_list was sent to this template by a route.
      The route called a function that created an alphabetical list by
      student last name.
-     The list is a list of tuples, in which thing[0] is the student ID
-     and thing[1] is the lastname.
+     The list is a list of tuples, in which item[0] is the student ID
+     and item[1] is the lastname.
      Jinja2 lets us write Python between specialized tags like PHP.
      - for item in student_list - it is a normal for-loop.
+
+     NOTE the special Jinja2 format for a URL derived from a route:
+
+     href="{{ url_for( 'student', idnum=item[0] ) }}"
+
+     href="{{ url_for('index') }}"
     -->
 
 {% endblock %}

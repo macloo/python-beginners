@@ -207,7 +207,7 @@ The route function `student()` calls `get_student()` and sends the ID and three 
 ```html
 <ul>
 {% for item in student_list %}
-    <li><a href="student/{{ item[0] }}">{{ item[1] }}</a></li>
+    <li><a href="{{ url_for( 'student', idnum=item[0] ) }}">{{ item[1] }}</a></li>
 {% endfor %}
 </ul>
 ```
@@ -228,4 +228,10 @@ You'll recognize `for item in student_list` as the beginning of a Python for-loo
 <img src="{{ photo }}" alt="Student photo">
 ```
 
-The variables are inserted where needed as placeholders in *double curly braces*, which we've already covered here. 
+The variables are inserted where needed as placeholders in *double curly braces*, which we've already covered here.
+
+## Templates: Conclusion
+
+I hope the final app in *students4.py* has demonstrated clearly why using templates in Flask is well worth the effort required to learn.
+
+* [Flask template documentation](http://jinja.pocoo.org/docs/2.10/templates/) &mdash; all the commands for the Jinja2 syntax are here.
