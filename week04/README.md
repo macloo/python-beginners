@@ -72,7 +72,7 @@ person =
 
 Just a note: We can have lists and/or tuples inside dictionaries as well. We can have multiples inside of multiples inside of multiples. In this case, though, we have only one added level of complexity.
 
-Note too that the **key** *cannot* be a list or a dictionary. The key must be an immutable type, such as a string or a number. (Some tuples can be used as keys, but I don't know how that would work.) The **value** may be a list or a dictionary.
+Note too that the **key** *cannot* be a list or a dictionary. The key must be an immutable type, such as a string or a number. (Some tuples can be used as keys, but I don't know how that would work.) The **value** may be a list or a dictionary, or just a string or a number. We use the *key* to find the *value*, so it follows that each key must be unique within a dictionary.
 
 In the example above, these are the (main or top-level) keys:
 
