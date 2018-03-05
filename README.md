@@ -15,21 +15,21 @@ The one thing I dislike in Sweigart’s book is his assumption that we would be 
 
 ## Week 01
 
-Students read chapters 1 and 2 in Sweigart. Some scripts in the **week01** folder are based on Sweigart’s &mdash; naturally, he has more examples than only these. See the README in the [week01](https://github.com/macloo/python-beginners/tree/master/week01) folder for more information.
+Students read chapters 1 and 2 in Sweigart. Some scripts in the **week01** folder are based on Sweigart’s &mdash; naturally, he has more examples than only these. See the README in the [week01](week01) folder for more information.
 
 Example files in this folder cover if-statements, for-loops, while-loops, and `random.randint`. Also (very basic): `print()`, `input()`, `len()`.
 
 ## Week 02
 
-Students read chapter 3, “Functions,” in Sweigart. See the README in the [week02](https://github.com/macloo/python-beginners/tree/master/week02) folder for more information.
+Students read chapter 3, “Functions,” in Sweigart. See the README in the [week02](week02) folder for more information.
 
 Example files in this folder cover functions, arguments, the `return` statement, scope of variables, and exception handling: `try`/`except`.
 
-Writing modular code is not only a good practice; it also helps you to write functions you can test reliably and reuse in future work. See [modular-code](https://github.com/macloo/python-beginners/tree/master/week02/modular-code) in the **week02** folder for more information.
+Writing modular code is not only a good practice; it also helps you to write functions you can test reliably and reuse in future work. See [modular-code](week02/modular-code) in the **week02** folder for more information.
 
 ## Week 03
 
-Students read chapters 4 and 8 in Sweigart. See the README in the [week03](https://github.com/macloo/python-beginners/tree/master/week03) folder for more information.
+Students read chapters 4 and 8 in Sweigart. See the README in the [week03](week03) folder for more information.
 
 Example files in this folder cover loops and lists, and how to open, read, and close files.
 
@@ -39,25 +39,25 @@ Chapter 8 covers **reading and writing files** with Python. The information we n
 
 ## Week 04
 
-Students read chapters 5 and 7 in Sweigart. See the README in the [week04](https://github.com/macloo/python-beginners/tree/master/week04) folder for more information.
+Students read Chapters 5 in Sweigart and learn about **Python dictionaries**. See the README in the [week04](week04) folder for more information.
 
 ## Jupyter Cheat Sheet
 
-Students use Jupyter Notebook to complete several assignments. The [cheat sheet](https://github.com/macloo/python-beginners/tree/master/jupyter_cheat_sheet) is helpful after Jupyter Notebook has been installed and they need to launch it, save their work, and close it correctly.
+Students use Jupyter Notebook to complete several assignments. The [cheat sheet](jupyter_cheat_sheet) is helpful after Jupyter Notebook has been installed and they need to launch it, save their work, and close it correctly.
 
 ## Web scraping
 
-Students are introduced to web scraping with the BeautifulSoup library in the second week. See the README in the [web_scraping](https://github.com/macloo/python-beginners/tree/master/web_scraping) folder for instructions to install BeautifulSoup, as well as some basic uses of this scraping library.
+Students are introduced to web scraping with the BeautifulSoup library in the second week. See the README in the [web_scraping](web_scraping) folder for instructions to install BeautifulSoup, as well as some basic uses of this scraping library.
 
 ### Mitchell, chapter 3
 
-The README in the [mitchell-ch3](https://github.com/macloo/python-beginners/tree/master/web_scraping/mitchell-ch3) folder supplements chapter 3 in *Web Scraping with Python*, by Ryan Mitchell. The chapter is very challenging for beginners, so here are a couple of `.py` files and examples to ease the way.
+The README in the [mitchell-ch3](web_scraping/mitchell-ch3) folder supplements chapter 3 in *Web Scraping with Python*, by Ryan Mitchell. The chapter is very challenging for beginners, so here are a couple of `.py` files and examples to ease the way.
 
 Example files are included for scraping all URLs from a page, and for scraping the same data items from numerous pages, using a list of URLs.
 
 ### Mitchell, the rest of the book
 
-The README in the [more-from-mitchell](https://github.com/macloo/python-beginners/tree/master/web_scraping/more-from-mitchell) folder highlights the points we cover in our third week with *Web Scraping with Python*, by Ryan Mitchell. We don’t have time to read the entire book, so we need to jump around and get acquainted with some common scraping problems and their solutions.
+The README in the [more-from-mitchell](web_scraping/more-from-mitchell) folder highlights the points we cover in our third week with *Web Scraping with Python*, by Ryan Mitchell. We don’t have time to read the entire book, so we need to jump around and get acquainted with some common scraping problems and their solutions.
 
 This section includes using Selenium, HTTP headers, writing scraped data to CSV files, the sleep timer in Python, and parsers.
 
@@ -65,4 +65,4 @@ Example files are included for writing scraped data to CSV files and to a MySQL 
 
 ## Flask
 
-Students are introduced to Flask, a Python web framework, in the fifth week. See the README in the [flask](https://github.com/macloo/python-beginners/tree/master/flask) folder for details.
+Students are introduced to Flask, a Python web framework, in the fifth week of Python. See the README in the [flask](flask) folder for details.
