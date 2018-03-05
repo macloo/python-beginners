@@ -241,6 +241,11 @@ You'll recognize `for item in student_list` as the beginning of a Python for-loo
 
 The variables are inserted where needed as placeholders in *double curly braces*, which we've already covered here.
 
+**Take note of the difference** between the Jinja2 elements in `index.html` and `student.html`:
+
+* A list representing *every record* in the data source is generated in `index.html`; therefore, it has a for-loop to extract items from every record.
+* Only *one record* is examined and represented in `student.html`, so there is no loop there. Only variables &mdash; which were passed in by the route.
+
 ## Templates: Conclusion
 
 I hope the final app in *students4.py* has demonstrated clearly why using templates in Flask is well worth the effort required to learn.
