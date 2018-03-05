@@ -2,7 +2,7 @@
 
 This app differs from the Example 2 app in a huge way: Each route calls a new function that reads data from an external file, *data.py*.
 
-This Flask app is explained in the README in [flask/part3_templates](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates).
+This Flask app is explained in the README in [flask/part3_templates](../).
 
 To run it (assuming you have Flask installed):
 
