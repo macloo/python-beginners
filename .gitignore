@@ -16,3 +16,6 @@ __pycache__/
 
 # Selenim WebDriver
 chromedriver
+
+# files to be ignored
+newdict.py
