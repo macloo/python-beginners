@@ -2,6 +2,17 @@
 
 In the [Flask introduction](https://github.com/macloo/python-beginners/tree/master/flask) and in [flask/part2](https://github.com/macloo/python-beginners/tree/master/flask/part2), we wrote some HTML directly in the Flask app script. This is very awkward, so naturally, Flask provides a better way to store the HTML (and CSS) you will want your Flask functions to generate.
 
+## Contents
+
+* [Folder structure for a Flask app](#folder-structure-for-a-flask-app)
+* [Example 1: Get started with templates](#example-1-get-started-with-templates)
+* [Example 2: Using a “base” template](#example-2-using-a-base-template)
+* [Example 3: The real power of templates is revealed](#example-3-the-real-power-of-templates-is-revealed)
+   * [Understanding a Python dictionary](#understanding-a-python-dictionary)
+   * [Data in and data out (functions)](#data-in-and-data-out-functions)
+   * [Changes to the templates](#changes-to-the-templates)
+* [Templates: Conclusion](#templates-conclusion)
+
 ## Folder structure for a Flask app
 
 A proper Flask app is going to use multiple files &mdash; some of which will be template files. The organization of these files has to follow rules so the app will work. Here is a diagram of the typical structure:
