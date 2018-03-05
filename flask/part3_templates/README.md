@@ -213,12 +213,12 @@ The route function `student()` calls `get_student()` and sends the ID and three 
 
 ### Changes to the templates
 
-`index.html` receives a list of links from the route function:
+`index.html` now receives a list of links from the route function:
 
 ```html
 <ul>
 {% for item in student_list %}
-    <li><a href="{{ url_for( 'student', idnum=item[0] ) }}">{{ item[1] }}</a></li>
+    <li><a href="/student/{{ item[0] }}">{{ item[1] }}</a></li>
 {% endfor %}
 </ul>
 ```
@@ -239,7 +239,7 @@ You'll recognize `for item in student_list` as the beginning of a Python for-loo
 <img src="{{ photo }}" alt="Student photo">
 ```
 
-The variables are inserted where needed as placeholders in *double curly braces*, which we've already covered here.
+The variables are inserted where needed in the HTML as placeholders in *double curly braces*, which we've already covered here.
 
 **Take note of the difference** between the Jinja2 elements in `index.html` and `student.html`:
 
