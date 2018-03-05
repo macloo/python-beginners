@@ -121,7 +121,7 @@ python students2.py
 
 ## Example 2: Using a “base” template
 
-A great time-saving feature of templates in Flask: We can tremendously shorten and streamline multiple template files by creating *one base template* that contains all the standard HTML. I have a base template named *base.html* in the *templates* folder in the [second version of the students app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app).
+A great time-saving feature of templates in Flask: We can tremendously shorten and streamline multiple template files by creating *one base template* that contains all the standard HTML. I have a base template named *base.html* in the *templates* folder in the [second version of the students app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app). Here is a direct link:  [base.html](https://github.com/macloo/python-beginners/blob/master/flask/part3_templates/ex2-app/templates/base.html).
 
 Inside the `<body>` in the file, you'll see this:
 
@@ -158,7 +158,7 @@ That's the entire contents of the file. Note the following two important points:
 * `{% extends 'base.html' %}` matches the exact filename of our base template, which is in the same *templates* folder.
 * `{% block content %}` matches the exact label in the block in the base template. If, for example, it were *block foobar* in the template, it would need to also be *block foobar* here.
 
-The only difference between the [ex1-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex1-app) example app and the  [ex2-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app) example app is the addition of the *base.html* template file in the second example.
+The only difference between the [ex1-app](ex1-app) example app and the  [ex2-app](ex2-app) example app is the addition of the *base.html* template file in the second example. Take a look at the [index.html](ex2-app/templates/index.html) and [student.html](ex2-app/templates/student.html) templates now that they use *base.html*. Sweet.
 
 ## Example 3: The real power of templates is revealed
 
