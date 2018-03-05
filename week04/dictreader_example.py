@@ -3,7 +3,6 @@ convert a csv file to dictionaries - each row is one dict
 Python 3.6 and not before
 """
 import csv
-from io import StringIO
 
 # open a CSV file
 # note - must have column headings in top row
@@ -14,7 +13,7 @@ my_reader = csv.DictReader(datafile)
 
 
 # commented out because both loops can't run
-#    - this works - 
+#    - this works -
 # my_list = []
 # for row in my_reader:
 #     my_list.append( dict(row) )
