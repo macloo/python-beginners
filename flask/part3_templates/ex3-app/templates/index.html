@@ -8,7 +8,7 @@
 
     <ul>
     {% for item in student_list %}
-        <li><a href="{{ url_for( 'student', idnum='item[0]' ) }}">{{ item[1] }}</a></li>
+        <li><a href="/student/{{ item[0] }}">{{ item[1] }}</a></li>
     {% endfor %}
     </ul>
 
@@ -19,12 +19,6 @@
      and item[1] is the lastname.
      Jinja2 lets us write Python between specialized tags like PHP.
      - for item in student_list - it is a normal for-loop.
-
-     NOTE the special Jinja2 format for a URL derived from a route:
-
-     href="{{ url_for( 'student', idnum=item[0] ) }}"
-
-     href="{{ url_for('index') }}"
     -->
 
 {% endblock %}
