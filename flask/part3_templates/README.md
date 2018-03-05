@@ -183,3 +183,49 @@ The complete code for this app is in the folder [ex3-app](https://github.com/mac
 ```bash
 python students4.py
 ```
+
+### Understanding a Python dictionary
+
+If the two new functions don't make sense to you, it's probably because you have not learned about Python dictionaries.
+
+The [week04](https://github.com/macloo/python-beginners/tree/master/week04) folder has examples for working with dictionaries. [This example](https://github.com/macloo/python-beginners/blob/master/week04/complex_dicts.py) uses the same data structure as the *students3.py* and *students4.py* files.
+
+### Data in and data out (functions)
+
+`get_all_students()` takes in the whole dataset as an argument, extracts the last name and ID number (SSN) for each person, and returns a sorted list of tuples. Each tuple contains two items, the last name and the ID number.
+
+The route function `index()` calls `get_all_students()` and sends the list of tuples to a template as `student_list`.
+
+`get_student()` takes in two arguments: the whole dataset, and the ID number that appears in the URL. The record for that ID number is found in the dataset, and each needed data value is taken from the record. Three values are returned.
+
+The route function `student()` calls `get_student()` and sends the ID and three values to a template as `id`, `name`, `photo` and `address`.
+
+### Changes to the templates
+
+`index.html` receives a list of links from the route function:
+
+```html
+<ul>
+{% for item in student_list %}
+    <li><a href="student/{{ item[0] }}">{{ item[1] }}</a></li>
+{% endfor %}
+</ul>
+```
+
+You'll recognize `for item in student_list` as the beginning of a Python for-loop. It's wrapped in `{%` and `%}` &mdash; as is the Jinja2 directive that marks the end of the for-loop: `{% endfor %}`. If this reminds you of working with PHP &mdash; yes! It's the same idea.
+
+`item[0]` an `item[1]` come from the tuple. The route function `index()` sends the list of tuples to this template as `student_list`. We loop over the list, and for each list item (that is, each tuple), the code puts the ID number (`item[0]`) into the `href` attribute and the last name (`item[1]`) between the `<a>` tags.
+
+`student.html` receives four variables (`id`, `name`, `photo` and `address`) from the route function:
+
+```html
+<h1>{{ name }}</h1>
+
+<p><strong>Student number:</strong> {{ id }}</p>
+
+<p><strong>Address:</strong> {{ address }}</p>
+
+<img src="{{ photo }}" alt="Student photo">
+```
+
+The variables are inserted where needed as placeholders in *double curly braces*, which we've already covered here. 
