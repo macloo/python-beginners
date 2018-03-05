@@ -39,7 +39,7 @@ The templates will not work if this folder structure is not exactly as described
 
 ## Example 1: Get started with templates
 
-We'll start with a small Flask app similar to the one explained in [flask/part2](https://github.com/macloo/python-beginners/tree/master/flask/part2).
+We'll start with a small Flask app similar to the one explained in [flask/part2](../part2).
 
 ```python
 from flask import Flask
@@ -113,7 +113,7 @@ def student(idnum):
     return render_template('student.html', id=idnum)
 ```
 
-The complete code for this app is in the folder [flask/part3_templates/ex1-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex1-app). To run it, `cd` into the `ex1-app` directory and type this at the bash prompt (`$`) in Terminal:
+The complete code for this app is in the folder [flask/part3_templates/ex1-app](ex1-app). To run it, `cd` into the `ex1-app` directory and type this at the bash prompt (`$`) in Terminal:
 
 ```bash
 python students2.py
@@ -121,7 +121,7 @@ python students2.py
 
 ## Example 2: Using a “base” template
 
-A great time-saving feature of templates in Flask: We can tremendously shorten and streamline multiple template files by creating *one base template* that contains all the standard HTML. I have a base template named *base.html* in the *templates* folder in the [second version of the students app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app). Here is a direct link:  [base.html](https://github.com/macloo/python-beginners/blob/master/flask/part3_templates/ex2-app/templates/base.html).
+A great time-saving feature of templates in Flask: We can tremendously shorten and streamline multiple template files by creating *one base template* that contains all the standard HTML. I have a base template named *base.html* in the *templates* folder in the [second version of the students app](ex2-app). Here is a direct link:  [base.html](ex2-app/templates/base.html).
 
 Inside the `<body>` in the file, you'll see this:
 
@@ -164,9 +164,9 @@ The only difference between the [ex1-app](ex1-app) example app and the  [ex2-app
 
 Now you'll see how to write 100 web pages with no actual HTML files. Well, except for the three template files you already have.
 
-We are building on the  [ex2-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex2-app) example app, discussed above.
+We are building on the  [ex2-app](ex2-app) example app, discussed above.
 
-Now, in the third version &mdash; the  [ex3-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex3-app) example app &mdash; we will make our two templates much more useful by enabling them to use data read from a separate file, *data.py*. That file contains information (name, ID, address, etc.) about 100 students (not real people).
+Now, in the third version &mdash; the  [ex3-app](ex3-app) example app &mdash; we will make our two templates much more useful by enabling them to use data read from a separate file, *data.py*. That file contains information (name, ID, address, etc.) about 100 students (not real people).
 
 Instead of working with the whole file while working out the bugs, the *students3.py* file uses just two records from the dataset. In addition to the list named DATA, two new functions have been added. These functions are outside the routes, but they are called *in* the routes.
 
@@ -189,7 +189,7 @@ The goal is to provide a list of all students (last names only) with an `<a href
 
 The ID number is used in the link because it is sure to be unique, unlike a name. We have been using a number in the route `@app.route('/student/<idnum>')` all along.
 
-The complete code for this app is in the folder [ex3-app](https://github.com/macloo/python-beginners/tree/master/flask/part3_templates/ex3-app). To run the final, complete app, `cd` into the `ex3-app` directory and type this at the bash prompt (`$`) in Terminal:
+The complete code for this app is in the folder [ex3-app](ex3-app). To run the final, complete app, `cd` into the `ex3-app` directory and type this at the bash prompt (`$`) in Terminal:
 
 ```bash
 python students4.py
@@ -199,7 +199,7 @@ python students4.py
 
 If the two new functions don't make sense to you, it's probably because you have not learned about Python dictionaries.
 
-The [week04](https://github.com/macloo/python-beginners/tree/master/week04) folder has examples for working with dictionaries. [This example](https://github.com/macloo/python-beginners/blob/master/week04/complex_dicts.py) uses the same data structure as the *students3.py* and *students4.py* files.
+The [week04](../../week04) folder has examples for working with dictionaries. [This example](../../week04/complex_dicts.py) uses the same data structure as the *students3.py* and *students4.py* files.
 
 ### Data in and data out (functions)
 
