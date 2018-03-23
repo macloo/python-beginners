@@ -124,7 +124,7 @@ Before we break that down and explain it, let's look at the code in the template
 
 **Where is the form?** This is the amazing thing about Flask-WTF &mdash; by configuring the form as we did in the Flask app, we can generate a simple form with Bootstrap styles using nothing more than the template you see above.
 
-
+<img src="../images/rabbit_hat.png" alt="Drawing of magician pulling rabbit from hat">
 
 
 
