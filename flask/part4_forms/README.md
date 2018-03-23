@@ -122,10 +122,23 @@ Before we break that down and explain it, let's look at the code in the template
 {% endblock %}
 ```
 
-**Where is the form?** This is the amazing thing about Flask-WTF &mdash; by configuring the form as we did in the Flask app, we can generate a simple form with Bootstrap styles using nothing more than the template you see above.
+**Where is the form?** This is the amazing thing about Flask-WTF &mdash; by configuring the form as we did *in the Flask app,* we can generate a simple form with Bootstrap styles using nothing more than the template you see above.
 
 <img src="../images/rabbit_hat.png" alt="Drawing of magician pulling rabbit from hat">
 
+Note that in the Flask route, we passed the variable `form` to the template *index.html*:
+
+```python
+return render_template('index.html', names=names, form=form, message=message)
+```
+
+So when you use `wtf.quick_form()`, the argument in the parentheses must be the *variable* that represents the form you created in the app.
+
+```python
+form = NameForm()
+```
+
+We discussed the configuration of `NameForm` above.
 
 
 
