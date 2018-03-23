@@ -1,4 +1,4 @@
-# Part 3: Forms in Flask
+# Part 4: Forms in Flask
 
 Flask has an extension that makes it easy to create web forms.
 
@@ -60,6 +60,8 @@ Flask-WTF's `FlaskForm` will automatically create a secure session with CSRF (cr
 
 You can read more about `app.config['SECRET_KEY']` in [this StackOverflow post](https://stackoverflow.com/questions/22463939/demystify-flask-app-secret-key).
 
+### Configure the form
+
 Next, we configure a form that inherits from Flask-WTF's `FlaskForm`. Python style dictates that a class starts with an uppercase letter and uses camel case, so here our new class is `NameForm`.
 
 ```python
@@ -71,6 +73,8 @@ class NameForm(FlaskForm):
 Note that `StringField` and `SubmitField` were **imported** at the top of the file. If we needed other form fields in this form, we would need to import those. See a [list of all WTForms field types](https://github.com/macloo/flask-forms/blob/master/Resources/WTForms-field-types.csv).
 
 WTForms also has a long list of [validators](https://github.com/macloo/flask-forms/blob/master/Resources/WTForms-validators.csv) we can use.
+
+### Put the form in a route function
 
 Now we will use the form in a Flask route:
 
@@ -94,6 +98,8 @@ def index():
             message = "That actor is not in our database."
     return render_template('index.html', names=names, form=form, message=message)
 ```
+
+### Put the form in a template
 
 Before we break that down and explain it, let's look at the code in the template *index.html*:
 
@@ -140,9 +146,106 @@ form = NameForm()
 
 We discussed the configuration of `NameForm` above.
 
+## Examining the route function
 
+Before reading further, try out [a working version of this app](https://weimergeeks.com/flask_form/index.html).
+
+1. You type an actor's name into the form and submit it.
+2. If the actor's name is in the data source, the app loads a detail page for that actor.
+3. Otherwise, you stay on the same page, the form is cleared, and a message tells you that actor is not in the database.
+
+```python
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    names = get_names(ACTORS)
+    # you must tell the variable 'form' what you named the class, above
+    # 'form' is the variable name used in this template: index.html
+    form = NameForm()
+    message = ""
+    if form.validate_on_submit():
+        name = form.name.data
+        if name in names:
+            # empty the form field
+            form.name.data = ""
+            id = get_id(ACTORS, name)
+            # redirect the browser to another route and template
+            return redirect( url_for('actor', id=id) )
+        else:
+            message = "That actor is not in our database."
+    return render_template('index.html', names=names, form=form, message=message)
+```
+
+First we have the route, as usual, but with a new addition for handling form data: `methods`.
+
+```python
+@app.route('/', methods=['GET', 'POST'])
+```
+
+Every HTML form has two possible methods, `GET` and `POST`. `GET` simply requests a response from the server. `POST`, however, sends a request with data attached in the body of the request; this is the way most forms are submitted.
+
+This route needs to use both methods because when we simply open the page, no form was submitted, and we're opening it with `GET`. When we submit the form, this same page is opened with `POST` if the actor's name (the form data) was not found.
+
+```python
+def index():
+    names = get_names(ACTORS)
+```
+
+At the start of the route function, we get the data source for this app. It happens to be in a list named `ACTORS`, and we get just the names by running a function, `get_names()`.
+
+```python
+form = NameForm()
+message = ""
+```
+
+We assign the previously configured form object, `NameForm()`, to a new variable, `form`.
+
+We create a new, empty variable, `message`.
+
+```python
+if form.validate_on_submit():
+    name = form.name.data
+```
+
+`validate_on_submit()` is a built-in function, called on `form` (our variable). **If it returns True,** the following commands and statements in the block will run. If not, the form is simply not submitted.
+
+`form.name.data` is the data (whatever is typed) into the text input field represented by `name`. Perhaps we should review how we configured the form:
+
+```python
+class NameForm(FlaskForm):
+    name = StringField('Which actor is your favorite?', validators=[Required()])
+    submit = SubmitField('Submit')
+```
+
+That `name` is the `name` in `form.name.data` &mdash; the contents of which we will now store in a new variable, `name`.
+
+```python
+if name in names:
+    # empty the form field
+    form.name.data = ""
+    id = get_id(ACTORS, name)
+    # redirect the browser to another route and template
+    return redirect( url_for('actor', id=id) )
+else:
+    message = "That actor is not in our database."
+```
+
+This if-statement is specific to this app. It checks whether the `name` (that was typed into the form) matches any name in the list `names`. If not, we jump down to `else` and text is put into the variable `message`. If `name` DOES match, we clear out the form, run a function called `get_id()`, and &mdash; **important!** &mdash; open a *different route* in this app:
+
+```python
+return redirect( url_for('actor', id=id) )
+```
+
+As far as using forms with Flask is concerned, you don't need to worry about the actors and their ids, etc. What is important is that the route function can be used to evaluate the data sent from the form. We check to see whether it matched any of the actors in a list, and *a different response* will be sent based on match or no match.
+
+The final line in the route function calls the template *index.html* and passes three variables to it:
+
+```python
+return render_template('index.html', names=names, form=form, message=message)
+```
 
 ## Resources
+
+[Sending form data](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data)
 
 [Flask-WTF documentation](https://flask-wtf.readthedocs.io/en/latest/index.html)
 
