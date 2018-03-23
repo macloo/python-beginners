@@ -208,7 +208,7 @@ if form.validate_on_submit():
 
 `validate_on_submit()` is a built-in function, called on `form` (our variable). **If it returns True,** the following commands and statements in the block will run. If not, the form is simply not submitted.
 
-`form.name.data` is the data (whatever is typed) into the text input field represented by `name`. Perhaps we should review how we configured the form:
+`form.name.data` is the contents of the text input field represented by `name`. Perhaps we should review how we configured the form:
 
 ```python
 class NameForm(FlaskForm):
