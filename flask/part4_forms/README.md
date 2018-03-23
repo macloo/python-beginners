@@ -137,9 +137,9 @@ Before we break that down and explain it, let's look at the code in the template
 
 If you want to view the Bootstrap templates installed by Flask-Bootstrap, here's how:
 
-<img src="images/location-flask-bootstrap.png" alt="Location of Flask-Bootstrap">
+<img src="../images/location-flask-bootstrap.png" alt="Location of Flask-Bootstrap">
 
-<img src="images/flask-bootstrap-templates.png" alt="Flask-Bootstrap template files" width="50%">
+<img src="../images/flask-bootstrap-templates.png" alt="Flask-Bootstrap template files" width="50%">
 
 By viewing *base.html* in *templates/bootstrap,* you can find the Jinja2 directives that surround the HEAD, list of attached CSS files, footer area, etc. You can then use those directives in your own templates for finer control.
 
