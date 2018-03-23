@@ -70,9 +70,9 @@ class NameForm(FlaskForm):
     submit = SubmitField('Submit')
 ```
 
-Note that `StringField` and `SubmitField` were **imported** at the top of the file. If we needed other form fields in this form, we would need to import those. See a [list of all WTForms field types](https://github.com/macloo/flask-forms/blob/master/Resources/WTForms-field-types.csv).
+Note that `StringField` and `SubmitField` were **imported** at the top of the file. If we needed other form fields in this form, we would need to import those. See a [list of all WTForms field types](WTForms-field-types.csv).
 
-WTForms also has a long list of [validators](https://github.com/macloo/flask-forms/blob/master/Resources/WTForms-validators.csv) we can use.
+WTForms also has a long list of [validators](WTForms-validators.csv) we can use.
 
 ### Put the form in a route function
 
