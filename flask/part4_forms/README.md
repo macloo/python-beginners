@@ -261,19 +261,19 @@ return render_template('index.html', names=names, form=form, message=message)
 
 **Flask-WTF** provides convenient methods for working with forms in Flask. Forms can be built easily and also processed easily, with a minimum of code.
 
-Adding **Flask-Bootstrap** ensures that we can build mobile-friendly forms with a minium amount of effort.
+Adding **Flask-Bootstrap** ensures that we can build mobile-friendly forms with a minimum amount of effort.
 
-Note that it is possible to build a customized form layout using Bootstrap 3 styles in a Flask template, or to build a custom form with no Bootstrap styles. In either case, you cannot use `{{ wtf.quick_form(form) }}` but would instead write out all the form code in your Flask template as you would in a normal HTML file. To take advantage of WTForms, you would create the form class in the same way as shown above.
+Note that it is possible to build a customized form layout using Bootstrap 3 styles in a Flask template, or to build a custom form with no Bootstrap styles. In either case, you cannot use `{{ wtf.quick_form(form) }}` but would instead write out all the form code in your Flask template as you would in a normal HTML file. To take advantage of WTForms, you would still  create the form class in the same way as shown above.
 
 ## Resources
 
-[Sending form data](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data)
+* [Sending form data](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data) &ndash; how web browsers interact with servers; request/response 
 
-[Flask-WTF documentation](https://flask-wtf.readthedocs.io/en/latest/index.html)
+* [Flask-WTF documentation](https://flask-wtf.readthedocs.io/en/latest/index.html)
 
-[Complete WTForms documentation](https://wtforms.readthedocs.io/en/latest/index.html)
+* [Complete WTForms documentation](https://wtforms.readthedocs.io/en/latest/index.html)
 
-[Flask-Bootstrap documentation](https://pythonhosted.org/Flask-Bootstrap/)
+* [Flask-Bootstrap documentation](https://pythonhosted.org/Flask-Bootstrap/)
 
 If you want to view the Bootstrap templates installed by Flask-Bootstrap, here's how:
 
