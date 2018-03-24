@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Richard Nixon</title>
+
+	<!-- note the special href for files in the Flask "static" folder -->
+	<link rel="stylesheet" href="../static/css/main.css">
+
+</head>
+<body>
+
+<div id="container">
+
+  <!-- Jinja2 directives: page contents will go between them -->
+  
+
+	<!-- the full dict for a president is sent here as pres by the route -->
+
+	<h1>Richard Nixon</h1>
+
+	<!-- NOTE the pattern for pointing to a file inside the static folder -->
+	<img class="right" src="../static/images/pr37.jpg" alt="President portrait">
+
+	<p>Richard Nixon, the 37th president of the United States, was born on 1/9/13, in Yorba Linda, California. He was 56 when he took office on 1/20/69. Member: Republican Party.
+
+	
+		He left office on 8/9/74.
+	
+
+		His occupation before the presidency: Lawyer.
+		His college: Whittier.
+
+	
+		He died in New York, New York, on 4/22/94.
+	
+	</p>
+
+	<p><a href="http://en.wikipedia.org/wiki/Richard_Nixon">View Wikipedia entry for Richard Nixon.</a></p>
+
+	<!-- NOTE the way to link to a route: Use the function name -->
+	<p><a href="../index.html">Return to the list</a> to select a different president.</p>
+
+
+
+</div>
+
+</body>
+</html>

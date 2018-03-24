@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>William McKinley</title>
+
+	<!-- note the special href for files in the Flask "static" folder -->
+	<link rel="stylesheet" href="../static/css/main.css">
+
+</head>
+<body>
+
+<div id="container">
+
+  <!-- Jinja2 directives: page contents will go between them -->
+  
+
+	<!-- the full dict for a president is sent here as pres by the route -->
+
+	<h1>William McKinley</h1>
+
+	<!-- NOTE the pattern for pointing to a file inside the static folder -->
+	<img class="right" src="../static/images/pr25.jpg" alt="President portrait">
+
+	<p>William McKinley, the 25th president of the United States, was born on 1/29/1843, in Niles, Ohio. He was 54 when he took office on 3/4/1897. Member: Republican Party.
+
+	
+		He died in office on 9/14/01.
+	
+
+		His occupation before the presidency: Lawyer.
+		His college: Allegheny College.
+
+	
+		He died in Buffalo, New York, on 9/14/01.
+	
+	</p>
+
+	<p><a href="http://en.wikipedia.org/wiki/William_McKinley">View Wikipedia entry for William McKinley.</a></p>
+
+	<!-- NOTE the way to link to a route: Use the function name -->
+	<p><a href="../index.html">Return to the list</a> to select a different president.</p>
+
+
+
+</div>
+
+</body>
+</html>

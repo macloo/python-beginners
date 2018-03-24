@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>James Buchanan</title>
+
+	<!-- note the special href for files in the Flask "static" folder -->
+	<link rel="stylesheet" href="../static/css/main.css">
+
+</head>
+<body>
+
+<div id="container">
+
+  <!-- Jinja2 directives: page contents will go between them -->
+  
+
+	<!-- the full dict for a president is sent here as pres by the route -->
+
+	<h1>James Buchanan</h1>
+
+	<!-- NOTE the pattern for pointing to a file inside the static folder -->
+	<img class="right" src="../static/images/pr15.jpg" alt="President portrait">
+
+	<p>James Buchanan, the 15th president of the United States, was born on 4/23/1791, in Cove Gap, Pennsylvania. He was 65 when he took office on 3/4/1857. Member: Democratic Party.
+
+	
+		He left office on 3/4/1861.
+	
+
+		His occupation before the presidency: Lawyer.
+		His college: Dickinson.
+
+	
+		He died in Lancaster, Pennsylvania, on 6/1/1868.
+	
+	</p>
+
+	<p><a href="http://en.wikipedia.org/wiki/James_Buchanan">View Wikipedia entry for James Buchanan.</a></p>
+
+	<!-- NOTE the way to link to a route: Use the function name -->
+	<p><a href="../index.html">Return to the list</a> to select a different president.</p>
+
+
+
+</div>
+
+</body>
+</html>

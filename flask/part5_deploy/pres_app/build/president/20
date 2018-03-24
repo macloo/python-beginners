@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>James A. Garfield</title>
+
+	<!-- note the special href for files in the Flask "static" folder -->
+	<link rel="stylesheet" href="../static/css/main.css">
+
+</head>
+<body>
+
+<div id="container">
+
+  <!-- Jinja2 directives: page contents will go between them -->
+  
+
+	<!-- the full dict for a president is sent here as pres by the route -->
+
+	<h1>James A. Garfield</h1>
+
+	<!-- NOTE the pattern for pointing to a file inside the static folder -->
+	<img class="right" src="../static/images/pr20.jpg" alt="President portrait">
+
+	<p>James A. Garfield, the 20th president of the United States, was born on 11/19/1831, in Cuyahoga County, Ohio. He was 49 when he took office on 3/4/1881. Member: Republican Party.
+
+	
+		He died in office on 9/19/1881.
+	
+
+		His occupation before the presidency: Lawyer.
+		His college: Williams.
+
+	
+		He died in Elberon, New Jersey, on 9/19/1881.
+	
+	</p>
+
+	<p><a href="http://en.wikipedia.org/wiki/James_A._Garfield">View Wikipedia entry for James A. Garfield.</a></p>
+
+	<!-- NOTE the way to link to a route: Use the function name -->
+	<p><a href="../index.html">Return to the list</a> to select a different president.</p>
+
+
+
+</div>
+
+</body>
+</html>

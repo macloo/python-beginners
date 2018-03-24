@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Harry S. Truman</title>
+
+	<!-- note the special href for files in the Flask "static" folder -->
+	<link rel="stylesheet" href="../static/css/main.css">
+
+</head>
+<body>
+
+<div id="container">
+
+  <!-- Jinja2 directives: page contents will go between them -->
+  
+
+	<!-- the full dict for a president is sent here as pres by the route -->
+
+	<h1>Harry S. Truman</h1>
+
+	<!-- NOTE the pattern for pointing to a file inside the static folder -->
+	<img class="right" src="../static/images/pr33.jpg" alt="President portrait">
+
+	<p>Harry S. Truman, the 33rd president of the United States, was born on 5/8/1884, in Lamar, Missouri. He was 60 when he took office on 4/12/45. Member: Democratic Party.
+
+	
+		He left office on 1/20/53.
+	
+
+		His occupation before the presidency: Businessman.
+		His college: None.
+
+	
+		He died in Kansas City, Missouri, on 12/26/72.
+	
+	</p>
+
+	<p><a href="http://en.wikipedia.org/wiki/Harry_S._Truman">View Wikipedia entry for Harry S. Truman.</a></p>
+
+	<!-- NOTE the way to link to a route: Use the function name -->
+	<p><a href="../index.html">Return to the list</a> to select a different president.</p>
+
+
+
+</div>
+
+</body>
+</html>

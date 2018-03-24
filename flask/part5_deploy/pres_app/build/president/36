@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Lyndon B. Johnson</title>
+
+	<!-- note the special href for files in the Flask "static" folder -->
+	<link rel="stylesheet" href="../static/css/main.css">
+
+</head>
+<body>
+
+<div id="container">
+
+  <!-- Jinja2 directives: page contents will go between them -->
+  
+
+	<!-- the full dict for a president is sent here as pres by the route -->
+
+	<h1>Lyndon B. Johnson</h1>
+
+	<!-- NOTE the pattern for pointing to a file inside the static folder -->
+	<img class="right" src="../static/images/pr36.jpg" alt="President portrait">
+
+	<p>Lyndon B. Johnson, the 36th president of the United States, was born on 8/27/08, in Gillespie County, Texas. He was 55 when he took office on 11/22/63. Member: Democratic Party.
+
+	
+		He left office on 1/20/69.
+	
+
+		His occupation before the presidency: Teacher.
+		His college: Southwest Texas State.
+
+	
+		He died in Gillespie County, Texas, on 1/22/73.
+	
+	</p>
+
+	<p><a href="http://en.wikipedia.org/wiki/Lyndon_B._Johnson">View Wikipedia entry for Lyndon B. Johnson.</a></p>
+
+	<!-- NOTE the way to link to a route: Use the function name -->
+	<p><a href="../index.html">Return to the list</a> to select a different president.</p>
+
+
+
+</div>
+
+</body>
+</html>

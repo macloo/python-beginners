@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Andrew Johnson</title>
+
+	<!-- note the special href for files in the Flask "static" folder -->
+	<link rel="stylesheet" href="../static/css/main.css">
+
+</head>
+<body>
+
+<div id="container">
+
+  <!-- Jinja2 directives: page contents will go between them -->
+  
+
+	<!-- the full dict for a president is sent here as pres by the route -->
+
+	<h1>Andrew Johnson</h1>
+
+	<!-- NOTE the pattern for pointing to a file inside the static folder -->
+	<img class="right" src="../static/images/pr17.jpg" alt="President portrait">
+
+	<p>Andrew Johnson, the 17th president of the United States, was born on 12/29/1808, in Raleigh, North Carolina. He was 56 when he took office on 4/15/1865. Member: Democratic/National Union Party.
+
+	
+		He left office on 3/4/1869.
+	
+
+		His occupation before the presidency: Tailor.
+		His college: None.
+
+	
+		He died in Elizabethton, Tenn., on 7/31/1875.
+	
+	</p>
+
+	<p><a href="http://en.wikipedia.org/wiki/Andrew_Johnson">View Wikipedia entry for Andrew Johnson.</a></p>
+
+	<!-- NOTE the way to link to a route: Use the function name -->
+	<p><a href="../index.html">Return to the list</a> to select a different president.</p>
+
+
+
+</div>
+
+</body>
+</html>
