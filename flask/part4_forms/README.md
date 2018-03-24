@@ -78,6 +78,8 @@ Next, we configure a form that inherits from Flask-WTF's `FlaskForm`. Python sty
 
 In the class, we assign each form control to a unique variable. This form has only one text input field and one submit button.
 
+**Every form control** must be configured here.
+
 ```python
 class NameForm(FlaskForm):
     name = StringField('Which actor is your favorite?', validators=[Required()])
@@ -86,7 +88,9 @@ class NameForm(FlaskForm):
 
 Note that `StringField` and `SubmitField` were **imported** at the top of the file. If we needed other form fields in this form, we would need to import those. See a [list of all WTForms field types](WTForms-field-types.csv).
 
-WTForms also has a long list of [validators](WTForms-validators.csv) we can use. The `Required()` validator prevents the form from being submitted if that field is empty. Note that these validators must also be imported at the top of the file. 
+Note that several field types (such as `RadioField` and `SelectField`) must have an option `choices=[]` specified, after the label text. Within the list, each choice is a pair in this format: `('string1', 'string2')`.
+
+WTForms also has a long list of [validators](WTForms-validators.csv) we can use. The `Required()` validator prevents the form from being submitted if that field is empty. Note that these validators must also be imported at the top of the file.
 
 ### Put the form in a route function
 
