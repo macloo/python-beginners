@@ -99,4 +99,22 @@ def actor():
         yield { 'id': item['id'] }
 ```
 
-You can definitely freeze the app with dynamic route information, but you might need to play around with it awhile before you get it to work.
+You can definitely freeze an app with dynamic route information, but you might need to play around with it awhile before you get it to work.
+
+Some apps *cannot* work via freezing. See below for details. 
+
+Read the [full documentation](http://pythonhosted.org/Frozen-Flask/) for Frozen-Flask.
+
+## When freezing will not work, cannot work
+
+If your app depends on dynamic activity &mdash; for example, if you are using **Flask-WTF** to process a form &mdash; you will not get a fully functioning app if you freeze it.
+
+In that case, you will need to run Python on the web server where people are accessing your pages (and NOT freeze the app).
+
+There are ways to do this if you use a cloud service such as [Amazon's AWS](https://aws.amazon.com/) or [Heroku](https://www.heroku.com/), but you don't necessarily need to go that way if you're a student and your app is not going to attract thousands of users.
+
+Most hosted web server accounts from companies such as [Reclaim Hosting](https://reclaimhosting.com/) provide **cPanel** &mdash; a set of services that you access from a simple dashboard.
+
+<img src="../images/setup_python_cpanel.png" alt="Set up Python cPanel icon" width="40%">
+
+If you find the icon above in the **cPanel** at your hosting provider, you're probably good to go. I've written [detailed instructions](http://bit.ly/flask-deploy) for how to install a Python app at Reclaim Hosting, but it's probably the same or very nearly so in any **cPanel** instance.
