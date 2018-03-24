@@ -1,0 +1,10 @@
+/* to override Bootstrap styles for some things */
+
+.space-above {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.blocker {
+  display: block;
+}
