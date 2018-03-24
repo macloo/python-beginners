@@ -55,7 +55,7 @@ In Terminal, change into the directory for the Flask app and enter this command 
 python freeze.py
 ```
 
-**If freezing worked:** Inside your Flask app folder, you’ll now see a new folder named *build*. Open it. Inside *build*, you’ll see a folder that has the same name as your Flask app file (for example, *president*). Open that folder.
+**If freezing worked:** Inside your Flask app folder, you’ll now see a new folder named *build*. Open it. Inside *build*, you’ll see a folder that has the same name as your Flask route (for example, *president*). Open that folder.
 
 There are all your files, created by Frozen-Flask.
 
@@ -64,6 +64,19 @@ For an example, open the *pres_app* folder in this repo, find the *build* folder
 The entire *build* folder can be uploaded to a web server, and the folder name can be changed (from *build* to anything), and all the pages will work.
 
 Need to update the site? Make your edits, run *freeze.py* again, and re-deploy.
+
+### The benefits of freezing
+
+Pause for a moment and consider this: Imagine you needed to build a site with detailed data about the 535 members of the U.S. Congress. You build it with Flask (using a CSV file, a Python dictionary, or an SQL database to generate all the data) with two or maybe three HTML templates. Then you run *freeze.py* and in seconds you have 535 individual files, which you just upload as one folder, and you're done.
+
+Similar apps might produce pages for:
+
+* 190 pages for each dog breed in the American Kennel Club
+* 318 pages for each character in all the Harry Potter novels
+* 3,144 counties and county equivalents in the United States
+* 6,909 living languages in the world
+
+When there are changes to the data, you update the data source, re-freeze and re-deploy.
 
 ### Freezer errors
 
