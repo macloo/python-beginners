@@ -86,7 +86,7 @@ class NameForm(FlaskForm):
 
 Note that `StringField` and `SubmitField` were **imported** at the top of the file. If we needed other form fields in this form, we would need to import those. See a [list of all WTForms field types](WTForms-field-types.csv).
 
-WTForms also has a long list of [validators](WTForms-validators.csv) we can use. The `Required()` validator prevents the form from being submitted if that field is empty.
+WTForms also has a long list of [validators](WTForms-validators.csv) we can use. The `Required()` validator prevents the form from being submitted if that field is empty. Note that these validators must also be imported at the top of the file. 
 
 ### Put the form in a route function
 
@@ -267,7 +267,7 @@ Note that it is possible to build a customized form layout using Bootstrap 3 sty
 
 ## Resources
 
-* [Sending form data](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data) &ndash; how web browsers interact with servers; request/response 
+* [Sending form data](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data) &ndash; how web browsers interact with servers; request/response
 
 * [Flask-WTF documentation](https://flask-wtf.readthedocs.io/en/latest/index.html)
 
