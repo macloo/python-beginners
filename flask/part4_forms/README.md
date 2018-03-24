@@ -31,14 +31,14 @@ This installation is done only once in any virtualenv. It is assumed you already
 You will have a long list of imports at the top of your app file:
 
 ```python
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import Required
 ```
 
-Note as always that Python is case-sensitive, so upper- and lowercase must be used exactly as shown. The fourth line will change depending on your form's contents.
+Note as always that Python is case-sensitive, so upper- and lowercase must be used exactly as shown. The fourth line will change depending on **your form's contents.** For example, if you have a SELECT element, you'll need to import that. [See the complete list](WTForms-field-types.csv) of WTForms form field types.
 
 ## Set up a form in a Flask app
 
@@ -56,7 +56,7 @@ Bootstrap(app)
 
 Flask allows us to set a "secret key" value. You can grab a string from a site such as [RandomKeygen](https://randomkeygen.com/). This value is used to prevent malicious hijacking of your form from an outside submission.
 
-Flask-WTF's `FlaskForm` will automatically create a secure session with CSRF (cross-site request forgery) protection if this key-value is set.
+Flask-WTF's `FlaskForm` will automatically create a secure session with CSRF (cross-site request forgery) protection if this key-value is set. Don't publish the actual key on GitHub!
 
 You can read more about `app.config['SECRET_KEY']` in [this StackOverflow post](https://stackoverflow.com/questions/22463939/demystify-flask-app-secret-key).
 
@@ -72,7 +72,7 @@ class NameForm(FlaskForm):
 
 Note that `StringField` and `SubmitField` were **imported** at the top of the file. If we needed other form fields in this form, we would need to import those. See a [list of all WTForms field types](WTForms-field-types.csv).
 
-WTForms also has a long list of [validators](WTForms-validators.csv) we can use.
+WTForms also has a long list of [validators](WTForms-validators.csv) we can use. The `Required()` validator prevents the form from being submitted if that field is empty.
 
 ### Put the form in a route function
 
@@ -128,7 +128,7 @@ Before we break that down and explain it, let's look at the code in the template
 {% endblock %}
 ```
 
-**Where is the form?** This is the amazing thing about Flask-WTF &mdash; by configuring the form as we did *in the Flask app,* we can generate a simple form with Bootstrap styles using nothing more than the template you see above.
+**Where is the form?** This is the amazing thing about Flask-WTF &mdash; by configuring the form as we did *in the Flask app,* we can generate a form with Bootstrap styles using nothing more than the template you see above.
 
 <img src="../images/rabbit_hat.png" alt="Drawing of magician pulling rabbit from hat">
 
@@ -148,7 +148,7 @@ We discussed the configuration of `NameForm` above.
 
 ## Examining the route function
 
-Before reading further, try out [a working version of this app](https://weimergeeks.com/flask_form/index.html).
+Before reading further, try out [a working version of this app](https://weimergeeks.com/flask_form/index.html). The complete code for the app is in this repo in the folder *actors_app*.
 
 1. You type an actor's name into the form and submit it.
 2. If the actor's name is in the data source, the app loads a detail page for that actor.
@@ -206,7 +206,7 @@ if form.validate_on_submit():
     name = form.name.data
 ```
 
-`validate_on_submit()` is a built-in function, called on `form` (our variable). **If it returns True,** the following commands and statements in the block will run. If not, the form is simply not submitted.
+`validate_on_submit()` is a built-in WTForms function, called on `form` (our variable). **If it returns True,** the following commands and statements in the block will run. If not, the form is simply not submitted, and invalid fields are flagged.
 
 `form.name.data` is the contents of the text input field represented by `name`. Perhaps we should review how we configured the form:
 
@@ -235,7 +235,7 @@ This if-statement is specific to this app. It checks whether the `name` (that wa
 return redirect( url_for('actor', id=id) )
 ```
 
-As far as using forms with Flask is concerned, you don't need to worry about the actors and their ids, etc. What is important is that the route function can be used to evaluate the data sent from the form. We check to see whether it matched any of the actors in a list, and *a different response* will be sent based on match or no match.
+As far as **using forms with Flask** is concerned, you don't need to worry about the actors and their ids, etc. What is important is that the route function can be used to *evaluate the data sent from the form.* We check to see whether it matched any of the actors in a list, and *a different response* will be sent based on match or no match.
 
 The final line in the route function calls the template *index.html* and passes three variables to it:
 
@@ -248,6 +248,8 @@ return render_template('index.html', names=names, form=form, message=message)
 [Sending form data](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data)
 
 [Flask-WTF documentation](https://flask-wtf.readthedocs.io/en/latest/index.html)
+
+[Complete WTForms documentation](https://wtforms.readthedocs.io/en/latest/index.html)
 
 [Flask-Bootstrap documentation](https://pythonhosted.org/Flask-Bootstrap/)
 
