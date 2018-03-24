@@ -4,7 +4,7 @@ When professionals deploy their Python web apps, nowadays they commonly deploy t
 
 One thing to understand, though, is that they often do not deploy a Python executable. That is, the site they upload to a web server is not the Flask app and its associated templates, etc., but rather a traditional website with hard-coded HTML files that has been *“baked out”* from Flask.
 
-In this document, we'll learn how to do that. Then we will also learn how to install a Flask app (one that has not been “baked out”) on a typical web hosting service such as [Reclaim Hosting](https://reclaimhosting.com/), using a simple cPanel service there.
+In this document, we'll learn how to do that. Then we will also learn how to install a Flask app (one that has not been “baked out”) on a typical web hosting service such as [Reclaim Hosting](https://reclaimhosting.com/), using a simple **cPanel** service there.
 
 ## “Baking it out” with Frozen-Flask
 
@@ -55,9 +55,9 @@ In Terminal, change into the directory for the Flask app and enter this command 
 python freeze.py
 ```
 
-Inside your Flask app folder, you’ll now see a new folder named *build*. Open it. Inside, you’ll see a folder that has the same name used in your Flask route (for example, song). Open that folder.
+**If freezing worked:** Inside your Flask app folder, you’ll now see a new folder named *build*. Open it. Inside *build*, you’ll see a folder that has the same name as your Flask app file (for example, *president*). Open that folder.
 
-There are all your files.
+There are all your files, created by Frozen-Flask.
 
 For an example, open the *pres_app* folder in this repo, find the *build* folder, and look inside.
 
@@ -67,13 +67,13 @@ Need to update the site? Make your edits, run *freeze.py* again, and re-deploy.
 
 ### Freezer errors
 
-If your app uses dynamic routes similar to this:
+**If freezing did not work:** This may happen because your app uses dynamic routes similar to this:
 
 ```python
 @app.route('/actor/<id>')
 ```
 
-You might need to add [a URL generator](http://pythonhosted.org/Frozen-Flask/#url-generators) to *freeze.py*.
+You might need to add [a URL generator](http://pythonhosted.org/Frozen-Flask/#url-generators) to the *freeze.py* file.
 
 For example:
 
