@@ -8,6 +8,18 @@ WTForms is “a flexible forms validation and rendering library for Python Web d
 * WTForms has built-in validation techniques.
 * WTForms can be combined with Bootstrap to help us make clean-looking, responsive forms for mobile and desktop screens.
 
+## Contents
+
+* [Setup for using forms in Flask](#setup-for-using-forms-in-flask)
+* [Imports for forms with Flask-WTF and Flask-Bootstrap](#imports-for-forms-with-flask-wtf-and-flask-bootstrap)
+* [Set up a form in a Flask app](#set-up-a-form-in-a-flask-app)
+   * [Configure the form](#configure-the-form)
+   * [Put the form in a route function](#put-the-form-in-a-route-function)
+   * [Put the form in a template](#put-the-form-in-a-template)
+* [Examining the route function](#examining-the-route-function)
+* [Conclusion](#conclusion)
+* [Resources](#resources)
+
 ## Setup for using forms in Flask
 
 We will install the **Flask-WTF** extension to help us work with forms in Flask. There are many extensions for Flask, and each one adds a different set of functions and capabilities. See the [list of Flask extensions](http://flask.pocoo.org/extensions/) for more.
@@ -28,7 +40,7 @@ This installation is done only once in any virtualenv. It is assumed you already
 
 ## Imports for forms with Flask-WTF and Flask-Bootstrap
 
-You will have a long list of imports at the top of your app file:
+You will have a long list of imports at the top of your Flask app file:
 
 ```python
 from flask import Flask, render_template, redirect, url_for
@@ -63,6 +75,8 @@ You can read more about `app.config['SECRET_KEY']` in [this StackOverflow post](
 ### Configure the form
 
 Next, we configure a form that inherits from Flask-WTF's `FlaskForm`. Python style dictates that a class starts with an uppercase letter and uses camel case, so here our new class is `NameForm`.
+
+In the class, we assign each form control to a unique variable. This form has only one text input field and one submit button.
 
 ```python
 class NameForm(FlaskForm):
@@ -206,7 +220,7 @@ if form.validate_on_submit():
     name = form.name.data
 ```
 
-`validate_on_submit()` is a built-in WTForms function, called on `form` (our variable). **If it returns True,** the following commands and statements in the block will run. If not, the form is simply not submitted, and invalid fields are flagged.
+`validate_on_submit()` is a built-in WTForms function, called on `form` (our variable). **If it returns True,** the following commands and statements in the block will run. If not, the form is simply not submitted, and invalid fields are flagged. It will return True if the form was filled in and submitted.
 
 `form.name.data` is the contents of the text input field represented by `name`. Perhaps we should review how we configured the form:
 
@@ -216,7 +230,7 @@ class NameForm(FlaskForm):
     submit = SubmitField('Submit')
 ```
 
-That `name` is the `name` in `form.name.data` &mdash; the contents of which we will now store in a new variable, `name`.
+That `name` is the `name` in `form.name.data` &mdash; the contents of which we will now store in a new variable, `name`. To put it another way: `name` now contains whatever the user typed into the text input field.
 
 ```python
 if name in names:
@@ -242,6 +256,14 @@ The final line in the route function calls the template *index.html* and passes 
 ```python
 return render_template('index.html', names=names, form=form, message=message)
 ```
+
+## Conclusion
+
+**Flask-WTF** provides convenient methods for working with forms in Flask. Forms can be built easily and also processed easily, with a minimum of code.
+
+Adding **Flask-Bootstrap** ensures that we can build mobile-friendly forms with a minium amount of effort.
+
+Note that it is possible to build a customized form layout using Bootstrap 3 styles in a Flask template, or to build a custom form with no Bootstrap styles. In either case, you cannot use `{{ wtf.quick_form(form) }}` but would instead write out all the form code in your Flask template as you would in a normal HTML file. To take advantage of WTForms, you would create the form class in the same way as shown above.
 
 ## Resources
 
