@@ -172,7 +172,7 @@ We discussed the configuration of `NameForm` above.
 
 ## Examining the route function
 
-Before reading further, try out [a working version of this app](https://weimergeeks.com/flask_form/index.html). The complete code for the app is in this repo in the folder *actors_app*.
+Before reading further, try out [a working version of this app](https://weimergeeks.com/flask_form/). The complete code for the app is in this repo in the folder *actors_app*.
 
 1. You type an actor's name into the form and submit it.
 2. If the actor's name is in the data source, the app loads a detail page for that actor.
