@@ -117,9 +117,15 @@ def index():
     return render_template('index.html', names=names, form=form, message=message)
 ```
 
+The crucial line is where we assign our configured form object to a new variable:
+
+```python
+form = NameForm()
+```
+
 ### Put the form in a template
 
-Before we break that down and explain it, let's look at the code in the template *index.html*:
+Before we break all that down and explain it, let's look at the code in the template *index.html*:
 
 ```html
 {% extends 'bootstrap/base.html' %}
