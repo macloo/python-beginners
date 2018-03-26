@@ -273,7 +273,9 @@ return render_template('index.html', names=names, form=form, message=message)
 
 Adding **Flask-Bootstrap** ensures that we can build mobile-friendly forms with a minimum amount of effort.
 
-Note that it is possible to build a customized form layout using Bootstrap 3 styles in a Flask template, or to build a custom form with no Bootstrap styles. In either case, you cannot use `{{ wtf.quick_form(form) }}` but would instead write out all the form code in your Flask template as you would in a normal HTML file. To take advantage of WTForms, you would still  create the form class in the same way as shown above.
+Note that it is possible to build a customized form layout using Bootstrap 3 styles in a Flask template, or to build a custom form with no Bootstrap styles. In either case, you cannot use `{{ wtf.quick_form(form) }}` but would instead write out all the form code in your Flask template as you would in a normal HTML file. To take advantage of WTForms, you would still  create the form class with `FlaskForm` in the same way as shown above.
+
+**IMPORTANT:** In early 2018, Bootstrap 4 replaced Bootstrap 3. The differences are significant; names and usage of styles have changed. For the time being, Flask-Bootstrap uses Bootstrap 3.3.7, so if you're writing Bootstrap styles into a Flask template, it is imperative that you use the [Bootstrap 3 documentation](https://getbootstrap.com/docs/3.3/css/).
 
 ## Resources
 
