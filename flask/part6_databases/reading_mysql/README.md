@@ -174,11 +174,15 @@ def socklist():
     return render_template('list.html', style=style, socks=socks)
 ```
 
-On the first page of the app, the user selects a *style* from the form. Submitting the form calls the route above, which passes that *style* in a SQL query to the database. The returned value, in the new variable *socks*, is passed to the template *list.html*, which generates a list of links to all the sock records that match that style.
+On the first page of the app, the user selects a *style* from the form. Submitting the form calls the route above, which passes that *style* in a SQL query to the database. The returned value, in the new variable `socks`, is passed to the template *list.html*, which generates a list of links to all the sock records that match that style.
 
 Remember, you can try the final app [here](https://weimergeeks.com/flask_db2/).
 
 Note that `Sock` is **the Python class** I made that represents the table (*socks*) in my MySQL database.
+
+```python
+socks = Sock.query.filter_by(style=style).order_by(Sock.name).all()
+```
 
 Here's the Flask-SQLAlchemy documentation for [querying the database](http://flask-sqlalchemy.pocoo.org/2.1/queries/#querying-records).
 
@@ -196,7 +200,7 @@ def sock(id):
 
 This time, the database is queried for ONE record, which matches the id in the clicked link. A 404 (file not found) error results if for any reason no record exists with that id.
 
-The template for this final route uses every field for the selected sock &mdash; name, style, color, quantity, price, and updated &mdash; and presents the information in a Bootstrap-style table.
+The template for this final route uses every field for the selected sock &mdash; name, style, color, quantity, price, and updated &mdash; and presents the information in a Bootstrap-styled table.
 
 The final app is [here](https://weimergeeks.com/flask_db2/). All the code for the app is here in this repo in the [flask-db-read](flask-db-read) folder.
 
