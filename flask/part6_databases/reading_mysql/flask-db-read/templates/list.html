@@ -1,0 +1,39 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+
+{% block title %}
+Sock List
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <h1>List of Socks</h1>
+
+      <p class="lead">This is a list of all the socks of the
+				<strong>"{{ style }}"</strong> style. Select the one about which you want more information.</p>
+
+			<ul>
+				<!-- here is a for-loop to give us all the socks -->
+				{% for sock in socks %}
+
+				<li><a href="{{ url_for('sock', id=sock.id) }}">{{ sock.name }}</a></li>
+
+				{% endfor %}
+			</ul>
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}
