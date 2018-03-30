@@ -2,6 +2,18 @@
 
 The prerequisites for this tutorial are explained in the README in [part6_databases](../../part6_databases) in this repo. It's essential to get your database connection working without errors before you try doing more with the database and Flask.
 
+## Contents
+
+* [Intro](#intro)
+* [Imports](#imports)
+* [The database connection](#the-database-connection)
+* [Configure the database model for SQLAlchemy](#configure-the-database-model-for-sqlalchemy)
+* [A Flask form](#a-flask-form)
+* [The Flask routes](#the-flask-routes)
+* [Conclusion](#conclusion)
+
+## Intro
+
 The MySQL database used in this tutorial has only one table:
 
 <img src="../../images/mysql_table.png" alt="MySQL database table structure" width="75%">
@@ -121,7 +133,9 @@ class SockForm(FlaskForm):
 
 ## The Flask routes
 
-This app has three routes and three templates. In terms of how the local browser sees the routes, they are:
+This app has three routes and three templates. Here is where we see Flask-SQLAlchemy used for SQL queries &mdash; in the route functions.
+
+In terms of how the local browser sees the routes, they are:
 
 * localhost:5000/
 * localhost:5000/list
