@@ -204,4 +204,4 @@ The final app is [here](https://weimergeeks.com/flask_db2/). All the code for th
 
 In this basic Flask app, we queried a MySQL database to find and retrieve data from all records that matched a given criterion (*style*), and we also queried that database to retrieve all fields from one record by matching its id.
 
-You have not done yet *written to* the database. That comes next, in [writing_mysql](writing_mysql).
+You have not done yet *written to* the database. That comes next, in [writing_mysql](../writing_mysql).
