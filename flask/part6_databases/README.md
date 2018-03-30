@@ -80,7 +80,7 @@ Open a new tab in your web browser and enter `localhost:5000/` in the address ba
 * Your database name is wrong in line 19.
 * The socket (line 21) does not match what you need on your computer.
 
-<img src="../images/mysql_permissions.png" alt="MySQL permissions" width="50%">
+<img src="../images/mysql_permissions.png" alt="MySQL permissions">
 
 ### About using XAMPP for MySQL databases
 
