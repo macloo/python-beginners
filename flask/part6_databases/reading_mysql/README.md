@@ -4,13 +4,13 @@ The prerequisites for this tutorial are explained in the README in [part6_databa
 
 The MySQL database used in this tutorial has only one table:
 
-<img src="../../images/mysql_table.png" alt="MySQL database table structure">
+<img src="../../images/mysql_table.png" alt="MySQL database table structure" width="75%">
 
-*MySQL database:* sockmarket *Structure for the table* socks *viewed in phpMyAdmin.*
+*Above &mdash; MySQL database:* sockmarket *Structure for the table* socks *viewed in phpMyAdmin.*
 
 We will thoroughly test the app locally before deploying it to a live server.
 
-Let's examine the *app.py* file. The final app is [here](https://weimergeeks.com/flask_db2/). The code is all here in this repo in the *flask-db-read* folder.
+Let's examine the *app.py* file. The final app is [here](https://weimergeeks.com/flask_db2/). The code is all here in this repo in the [flask-db-read](flask-db-read) folder.
 
 ## Imports
 
@@ -161,6 +161,8 @@ def socklist():
 ```
 
 On the first page of the app, the user selects a *style* from the form. Submitting the form calls the route above, which passes that *style* in a SQL query to the database. The returned value, in the new variable *socks*, is passed to the template *list.html*, which generates a list of links to all the sock records that match that style.
+
+Remember, you can try the final app [here](https://weimergeeks.com/flask_db2/).
 
 Note that `Sock` is **the Python class** I made that represents the table (*socks*) in my MySQL database.
 
