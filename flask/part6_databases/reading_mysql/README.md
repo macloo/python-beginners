@@ -1,6 +1,6 @@
 # Reading from a MySQL database
 
-The prerequisites for this tutorial are explained in the README in [part6_databases](part6_databases) in this repo. It's essential to get your database connection working without errors before you try doing more with the database and Flask.
+The prerequisites for this tutorial are explained in the README in [part6_databases](../../part6_databases) in this repo. It's essential to get your database connection working without errors before you try doing more with the database and Flask.
 
 The MySQL database used in this tutorial has only one table:
 
@@ -37,7 +37,7 @@ The "secret key" is explained in the [Flask forms](../../part4_forms) section of
 
 ## The database connection
 
-Most of this was explained in the README in [part6_databases](part6_databases) in this repo. Note that the username and password for the database will be different on a live web server.
+Most of this was explained in the README in [part6_databases](../../part6_databases) in this repo. Note that the username and password for the database will be different on a live web server.
 
 ```python
 # connect to local database
