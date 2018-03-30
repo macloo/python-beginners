@@ -181,3 +181,13 @@ def sock(id):
 ```
 
 This time, the database is queried for ONE record, which matches the id in the clicked link. A 404 (file not found) error results if for any reason no record exists with that id.
+
+The template for this final route uses every field for the selected sock &mdash; name, style, color, quantity, price, and updated &mdash; and presents the information in a Bootstrap-style table.
+
+The final app is [here](https://weimergeeks.com/flask_db2/). All the code for the app is here in this repo in the [flask-db-read](flask-db-read) folder.
+
+## Conclusion
+
+In this basic Flask app, we queried a MySQL database to find and retrieve data from all records that matched a given criterion (*style*), and we also queried that database to retrieve all fields from one record by matching its id.
+
+You have not done yet *written to* the database. That comes next, in [writing_mysql](writing_mysql).
