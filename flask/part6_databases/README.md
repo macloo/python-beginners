@@ -4,6 +4,16 @@
 
 [Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/) is an *extension* for Flask that adds SQLAlchemy to your Flask app.
 
+## Contents
+
+* [Setup for using Flask-SQLAlchemy](#setup-for-using-flask-sqlalchemy)
+* [Introduction: Basics of using a database with Flask](#introduction-basics-of-using-a-database-with-flask)
+* [Make a checklist for your database project](#make-a-checklist-for-your-database-project)
+* [How to connect a MySQL database to a Flask app](#how-to-connect-a-mysql-database-to-a-flask-app)
+  * [What could go wrong?](#what-could-go-wrong)
+  * [About using XAMPP for MySQL databases](#about-using-xampp-for-mysql-databases)
+* [Conclusion](#conclusion)
+
 ## Setup for using Flask-SQLAlchemy
 
 We will install the **Flask-SQLAlchemy** extension to enable us to work with a SQL database in Flask. There are many extensions for Flask; each one adds a different set of functions and capabilities. See the [list of Flask extensions](http://flask.pocoo.org/extensions/) for more.
