@@ -89,3 +89,9 @@ When we created MySQL databases at the beginning of my course, we used [XAMPP](h
  However, if you've downloaded the **VM** version of XAMPP for Mac (not an issue for Windows on Linux), the code in *local_db_test.py* is not going to work. The solution is to [go to this XAMPP download page](https://www.apachefriends.org/download.html#download-apple) and download the highest-numbered version that does NOT say "XAMPP-VM."
 
  If you already installed the VM version, uninstall it and install the non-VM version.
+
+## Conclusion
+
+This has been a basic introduction to getting started with Flask-SQLAlchemy and a MySQL database.
+
+You have not done any reading from or writing to the database yet. That comes next, in [reading_mysql](reading_mysql).
