@@ -174,11 +174,13 @@ def socklist():
     return render_template('list.html', style=style, socks=socks)
 ```
 
-On the first page of the app, the user selects a *style* from the form. Submitting the form calls the route above, which passes that *style* in a SQL query to the database. The returned value, in the new variable `socks`, is passed to the template *list.html*, which generates a list of links to all the sock records that match that style.
+On the first page of the app, the user selects a *style* from the form. Submitting the form calls the route above, which passes that *style* in a SQL query to the database. All records with that style are retrieved.
+
+The retrieved records, in the new variable `socks`, are passed to the template *list.html*, which generates a list of links to all the sock records that matched the style.
 
 Remember, you can try the final app [here](https://weimergeeks.com/flask_db2/).
 
-Note that `Sock` is **the Python class** I made that represents the table (*socks*) in my MySQL database.
+Note that `Sock` is **the Python class** I made (the database model) that represents the table (*socks*) in my MySQL database.
 
 ```python
 socks = Sock.query.filter_by(style=style).order_by(Sock.name).all()
