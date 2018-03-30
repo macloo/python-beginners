@@ -82,6 +82,8 @@ Open a new tab in your web browser and enter `localhost:5000/` in the address ba
 
 <img src="../images/mysql_permissions.png" alt="MySQL permissions">
 
+*Note that this is a local MySQL database, running on the same computer as the Flask app. The database* sockmarket *has only one user, root, and no password. This is acceptable on a local machine ONLY. Always use a username and a strong password on a live web server!*
+
 ### About using XAMPP for MySQL databases
 
 When we created MySQL databases at the beginning of my course, we used [XAMPP](https://www.apachefriends.org/index.html) to do so. This is a great option and works pretty much identically on Mac, Windows and Linux. Unlike [MAMP](https://www.mamp.info/), there's no paid version of XAMPP. XAMPP is just plain free.
