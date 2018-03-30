@@ -4,7 +4,7 @@ The prerequisites for this tutorial are explained in the README in [part6_databa
 
 The MySQL database used in this tutorial has only one table:
 
-<img src="../images/mysql_table.png" alt="MySQL database table structure">
+<img src="../../images/mysql_table.png" alt="MySQL database table structure">
 
 *MySQL database:* sockmarket *Structure for the table* socks *viewed in phpMyAdmin.*
 
