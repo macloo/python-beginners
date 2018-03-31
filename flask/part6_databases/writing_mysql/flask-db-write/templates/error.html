@@ -1,0 +1,22 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+{{ pagetitle }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <h1>{{ pageheading }}</h1>
+
+      <p><a href="{{ url_for('sock_table') }}">View socks table</a></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

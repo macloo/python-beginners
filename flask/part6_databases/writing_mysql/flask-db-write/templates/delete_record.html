@@ -1,0 +1,65 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+
+{% block title %}
+Delete Database Record
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <!-- note, the id is not used _in_ the template, although the
+		       route requires the id -->
+
+      <h1>{{ the_sock.name }}</h1>
+
+			<table class="small-table">
+				<tr>
+					<th>Style:</th>
+					<td>{{ the_sock.style }}</td>
+				</tr><tr>
+					<th>Color:</th>
+					<td>{{ the_sock.color }}</td>
+				</tr><tr>
+					<th>Quantity:</th>
+					<td>{{ the_sock.quantity }}</td>
+				</tr><tr>
+					<th>Price:</th>
+					<td>${{ the_sock.price }}</td>
+				</tr><tr>
+					<th>Updated:</th>
+					<td>{{ the_sock.updated }}</td>
+				</tr>
+			</table>
+
+
+			<p class="lead">Are you sure you want to permanently delete this record?</p>
+
+			<form method="post" action="{{ url_for('deletion_result') }}" role="form" name="delete_form" id="delete_form">
+				{{ form2.csrf_token }}
+				{{ form2.id_field(value=id) }}
+				{{ form2.purpose(value='deleted') }}
+				{{ form2.submit(class="btn btn-info space-below-btn") }}
+			</form>
+
+			<p><a href="{{ url_for('sock_table') }}">Return to table</a> (Nothing will be changed)</p>
+
+      <!-- notice how the URL in the link above is rendered for
+           Flask - it needs to name the FUNCTION, not the route
+					 and NOT the template!
+      -->
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

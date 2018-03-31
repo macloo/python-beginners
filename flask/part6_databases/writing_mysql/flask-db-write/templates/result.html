@@ -1,0 +1,31 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+
+{% block title %}
+Record {{ result }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <h1>Record {{ result }}</h1>
+
+      <p class="lead">The record for sock <strong>{{ sockname }}</strong> has been {{ result }}.</p>
+
+	  <p><a href="{{ url_for('sock_table') }}">View all socks</a></p>
+
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

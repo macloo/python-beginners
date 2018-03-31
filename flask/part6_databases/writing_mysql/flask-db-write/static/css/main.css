@@ -1,0 +1,39 @@
+/* to override Bootstrap styles for some things */
+
+h1 {
+  font-weight: bold;
+  color: #31B0D5;
+  padding-bottom: 0.5em;
+}
+
+.space-above {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.space-below {
+  margin-bottom: 40px;
+}
+
+.space-below-btn {
+  margin-bottom: 10px;
+}
+
+.colorful {
+  background: #69D6FA;
+  padding: 1em;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.small-table th, .small-table td {
+  font-size: 1.5em;
+  padding-bottom: 10px;
+  padding-right: 1em;
+}
+
+.small-table {
+  margin-bottom: 20px;
+}

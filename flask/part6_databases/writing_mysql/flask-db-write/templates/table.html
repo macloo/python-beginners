@@ -1,0 +1,69 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+
+{% block title %}
+All the Socks
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+			<h1>All the Socks</h1>
+
+			<p>To update or delete a row, select it below and then click the Submit button at the bottom of the table. Or you may <a href="{{ url_for('add') }}">add a new sock</a>.</p>
+
+			<!-- start form and table - not a WTForm -->
+			<form method="POST" action="{{ url_for('edit') }}" role="form" name="table_form" id="table_form">
+
+			<table class="table table-responsive">
+				<!-- header row with column names from db -->
+				<thead>
+				<tr class="info">
+						<th class="center-align">Select</th>
+						<th>Name</th>
+						<th>Style</th>
+						<th>Color</th>
+						<th>Quantity</th>
+						<th>Price</th>
+						<th>Updated</th>
+				</tr>
+			</thead>
+			<tbody class="table-striped">
+
+				{% for sock in socks %}
+
+				<tr>
+					<!-- the database record id becomes the id and the value
+						 of the radio button -->
+				    <td class="center-align"><input type="radio" name="id" id="{{ sock.id }}" value="{{ sock.id }}"></td>
+
+				    <td>{{ sock.name }}</td>
+				    <td>{{ sock.style }}</td>
+				    <td>{{ sock.color }}</td>
+				    <td>{{ sock.quantity }}</td>
+				    <td>${{ sock.price }}</td>
+				    <td>{{ sock.updated }}</td>
+				</tr>
+
+				{% endfor %}
+			</tbody>
+			</table>
+
+		<input type="submit" class="btn btn-info btn-lg space-below" id="submit" value="Submit One Row for Editing">
+		</form>
+		<!-- end form and table -->
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
