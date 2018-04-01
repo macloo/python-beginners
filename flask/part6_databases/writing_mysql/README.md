@@ -16,13 +16,13 @@ The purpose of this section (and its Flask app) is to show how to write to a MyS
 2. Update a record: Retrieve an existing record and allow the user to edit any part of it, then write the changes to the database.
 3. Delete a selected record.
 
-For option 1, we do not have to find a record in the database. We need an empty form, and the user fills it in and submits it.
+For option 1, we do not have to find a record in the database. We give the user an empty form, and the user fills it in and submits it. (Alternatively, new records could be added to the database from a file, without using a form. That is not done in this app.)
 
 For options 2 and 3, we must identify the existing record.
 
-For option 2, we can use the same form used for option 1, but we must fill it in with all the existing data. Then the user changes whichever items need editing and submits the form.
+For option 2, we can use the same form used for option 1, but we must fill it in with all the existing data. Then the user changes whichever items need editing and submits the form. (Alternatively, a script could check a file to find records that had changed and then update them without using a form.)
 
-For option 3, after identifying the desired record, we must remove it completely from the database.
+For option 3, after identifying the desired record, we need to remove it completely from the database.
 
 # The forms
 
@@ -58,7 +58,7 @@ from datetime import date
 
 ## Examining the Flask route functions
 
-Let's see what each route does, with particular attention to when the database is written to.
+Let's see what each route does, with particular attention to when the Flask app *writes to* the database.
 
 ### View the entire database as a table.
 
@@ -252,4 +252,4 @@ Note that `record` is a new variable that was assigned just before those two lin
 
 ## Conclusion
 
-TK 
+TK
