@@ -216,7 +216,7 @@ In the `else` block, we ensure that error messages are written if the user fille
 
 <img src="../../images/form_error_messages.png" alt="The form supplies error messages" width="50%">
 
-*The error messages displayed above are encoded in the AddRecord() class, in* app.py.
+*The error messages displayed above are encoded in the AddRecord() class, in app.py.*
 
 ### Delete a record, step 2.
 
@@ -292,4 +292,14 @@ Note that `record` is a new variable that was assigned just before those two lin
 
 ## Conclusion
 
-TK
+In this section, we examined six Flask routes that together form a system for adding, updating or deleting database records.
+
+We used the following short, simple commands from **Flask-SQLAlchemy**:
+
+* `db.session.delete()`
+* `db.session.add()`
+* `db.session.commit()`
+
+We used four different web forms to do the work of writing to the database, whether we were selecting an existing record to be deleted or edited, or creating an entirely new record to add to the database. The forms are styled with **Flask-Bootstrap** and configured with **Flask-WTF**.
+
+We also noted that updates to a database can be down without forms if the updates are coming in as files &mdash; for example, a weekly or monthly data dump in the form of a CSV or JSON file.
