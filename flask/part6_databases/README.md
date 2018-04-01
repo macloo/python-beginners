@@ -50,7 +50,7 @@ Note that you won't write a straightforward SQL query; you will use [Flask-SQLAl
 socks = Sock.query.filter_by(style='knee-high').order_by(Sock.name).all()
 ```
 
-The **Flask-SQLAlchemy** statement to the right of the equals sign is equivalent to this standard SQL statement:
+The **Flask-SQLAlchemy** statement to the right of the equals sign, above, is equivalent to this standard SQL statement:
 
 ```sql
 SELECT * FROM socks WHERE style="knee-high" ORDER BY name
@@ -58,7 +58,7 @@ SELECT * FROM socks WHERE style="knee-high" ORDER BY name
 
 (It is assumed you already know how to write basic SQL queries.)
 
-In addition to *reading from* your SQL database, your app might allow people to *write to* the database. In that case, you will probably want people to log in securely.
+In addition to *reading from* your SQL database, your app might allow people to *write to* the database. In that case, you will probably want people to log in securely. Alternatively, you might set up a Python script that updates your database on a regular schedule (e.g., writing in new records from a monthly data dump).
 
 You might write a Python script to populate your database from the contents of a CSV file. This would be fairly simple if you only need to run it once. If you need to add records repeatedly (say, once per month) to an existing database, you might need to check whether you are *duplicating records that are already there.* If you need to check for existing records and update them, that’s more challenging.
 
@@ -70,7 +70,7 @@ You will not necessarily need forms if your app only *reads from* the database.
 
 Figure out what your own app will need to do:
 
-1. Create a database (*optional*; only once)
+1. Create a database (*optional,* because it might already exist; do this only once)
 2. Connect to the database (required)
 3. Read from the database: Query
    * Display all records?
