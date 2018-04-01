@@ -6,6 +6,19 @@ Prerequisites for this tutorial are explained in the README in [part6_databases]
 
 ## Contents
 
+* [Add, update or delete a database record](#add-update-or-delete-a-database-record)
+* [The forms](#the-forms)
+* [Things carried over from the previous section](#things-carried-over-from-the-previous-section)
+* [Examining the Flask route functions](#examining-the-flask-route-functions)
+   * [View the entire database as a table.](#view-the-entire-database-as-a-table)
+   * [A choice to edit or delete the selected record.](#a-choice-to-edit-or-delete-the-selected-record)
+   * [Update a record, step 1.](#update-a-record-step-1)
+   * [Delete a record, step 1.](#delete-a-record-step-1)
+   * [Update a record, step 2.](#update-a-record-step-2)
+   * [Delete a record, step 2.](#delete-a-record-step-2)
+   * [Add a new record to the database.](#add-a-new-record-to-the-database)
+* [Conclusion](#conclusion)
+
 ## Add, update or delete a database record
 
 The purpose of this section (and its Flask app) is to show how to write to a MySQL database using **Flask-SQLAlchemy** commands.
