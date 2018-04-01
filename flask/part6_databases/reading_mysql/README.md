@@ -24,6 +24,8 @@ We will thoroughly test the app locally before deploying it to a live server.
 
 Let's examine the *app.py* file. The final app is [here](https://weimergeeks.com/flask_db2/). The code is all here in this repo in the [flask-db-read](flask-db-read) folder.
 
+The Flask app discussed below is [app.py](flask-db-read/app.py).
+
 ## Imports
 
 In addition to Flask, Flask-SQLAlchemy, and PyMySQL, we also import Flask-WTF for forms and Flask-Bootstrap for CSS styles.
@@ -49,7 +51,9 @@ The "secret key" is explained in the [Flask forms](../../part4_forms) section of
 
 ## The database connection
 
-Most of this was explained in the README in [part6_databases](../../part6_databases) in this repo. Note that the username and password for the database will be different on a live web server.
+Most of this was explained in the README in [part6_databases](../../part6_databases) in this repo.
+
+**Note that the username and password for the database will be different on a live web server.**
 
 ```python
 # connect to local database
@@ -74,11 +78,11 @@ bootstrap = Bootstrap(app)
 
 Each table in the database needs a Python class to be created for it. Name the class after the table. Starting with an uppercase letter and using camel case (not underscores) is Python style for classes. This database has only ONE table, *socks*.
 
-This is called [Declaring Models](http://flask-sqlalchemy.pocoo.org/2.1/models/) in the Flask-SQLAlchemy documentation. Note that we’re doing it in the Flask-SQLAlchemy manner, which differs from the straight-up SQLAlchemy way.
+This is called [Declaring Models](http://flask-sqlalchemy.pocoo.org/2.1/models/) in the **Flask-SQLAlchemy** documentation. Note that we’re doing it in the Flask-SQLAlchemy manner, which differs from the straight-up SQLAlchemy way.
 
 The class inherits from `db.Model` (in SQLAlchemy), so don't change `db.Model`!
 
-`__tablename__ = 'socks'`: Do not alter `__tablename__ =`; the right side value must exactly match the table name in your database.
+`__tablename__ = 'socks'`: Do not alter `__tablename__ =`; and note, the right side value must exactly match the table name in your database.
 
 Identify all of your columns by both name and data type. Make sure column names match exactly what you have in your database. Remember that Python is case-sensitive, so note where uppercase is used, and don't change it.
 
@@ -111,13 +115,13 @@ That's the entire class for *one table*. If you're unfamiliar with classes in Py
 
 Note the repetition of the column names in `def __init__()`.
 
-`return '<Sock %s>' % self.name`: Replace *Sock* with whatever your class name is. If you don’t have `self.name` in your `def __init__()`, then substitute the title or other column heading from your table that best identifies an individual record in your database.
+`return '<Sock %s>' % self.name`: Replace *Sock* with whatever **your class name** is. If you don’t have `self.name` in your `def __init__()`, then substitute the title or other column heading from your table that best identifies an individual record in your database. (This does not need to be the primary key field.)
 
 Compare to [this simple example](http://flask-sqlalchemy.pocoo.org/2.1/models/#simple-example).
 
 ## A Flask form
 
-How to create forms with the Flask-WTF extension is explained in the [Flask forms](../../part4_forms) section of this repo.
+How to create forms with the Flask-WTF extension is explained in the [Flask forms](../../part4_forms) section of this repo. I have kept forms to a bare minimum in this example, but there are lots of forms in [the next example](../writing_mysql).
 
 Here we configure a small, simple form with only a select menu and a submit button. The select menu choices correspond to the *style* field in the database.
 
@@ -131,9 +135,11 @@ class SockForm(FlaskForm):
     submit = SubmitField('Submit')
 ```
 
+That form appears in the Flask template [index.html](flask-db-read/templates/index.html). It is part of the first route function.
+
 ## The Flask routes
 
-This app has three routes and three templates. Here is where we see Flask-SQLAlchemy used for SQL queries &mdash; in the route functions.
+This app has three main routes and three main templates (not including the error routes). Here is where we see **Flask-SQLAlchemy** used for SQL queries &mdash; in the route functions.
 
 In terms of how the local browser sees the routes, they are:
 
@@ -159,28 +165,28 @@ The first route does not use the database at all. When the form there is submitt
 {{ wtf.quick_form(form, action=url_for("socklist"), method="post") }}
 ```
 
-Here's that second route:
+Here is that second route:
 
 ```python
 @app.route('/list', methods=['POST'])
 def socklist():
     # 'select' is the name quick_form assigned automatically to
-    # the select menu
+    # the select menu in index.html
     style = request.form['select']
-    # now we know which style was selected in the form
+    # now we know which style was selected in the submitted form
     # here's a SQLAlchemy query -
     socks = Sock.query.filter_by(style=style).order_by(Sock.name).all()
     # and we pass the results to the template
     return render_template('list.html', style=style, socks=socks)
 ```
 
-On the first page of the app, the user selects a *style* from the form. Submitting the form calls the route above, which passes that *style* in a SQL query to the database. All records with that style are retrieved.
+On the first page of the app (template: *index.html*), the user selects a *style* from the form. Submitting the form calls the route above, which passes that *style* in a SQL query to the database. All records with that style are retrieved.
 
-The retrieved records, in the new variable `socks`, are passed to the template *list.html*, which generates a list of links to all the sock records that matched the style.
+The retrieved records, in the new variable `socks`, are passed to the template *list.html*, which generates a list of links to all the sock records that matched the style. Depending on which style was selected, you get a completely different list of socks.
 
 Remember, you can try the final app [here](https://weimergeeks.com/flask_db2/).
 
-Note that `Sock` is **the Python class** I made (the database model) that represents the table (*socks*) in my MySQL database.
+Note that `Sock` is **the Python class** I made (the database model) that represents the table (*socks*) in my MySQL database. The class (uppercase *S*) is used twice in the Flask-SQLAlchemy query to the database:
 
 ```python
 socks = Sock.query.filter_by(style=style).order_by(Sock.name).all()
