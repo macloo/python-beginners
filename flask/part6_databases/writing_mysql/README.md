@@ -214,7 +214,7 @@ db = SQLAlchemy(app)
 
 In the `else` block, we ensure that error messages are written if the user filled any form fields with invalid data, and the form is not submitted. We have to replace the form's own data each time the form submission fails and the error messages are written. That's why assignments in the `else` block (such as `form3.name.data`) are different from those in the `if` block (such as `request.form['name']`).
 
-<img src="../../images/form_error_messages.png" alt="The form supplies error messages" width="75%">
+<img src="../../images/form_error_messages.png" alt="The form supplies error messages" width="50%">
 
 *The error messages displayed above are encoded in the AddRecord() class, in* app.py.
 
