@@ -183,13 +183,40 @@ db.session.commit()
 
 In that one small line, you get SQL-injection protection, transaction integrity, and all the tricky database things that require a lot more code with other languages and systems (such as PHP) &mdash; thanks to **Flask-SQLAlchemy**.
 
-In the `else` block, we ensure that error messages are written if the user filled any form fields with invalid data, and the form is not submitted.
+Before committing, we retrieved the desired record (using a selected ID) and stored the entire record in a new variable, `the_sock`:
+
+```python
+the_sock = Sock.query.filter_by(id=id).first()
+```
+
+We also *replaced* each field in the record with the data submitted in the form:
+
+```python
+the_sock.name = request.form['name']
+the_sock.style = request.form['style']
+the_sock.color = request.form['color']
+the_sock.quantity = request.form['quantity']
+the_sock.price = request.form['price']
+the_sock.updated = stringdate()
+```
+
+And then we committed the changes:
+
+```python
+db.session.commit()
+```
 
 Remember that `db` was assigned near the top of the app:
 
 ```python
 db = SQLAlchemy(app)
 ```
+
+In the `else` block, we ensure that error messages are written if the user filled any form fields with invalid data, and the form is not submitted. We have to replace the form's own data each time the form submission fails and the error messages are written. That's why assignments in the `else` block (such as `form3.name.data`) are different from those in the `if` block (such as `request.form['name']`).
+
+<img src="../../images/form_error_messages.png" alt="The form supplies error messages" width="75%">
+
+*The error messages displayed above are encoded in the AddRecord() class, in* app.py.
 
 ### Delete a record, step 2.
 
