@@ -103,6 +103,7 @@ Open a new tab in your web browser and enter `localhost:5000/` in the address ba
 ### What could go wrong?
 
 * You forgot to install PyMySQL or Flask-SQLAlchemy in your virtualenv.
+* Your virtualenv has not been activated.
 * Your username and/or password for the database are wrong in line 16. If you changed them, maybe you shouldn’t have.
 * Your database name is wrong in line 19.
 * The socket (line 21) does not match what you need on your computer.
