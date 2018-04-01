@@ -44,11 +44,27 @@ Your database may have one table, or more than one table. That depends on what y
 
 Your app might only *read from* your SQL database. You can write SQL queries to accomplish this &mdash; use **Flask-SQLAlchemy** commands to do so.
 
-Your app might allow people to *write to* your SQL database. In that case, you will probably want people to log in securely.
+Note that you won't write a straightforward SQL query; you will use [Flask-SQLAlchemy syntax](http://flask-sqlalchemy.pocoo.org/2.3/queries/#querying-records) instead. For example:
+
+```python
+socks = Sock.query.filter_by(style='knee-high').order_by(Sock.name).all()
+```
+
+The **Flask-SQLAlchemy** statement to the right of the equals sign is equivalent to this standard SQL statement:
+
+```sql
+SELECT * FROM socks WHERE style="knee-high" ORDER BY name
+```
+
+(It is assumed you already know how to write basic SQL queries.)
+
+In addition to *reading from* your SQL database, your app might allow people to *write to* the database. In that case, you will probably want people to log in securely.
 
 You might write a Python script to populate your database from the contents of a CSV file. This would be fairly simple if you only need to run it once. If you need to add records repeatedly (say, once per month) to an existing database, you might need to check whether you are *duplicating records that are already there.* If you need to check for existing records and update them, that’s more challenging.
 
-If people are writing into your database, you will want to give them a web form, or forms, for doing so. See [part4_forms](../part4_forms) if you need to create a web form in your Flask app.
+If people are *writing into* your database, you will want to give them a web form, or forms, for doing so. See [part4_forms](../part4_forms) if you need to create a web form in your Flask app.
+
+You will not necessarily need forms if your app only *reads from* the database.
 
 ## Make a checklist for your database project
 
@@ -62,6 +78,7 @@ Figure out what your own app will need to do:
    * Search for multiple records?
    * Search for one record at a time?
 4. Write to the database
+   * Are web forms needed?
 5. Allow users to write to the database
    * Insert a new record?
    * Update an existing record?
