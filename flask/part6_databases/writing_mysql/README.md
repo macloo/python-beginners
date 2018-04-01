@@ -87,6 +87,10 @@ def edit():
 
 Here we also do not write to the database. The function expects the HTTP request to have come from a form (`methods=['POST']`). The form will have sent the ID of one database record. Two forms are in the template, although the user sees only their submit buttons &mdash; the ID is in a hidden field in each form, and each form is configured to call *a different route*.
 
+If the route is called without a secure form submission, an error route (405) is called.
+
+<img src="../../images/error.png" alt="Result of error in route" width="75%">
+
 See the template [sock.html](flask-db-write/templates/sock.html).
 
 ### Update a record, step 1.
