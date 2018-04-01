@@ -65,6 +65,6 @@ Example files are included for writing scraped data to CSV files and to a MySQL 
 
 ## Flask
 
-Students are introduced to Flask, a Python web framework, in the fifth week of Python. See the README in the [flask](flask) folder for details.
+Students are introduced to Flask, a Python framework, in the fifth week of Python. See the README in the [flask](flask) folder for details.
 
 This section has several parts, explaining templates, app deployment, **Flask-WTF** forms, and **Flask-SQLAlchemy** for database apps.
