@@ -2,6 +2,8 @@
 
 Parts of the app described here are duplicated from the app explained in [reading_mysql](../reading_mysql), so those parts will not be repeated here.
 
+You can use a live version of this app [here](https://weimergeeks.com/flask_dbw/).
+
 Prerequisites for this tutorial are explained in the README in [part6_databases](../../part6_databases) in this repo. It's essential to get your database connection working without errors before you try doing more with the database and Flask.
 
 ## Contents
@@ -40,6 +42,8 @@ For option 3, after identifying the desired record, we need to remove it complet
 # The forms
 
 This Flask app includes four forms. Three of those are **Flask-WTF** forms as described in [part4_forms](../../part4_forms) in this repo.
+
+Try the live app [here](https://weimergeeks.com/flask_dbw/).
 
 The first form we see is actually a table containing all the contents of the MySQL database. Each record row begins with a radio button, allowing the user to select one (and only one) record for editing or deleting. This form is built from the database using Jinja2 template commands in the template file [table.html](flask-db-write/templates/table.html). The value of the radio button control is the record ID from the database.
 
@@ -83,6 +87,8 @@ def sock_table():
 ```
 
 Here we do not write to the database; we simply view all the records. The Flask-SQLAlchemy query is equivalent to `SELECT * FROM socks ORDER BY name`.
+
+That writes the [first page](https://weimergeeks.com/flask_dbw/) of the live app.
 
 ### A choice to edit or delete the selected record.
 
@@ -266,6 +272,8 @@ You can read up on [how a SQLAlchemy session works](http://docs.sqlalchemy.org/e
 ### Add a new record to the database.
 
 This is similar to the `update_result()` function above, but it's simpler because we don't get anything *from* the database &mdash; not even an ID. We give the user an empty form to fill in, and we write error messages on the form if it fails to validate when they try to submit it.
+
+View this page live [here](https://weimergeeks.com/flask_dbw/add).
 
 ```python
 # add a new sock to the database
