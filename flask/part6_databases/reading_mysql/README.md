@@ -208,7 +208,7 @@ def sock(id):
 
 This time, the database is queried for ONE record, which matches the id in the clicked link. A 404 (file not found) error results if for any reason no record exists with that id.
 
-The template for this final route uses every field for the selected sock &mdash; name, style, color, quantity, price, and updated &mdash; and presents the information in a Bootstrap-styled table.
+The template for this final route ([sock.html](flask-db-read/templates/sock.html)) uses every field for the selected sock &mdash; name, style, color, quantity, price, and updated &mdash; and presents the information in a Bootstrap-styled table.
 
 The final app is [here](https://weimergeeks.com/flask_db2/). All the code for the app is here in this repo in the [flask-db-read](flask-db-read) folder.
 
