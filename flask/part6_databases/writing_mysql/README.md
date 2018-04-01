@@ -89,7 +89,7 @@ Here we also do not write to the database. The function expects the HTTP request
 
 If the route is called without a secure form submission, an error route (405) is called.
 
-<img src="../../images/error.png" alt="Result of error in route" width="75%">
+<img src="../../images/error_route.png" alt="Result of error in route" width="75%">
 
 See the template [sock.html](flask-db-write/templates/sock.html).
 
