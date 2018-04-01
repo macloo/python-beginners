@@ -107,6 +107,15 @@ def update():
 
 Still not writing to the database, although now we are close to it &mdash; here the user sees a form filled in with the complete contents of one record. This record was selected from the big table, and the user chose “Update This Record.” The ID for the selected record is passed to this route by the update form (form1) in [sock.html](flask-db-write/templates/sock.html).
 
+Let's take a moment to look at how Flask takes a submitted value (`id`) from the form in the function shown above:
+
+```python
+id = request.form['id_field']
+```
+
+`request` is imported from Flask &mdash; not Flask-SQLAlchemy. The form values sent in the body of the HTTP request are accessible in the route function as key/value pairs. As with all HTML forms, the *key* comes from the *name* coded into in the form control. In this case, the *key* is `'id_field'`.
+
+`id_field` is configured as a Flask-WTF `HiddenField()` in both of these form classes in *app.py*: `UpdateChoiceForm()` and `DeleteChoiceForm()`. This enables us to pass the sock record's ID from route to route without the user ever seeing it.
 
 ### Delete a record, step 1.
 
@@ -122,7 +131,7 @@ def delete():
 
 Also not writing to the database &mdash; here the user sees an “Are you sure?” message with regard to deleting one record. The record was selected from the big table, and the user chose “Delete This Record.” The ID for the selected record is passed to this route by the delete form (form2) in [sock.html](flask-db-write/templates/sock.html).
 
-The same form appears *again* in this template, [delete_record.html](flask-db-write/templates/delete_record.html) &mdash; but the form's `action` attribute is different.
+The same form appears *again* in this template, [delete_record.html](flask-db-write/templates/delete_record.html) &mdash; but *there,* the form's `action` attribute is different.
 
 ### Update a record, step 2.
 
@@ -172,7 +181,7 @@ In the `if` block (below `if form3.validate_on_submit():`), we finally see how F
 db.session.commit()
 ```
 
-In that small line, you get SQL-injection protection, transaction integrity, and all the tricky database things that require a lot more code with other languages and systems (such as PHP).
+In that one small line, you get SQL-injection protection, transaction integrity, and all the tricky database things that require a lot more code with other languages and systems (such as PHP) &mdash; thanks to **Flask-SQLAlchemy**.
 
 In the `else` block, we ensure that error messages are written if the user filled any form fields with invalid data, and the form is not submitted.
 
