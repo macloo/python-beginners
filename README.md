@@ -2,9 +2,9 @@
 
 Used in conjunction with the book [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), by Al Sweigart (2015). There is a link to download his code under "Additional Content" on that page.
 
-Since 2012, I have been teaching Python to journalism students. I used to use a set of tutorials called *Learn Python the Hard Way*. I’ve been trying to find a new set of instructions suitable for my students, whose previous experience with programming is recent and limited to client-side JavaScript.
+Since 2012, I have been teaching Python to journalism students. I used to use a set of tutorials called *Learn Python the Hard Way*. I sought a new set of instructions suitable for my students, whose previous experience with programming is recent and limited to client-side JavaScript.
 
-I adopted Sweigart’s text in 2017. I’m really pleased with the way he introduces the basics of Python 3. I decided to abandon Python 2 in mid-2017, and it’s great to have found a beginner text that explains enough but not too much. I love Sweigart’s style and his examples.
+I adopted Sweigart’s text in 2017 after examining several others. I’m really pleased with the way he introduces the basics of Python 3. I decided to abandon Python 2 in 2017, and it’s great to have found a beginner text that explains enough but not too much. I love Sweigart’s style and his examples.
 
 The one thing I dislike in Sweigart’s book is his assumption that we would be using IDLE. We write our code in [Atom](https://atom.io/) and run it in Terminal (or PowerShell on Windows).
 
@@ -13,6 +13,12 @@ The one thing I dislike in Sweigart’s book is his assumption that we would be 
 * [Command Line Tips](http://bit.ly/mm-commandline) &mdash; How to navigate among your files and folders in the Terminal.
 * [Getting Started with Python 3](http://bit.ly/py3-quick-install) &mdash; How to install Python 3 and get it running.
 * [Creating or using requirements.txt](http://bit.ly/python-reqs) &mdash; How to install the libraries and extensions know as *dependencies* for a Python project or app. It is not necessary to read this until week 5 or later.
+
+## About this repo
+
+Below you'll see an overview of the contents. Within each folder, you'll find a README and example Python files. In the course, we cover web scraping with Python and also web apps using the Flask framework. Inside the [web_scraping](web_scraping) folder and the [flask](flask) folder here, you'll find a lot more information and examples.
+
+In the course, we spend about four weeks on scraping and another four weeks on Flask.
 
 ## Week 01
 
