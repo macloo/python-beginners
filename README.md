@@ -12,6 +12,7 @@ The one thing I dislike in Sweigart’s book is his assumption that we would be 
 
 * [Command Line Tips](http://bit.ly/mm-commandline) &mdash; How to navigate among your files and folders in the Terminal.
 * [Getting Started with Python 3](http://bit.ly/py3-quick-install) &mdash; How to install Python 3 and get it running.
+* [Creating or using requirements.txt](http://bit.ly/python-reqs) &mdash; How to install the libraries and extensions know as *dependencies* for a Python project or app. It is not necessary to read this until week 5 or later.
 
 ## Week 01
 
