@@ -20,6 +20,8 @@ Below you'll see an overview of the contents. Within each folder, you'll find a 
 
 In the course, we spend about four weeks on scraping and another four weeks on Flask.
 
+Here is [the week-by-week schedule for the course](https://webappsplus.wordpress.com/sked/). Python starts in week 5 there.
+
 ## Week 01
 
 Students read chapters 1 and 2 in Sweigart. Some scripts in the **week01** folder are based on Sweigart’s &mdash; naturally, he has more examples than only these. See the README in the [week01](week01) folder for more information.
