@@ -153,13 +153,15 @@ heroku --version
 
 Follow the **login** instructions under [Getting Started](https://devcenter.heroku.com/articles/heroku-cli#getting-started).
 
-You will log in this way *each time* you use the Heroku CLI.
+You will log in this way *each time* you use the Heroku CLI. You can log out &mdash; `heroku logout` &mdash; or just quit Terminal.
 
-If you use the [GitHub Desktop app](https://desktop.github.com/), you already have command-line `git`. This is not part of Heroku, but **you will need to use** command-line `git` to *deploy to* Heroku.
+You can [read more](https://devcenter.heroku.com/categories/command-line) about the Heroku CLI if you like.
 
 #### Preliminary steps
 
-Before proceeding with command-line `git`, your Flask app should be ready to deploy (all code completed and tested). That includes these steps:
+If you use the [GitHub Desktop app](https://desktop.github.com/), you already have command-line `git`. This is not part of Heroku, but **you will need to use** command-line `git` to *deploy to* Heroku.
+
+Before proceeding with command-line `git`, your Flask app should be ready to deploy (all code completed and tested). You must also complete these steps:
 
 1. Install **Gunicorn**: You need to add a production-level web server to your web app. Heroku recommends [Gunicorn](http://gunicorn.org/) for Python applications. Activate the virtualenv for your app and install it with `pip install gunicorn`.
 
