@@ -128,7 +128,7 @@ If you find the icon above in the **cPanel** at your hosting provider, you're pr
 
 You can get started on [Heroku](https://www.heroku.com/) for free, and if you find you need more than the free option provides, you can [change your plan](https://www.heroku.com/pricing).
 
-The example app for deployment to Heroku here is the same as the final *students* app in the [templates](../../part3_templates) section of this repo. The complete app deployed to Heroku is in the *students-flask-app* folder here. The app is running at this URL:
+The example app for deployment to Heroku here is the same as the final *students* app in the [templates](../part3_templates) section of this repo. The complete app deployed to Heroku is in the *students-flask-app* folder here. The app is running at this URL:
 
 https://students-flask.herokuapp.com/
 
