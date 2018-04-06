@@ -190,6 +190,10 @@ Many lines of messages from the *remote* branch on Heroku will be printed to the
 
 Use your web browser to go to the web address given above to view the active app.
 
+You'll find you have a new *branch* in your local repo.
+
+![Branch in GitHub app](../images/heroku_branch.png)
+
 #### The Heroku dashboard
 
 When you are logged in at Heroku.com, you'll see your Heroku dashboard.
