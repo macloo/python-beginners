@@ -129,3 +129,21 @@ If you find the icon above in the **cPanel** at your hosting provider, you're pr
 You can get started on [Heroku](https://www.heroku.com/) for free, and if you find you need more than the free option provides, you can [change your plan](https://www.heroku.com/pricing).
 
 The example app is the same as the final *students* app in the [templates](../../part3_templates) section of this repo. The complete app deployed to Heroku is in the *students-flask-app* folder here.
+
+Once you have a Heroku account, download the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), a command-line tool. Use the appropriate installer for your operating system. Test that it was installed successfully by entering this in Terminal at the bash prompt (`$`):
+
+```bash
+heroku --version
+```
+
+Follow the **login** instructions under [Getting Started](https://devcenter.heroku.com/articles/heroku-cli#getting-started).
+
+You will log in this way each time you use the Heroku CLI.
+
+If you use the [GitHub Desktop app](https://desktop.github.com/), you already have command-line `git`. This is not part of Heroku, but you need to use it to deploy to Heroku.
+
+
+
+
+
+When you are logged in, you'll see your Heroku dashboard.
