@@ -12,14 +12,14 @@ In this document, we'll learn how to do that. Then we will also learn how to ins
 ## Contents
 
 * [“Baking it out” with Frozen-Flask](#baking-it-out-with-frozen-flask)
- * [The benefits of freezing](#the-benefits-of-freezing)
- * [Freezer errors](#freezer-errors)
+  * [The benefits of freezing](#the-benefits-of-freezing)
+  * [Freezer errors](#freezer-errors)
 * [When freezing will not work, cannot work](#when-freezing-will-not-work-cannot-work)
- * [The hosted website solution](#the-hosted-website-solution)
- * [Using Heroku instead](#using-heroku-instead)
-    * [Preliminary steps](#preliminary-steps)
-    * [Deploy to Heroku](#deploy-to-heroku)
-    * [The Heroku dashboard](#the-heroku-dashboard)
+  * [The hosted website solution](#the-hosted-website-solution)
+  * [Using Heroku instead](#using-heroku-instead)
+     * [Preliminary steps](#preliminary-steps)
+     * [Deploy to Heroku](#deploy-to-heroku)
+     * [The Heroku dashboard](#the-heroku-dashboard)
 * [Conclusion](#conclusion)
 
 ## “Baking it out” with Frozen-Flask
