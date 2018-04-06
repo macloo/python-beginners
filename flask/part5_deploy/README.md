@@ -142,7 +142,7 @@ Follow the **login** instructions under [Getting Started](https://devcenter.hero
 
 You will log in this way *each time* you use the Heroku CLI.
 
-If you use the [GitHub Desktop app](https://desktop.github.com/), you already have command-line `git`. This is not part of Heroku, but you need to use command-line `git` to *deploy to* Heroku.
+If you use the [GitHub Desktop app](https://desktop.github.com/), you already have command-line `git`. This is not part of Heroku, but **you will need to use** command-line `git` to *deploy to* Heroku.
 
 #### Preliminary steps
 
@@ -178,7 +178,7 @@ The command will return the **web address** of your app: https://students-flask.
 
 You'll *register* the app only *once.*
 
-Before you deploy, make sure all changes are *committed* (in the GitHub Desktop app) and all have been *pushed* to GitHub.
+Before you *push to Heroku,* make sure all changes are *committed* (in the GitHub Desktop app).
 
 Then at the bash prompt (`$`), type:
 
@@ -186,7 +186,7 @@ Then at the bash prompt (`$`), type:
 git push heroku master
 ```
 
-Many messages from the remote branch will be printed to the Terminal. Wait until you see `Verifying deploy... done.` And then ... you're back at the bash prompt (`$`).
+Many lines of messages from the *remote* branch on Heroku will be printed to the Terminal. Wait until you see `Verifying deploy... done.` And then ... you're back at the bash prompt (`$`).
 
 Use your web browser to go to the web address given above to view the active app.
 
