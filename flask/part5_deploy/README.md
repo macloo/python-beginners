@@ -9,6 +9,19 @@ In this document, we'll learn how to do that. Then we will also learn how to ins
 * A typical web hosting service such as [Reclaim Hosting](https://reclaimhosting.com/), using a simple **cPanel** service there.
 * Heroku, via `git` commands, and using the Gunicorn server.
 
+## Contents
+
+* [“Baking it out” with Frozen-Flask](#baking-it-out-with-frozen-flask)
+ * [The benefits of freezing](#the-benefits-of-freezing)
+ * [Freezer errors](#freezer-errors)
+* [When freezing will not work, cannot work](#when-freezing-will-not-work-cannot-work)
+ * [The hosted website solution](#the-hosted-website-solution)
+ * [Using Heroku instead](#using-heroku-instead)
+    * [Preliminary steps](#preliminary-steps)
+    * [Deploy to Heroku](#deploy-to-heroku)
+    * [The Heroku dashboard](#the-heroku-dashboard)
+* [Conclusion](#conclusion)
+
 ## “Baking it out” with Frozen-Flask
 
 **Frozen-Flask** is a Flask extension, so we'll need to install it. In Terminal, change into your Flask projects folder and activate your virtualenv there. Then install at the bash prompt (`$`):
