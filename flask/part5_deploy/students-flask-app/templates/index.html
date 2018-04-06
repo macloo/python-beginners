@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Welcome to the student records Flask example!</h1>
+
+<p>For more information about this simple demonstration app, see the <a href="https://github.com/macloo/students-flask-app">GitHub repo</a>.</p>
+
+<p>Click any student's last name to see a complete record. (These are fictitious people, not real students.)</p>
+
+    <ul>
+    {% for item in student_list %}
+        <li><a href="{{ url_for( 'student', idnum=item[0] ) }}">{{ item[1] }}</a></li>
+    {% endfor %}
+    </ul>
+
+<!-- Note that student_list was sent to this template by a route.
+     The route called a function that created an alphabetical list by
+     student last name.
+     The list is a list of tuples, in which item[0] is the student ID
+     and item[1] is the lastname.
+     Jinja2 lets us write Python between specialized tags like PHP.
+     - for item in student_list - it is a normal for-loop.
+    -->
+
+{% endblock %}
