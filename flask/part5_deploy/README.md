@@ -194,6 +194,20 @@ You'll find you have a new *branch* in your local repo.
 
 ![Branch in GitHub app](../images/heroku_branch.png)
 
+If you *make changes* to the app, you'll need to **push to Heroku again.** Save files and commit locally. Log into Heroku (if not already logged in), and:
+
+```bash
+git push heroku master
+```
+
 #### The Heroku dashboard
 
-When you are logged in at Heroku.com, you'll see your Heroku dashboard.
+When you are logged in at Heroku.com, you'll see your Heroku dashboard. All your registered apps are listed here. To manage an app, click its name.
+
+**To delete an app** from Heroku, once you've clicked its name, click *Settings.* Then click the **Delete app** button at the bottom of the page. You will be asked to confirm your choice.
+
+You can also manage other aspects of your app, such as config variables, on the *Settings* page.
+
+## Conclusion
+
+We've learned about three different options for deploying a Flask app. 
