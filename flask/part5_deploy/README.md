@@ -128,7 +128,9 @@ If you find the icon above in the **cPanel** at your hosting provider, you're pr
 
 You can get started on [Heroku](https://www.heroku.com/) for free, and if you find you need more than the free option provides, you can [change your plan](https://www.heroku.com/pricing).
 
-The example app is the same as the final *students* app in the [templates](../../part3_templates) section of this repo. The complete app deployed to Heroku is in the *students-flask-app* folder here.
+The example app for deployment to Heroku here is the same as the final *students* app in the [templates](../../part3_templates) section of this repo. The complete app deployed to Heroku is in the *students-flask-app* folder here. The app is running at this URL:
+
+https://students-flask.herokuapp.com/
 
 Once you have a Heroku account, download the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), a command-line tool. Use the appropriate installer for your operating system. Test that it was installed successfully by entering this in Terminal at the bash prompt (`$`):
 
@@ -138,12 +140,56 @@ heroku --version
 
 Follow the **login** instructions under [Getting Started](https://devcenter.heroku.com/articles/heroku-cli#getting-started).
 
-You will log in this way each time you use the Heroku CLI.
+You will log in this way *each time* you use the Heroku CLI.
 
-If you use the [GitHub Desktop app](https://desktop.github.com/), you already have command-line `git`. This is not part of Heroku, but you need to use it to deploy to Heroku.
+If you use the [GitHub Desktop app](https://desktop.github.com/), you already have command-line `git`. This is not part of Heroku, but you need to use command-line `git` to *deploy to* Heroku.
 
+#### Preliminary steps
 
+Before proceeding with command-line `git`, your Flask app should be ready to deploy (all code completed and tested). That includes these steps:
 
+1. Install **Gunicorn**: You need to add a production-level web server to your web app. Heroku recommends [Gunicorn](http://gunicorn.org/) for Python applications. Activate the virtualenv for your app and install it with `pip install gunicorn`.
 
+2. Create or update *requirements.txt*: Instructions are [here](http://bit.ly/python-reqs). Even if you created a *requirements.txt* file earlier, you must re-create it to add **Gunicorn** to the list. **This is absolutely necessary.**
 
-When you are logged in, you'll see your Heroku dashboard.
+3. Make sure there is a *.gitignore* file in your repo and it excludes your *env/* or *venv/* folder. You should not commit virtual environment files; the *requirements.txt* file lists all the contents of your virtualenv so that it can be re-created on Heroku.
+
+4. Create *Procfile*: This is a plain-text file that must be named exactly `Procfile` (uppercase P, and no file extension). Its contents declare which commands are run by the application's dynos on Heroku. Read more about *Procfile* [here](https://devcenter.heroku.com/articles/procfile).
+
+To run a simple Python web app (such as our example app, *students.py* in *students-flask-app*), the complete contents of *Procfile* are:
+
+```
+web: gunicorn students:app
+```
+
+**Database:** Note that Heroku prefers PostgreSQL and not MySQL or MariaDB. If your app includes a MySQL database, [read this](https://devcenter.heroku.com/articles/heroku-mysql). Our example app, *students-flask-app*, does not use any SQL database, so we can deploy it simply.
+
+#### Deploy to Heroku
+
+To *register* a new application with Heroku, use the `apps:create` command. **You must be in the root directory of your app.** So at the bash prompt (`$`), I am *inside* the *students-flask-app* directory, and my virtualenv is not active.
+
+```bash
+heroku apps:create students-flask
+```
+
+Heroku applications must have a unique name, so if yours is taken, you will need to choose another name. It does not need to match your app folder name.
+
+The command will return the **web address** of your app: https://students-flask.herokuapp.com/
+
+You'll *register* the app only *once.*
+
+Before you deploy, make sure all changes are *committed* (in the GitHub Desktop app) and all have been *pushed* to GitHub.
+
+Then at the bash prompt (`$`), type:
+
+```bash
+git push heroku master
+```
+
+Many messages from the remote branch will be printed to the Terminal. Wait until you see `Verifying deploy... done.` And then ... you're back at the bash prompt (`$`).
+
+Use your web browser to go to the web address given above to view the active app.
+
+#### The Heroku dashboard
+
+When you are logged in at Heroku.com, you'll see your Heroku dashboard.
