@@ -6,8 +6,8 @@ One thing to understand, though, is that they often do not deploy a Python execu
 
 In this document, we'll learn how to do that. Then we will also learn how to install a Flask app (one that has not been “baked out”) on:
 
-* Heroku, via `git` commands, and using Gnunicorn.
 * A typical web hosting service such as [Reclaim Hosting](https://reclaimhosting.com/), using a simple **cPanel** service there.
+* Heroku, via `git` commands, and using the Gunicorn server.
 
 ## “Baking it out” with Frozen-Flask
 
@@ -206,8 +206,16 @@ When you are logged in at Heroku.com, you'll see your Heroku dashboard. All your
 
 **To delete an app** from Heroku, once you've clicked its name, click *Settings.* Then click the **Delete app** button at the bottom of the page. You will be asked to confirm your choice.
 
-You can also manage other aspects of your app, such as config variables, on the *Settings* page.
+You can also manage other aspects of your app, such as config variables, on the *Settings* page. You can also [add a custom domain name](https://devcenter.heroku.com/articles/custom-domains) for your app.
 
 ## Conclusion
 
-We've learned about three different options for deploying a Flask app. 
+We've learned about three different options for deploying a Flask app:
+
+* Use Frozen-Flask
+* Deploy to a hosted web account
+* Deploy to Heroku, a free cloud service
+
+Depending on the characteristics of your Flask app, one of these options might be much better than the others, or they might all be equally suitable.
+
+See [more options for deploying](http://flask.pocoo.org/docs/0.12/deploying/) in the Flask documentation.
