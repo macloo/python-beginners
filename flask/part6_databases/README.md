@@ -112,6 +112,8 @@ Open a new tab in your web browser and enter `localhost:5000/` in the address ba
 
 *Note that this is a local MySQL database, running on the same computer as the Flask app. The database* sockmarket *has only one user, root, and no password. This is acceptable on a local machine ONLY. Always use a username and a strong password on a live web server!*
 
+There's a second starter script in this repo for testing whether you can connect on **a hosted website** that provides phpMyAdmin: [host_db_test.py](host_db_test.py). Before running it, make sure you've set up a MySQL database with at least one table in it.
+
 ### About using XAMPP for MySQL databases
 
 When we created MySQL databases at the beginning of my course, we used [XAMPP](https://www.apachefriends.org/index.html) to do so. This is a great option and works pretty much identically on Mac, Windows and Linux. Unlike [MAMP](https://www.mamp.info/), there's no paid version of XAMPP. XAMPP is just plain free.

@@ -1,8 +1,6 @@
 """
-test for a local MySQL database connection
-make sure your virtualenv is activated!
-make sure you have "started all" in XAMPP!
-code below works for a MySQL database in XAMPP on Mac OS
+test for a MySQL database connection on your hosted website
+code below works for a MySQL database in phpMyAdmin on Reclaim Hosting
 """
 
 import pymysql
@@ -10,17 +8,17 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+# the next line is necessary with cPanel deployment
+application = app
 
-# this userpass assumes you did not create a password for your database
-# and the database username is the default, 'root'
-userpass = 'mysql+pymysql://root:@'
+# make sure you get the username, password and databasename right
+# note colon : and "at" sign @ in userpass - keep them
+userpass = 'mysql+pymysql://username:password@'
 basedir  = '127.0.0.1'
-# change to YOUR database name, with a slash added as shown
-dbname   = '/sockmarket'
-# this socket is going to be very different on a Windows computer
-# try 'C:/xampp/mysql/mysql.sock' 
-socket   = '?unix_socket=/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock'
-dbname   = dbname + socket
+# keep the slash /
+dbname   = '/databasename'
+
+# change NOTHING below
 
 # put them all together as a string that shows SQLAlchemy where the database is
 app.config['SQLALCHEMY_DATABASE_URI'] = userpass + basedir + dbname
