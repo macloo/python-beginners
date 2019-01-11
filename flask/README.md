@@ -15,6 +15,7 @@ We will install Flask in a new Python3 virtual environment. Students have alread
     * [Create a new virtualenv in that directory and activate it](#create-a-new-virtualenv-in-that-directory-and-activate-it)
     * [Install Flask](#install-flask)
     * [Test Flask](#test-flask)
+    * [Video](#flask-intro-video)
 * [Deconstruct the code in a small Flask app](#deconstruct-the-code-in-a-small-flask-app)
     * [Import Flask and create an application object](#import-flask-and-create-an-application-object)
     * [Add a route and some action](#add-a-route-and-some-action)
@@ -112,6 +113,14 @@ Flask includes a built-in web server, for development use. What you've done is:
 2. With the command `FLASK_APP=hello.py flask run`, you started the server and ran the app on it.
 
 **To shut down the server,** press Control-C in Terminal.
+
+### Flask intro video
+
+Here is an excellent video from a Harvard EdX course. Starting at 00:40:25, the instructor explains Flask pretty much as I have done in this README and in the parts to follow. It is exceptionally clear and well organized.
+
+If you would prefer a video, I highly recommend this:
+
+[Flask - Lecture 2 - CS50's Web Programming with Python and JavaScript](https://www.youtube.com/watch?v=j5wysXqaIV8)
 
 ## Deconstruct the code in a small Flask app
 
