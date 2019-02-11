@@ -63,10 +63,21 @@ Create a new **virtualenv** there (this is done only once).
 $ virtualenv --python=/usr/local/bin/python3 env
 ```
 
+Skip to **Continue ...** below.
+
 **Windows PowerShell**
 ```bash
-PS> virtualenv --python=C:\Python36\python.exe env
+PS> virtualenv --python=C:\Python37\python.exe env
 ```
+Note: On Windows, this might not be the location of your Python 3. To find the location, start the Python 3 interpreter and try this code to find your installed Python path:
+```
+>>> import os
+>>> import sys
+>>> os.path.dirname(sys.executable)
+```
+The next line will be the path on your computer. Use the code shown above, but replace `C:\Python37\` with that new line you just got. Make sure to keep `python.exe env` at the end.
+
+#### Continue ...
 
 Activate the **virtualenv**:
 
@@ -79,6 +90,7 @@ $ source env/bin/activate
 ```bash
 PS> env\Scripts\activate.bat
 ```
+Note: The command on Windows might be different, depending on what you are using. The uppercase S is necessary.
 
 **Important:** You should now see `(env)` at the far left side of your prompt. This indicates that the **virtualenv** is active. Example (Mac OS/bash):
 
@@ -99,7 +111,7 @@ You'll know it worked because `(env)` will no longer be at the far left side of 
 In Mac OS or Windows, at the `$` bash prompt (or Windows `PS>`), type:
 
 ```bash
-pip install beautifulsoup4
+pip3 install beautifulsoup4
 ```
 
 This is how you install *any* Python library that exists in the [Python Package Index](https://pypi.python.org/pypi). Pretty handy. **pip** is a tool for installing Python packages, which is what you just did.
