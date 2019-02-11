@@ -1,6 +1,6 @@
 # Introduction to Web Scraping
 
-We use this book: *Web Scraping with Python: Collecting Data from the Modern Web,* by Ryan Mitchell (O’Reilly, 2015). A new 2nd edition of this will be published in 2018 but is not yet available, so we must use the 1st edition.
+We use this book: *Web Scraping with Python: Collecting More Data from the Modern Web,* 2nd edition, by Ryan Mitchell (O’Reilly, 2018). We must use [the 2nd edition](http://shop.oreilly.com/product/0636920078067.do), because there are many changes from the previous edition.
 
 Python3 is used throughout this book.
 
