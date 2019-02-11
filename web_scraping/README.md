@@ -98,7 +98,7 @@ Note: The command on Windows might be different, depending on what you are using
 (env) mcadams scraping $
 ```
 
-When you are finished working in a **virtualenv**, you should *deactivate* it. The command is the same in Mac OS or Windows (DO **NOT** DO THIS NOW):
+When you are *finished* working in a **virtualenv**, you should *deactivate* it. The command is the same in Mac OS or Windows (DO **NOT** DO THIS NOW):
 
 ```
 deactivate
@@ -114,13 +114,13 @@ In Mac OS or Windows, at the `$` bash prompt (or Windows `PS>`), type:
 pip3 install beautifulsoup4
 ```
 
-This is how you install *any* Python library that exists in the [Python Package Index](https://pypi.python.org/pypi). Pretty handy. **pip** is a tool for installing Python packages, which is what you just did.
+This is how you install *any* Python library that exists in the [Python Package Index](https://pypi.python.org/pypi). Pretty handy. **pip3** is a tool for installing Python packages, which is what you just did.
 
 **Note:** You installed BeautifulSoup in the Python3 **virtualenv** that is currently active. When that **virtualenv** is *not* active, BeautifulSoup will not be available to you. This is ideal, because you will create different virtual environments for different Python projects, and you won't need to worry about updated libraries in the future breaking your (past) code.
 
 ### Test BeautifulSoup
 
-**Start Python.** Because you are in a Python3 **virtualenv**, you need only type `python`.
+**Start Python.** Because you are in a Python3 **virtualenv**, you need only type `python`. (NOT `python3`.)
 
 You should now be at the `>>>` prompt &mdash; the Python prompt.
 
@@ -134,10 +134,11 @@ bsObj = BeautifulSoup(html, "html.parser")
 print(bsObj.h1)
 ```
 
-1. You imported two Python modules, `urlopen` and `BeautifulSoup` (the first two lines).
+1. You imported two Python modules, `urlopen` and `BeautifulSoup` (the first two lines). This allows you to use their functions.
 2. You used `urlopen` to copy the entire contents of the URL given into a new Python variable, `html`.
-3. You used `BeautifulSoup` to process the value of that variable (the contents of the file at that URL) through a built-in HTML parser (`html.parser` is not the only option for this; `html5lib` is more robust and can be installed with *pip*). The result: All the HTML from the file is now in a BeautifulSoup object with the new Python variable name `bsObj`.
-4. Using the syntax of the BeautifulSoup library, you printed the first H1 element (including its tags) from that parsed value. Check out [the page on the web](https://weimergeeks.com/examples/scraping/example1.html) to see what you scraped.
+3. You used the `BeautifulSoup` function to process the value of that variable (the contents of the file at that URL) through a built-in HTML parser (`html.parser` is not the only option for this; `html5lib` is more robust and can be installed with *pip3*).
+4. The result: All the HTML from the file is now in a BeautifulSoup object with the new Python variable name `bsObj`. (In Mitchell's first edition, she used `bsObj`. Now, in the second edition, she uses just `bs`. FYI, most other people use `soup`. It is just a variable name.)
+5. Using the syntax of the BeautifulSoup library, you printed the first H1 element (including its tags) from that parsed value. Option: Check out [the page on the web](https://weimergeeks.com/examples/scraping/example1.html) to see what you scraped.
 
 If it works, you'll see:
 
@@ -145,15 +146,15 @@ If it works, you'll see:
 <h1>We Are Learning About Web Scraping!</h1>
 ```
 
-If you got an error about SSL, quit Python (`quit()` or Command-D) and enter this at the bash prompt:
+If you got an error about SSL, quit Python (`quit()` or Command-D) and enter this at the bash prompt (Mac only):
 
 ```bash
-/Applications/Python\ 3.6/Install\ Certificates.command
+/Applications/Python\ 3.7/Install\ Certificates.command
 ```
 
 Then return to the Python prompt and retry the five lines above.
 
-The example is based on the one on page 8 of Mitchell's book; the code is updated in her [GitHub repo](https://github.com/REMitchell/python-scraping) (chapter1) for the book, where we can find **updated code** that will no doubt appear in her 2nd edition.
+The example is based on the one in Mitchell's book; the code is in her [GitHub repo](https://github.com/REMitchell/python-scraping/blob/master/Chapter01_BeginningToScrape.ipynb) (Chapter01) for the book, second edition.
 
 The command `bsObj.h1` would work the same way for any HTML tag (if it exists in the file). Instead of printing it, you might stash it in a variable:
 
