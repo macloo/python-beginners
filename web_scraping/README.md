@@ -172,11 +172,13 @@ After extracting the desired information, we can use other Python commands (and 
 
 ### What is the BeautifulSoup object?
 
-It's very important to understand that many of the BeautifulSoup commands work on an *object*, which is not the same as a simple *string*. Throughout her book, Mitchell uses the variable name `bsObj` to remind us of that fact.
+It's very important to understand that many of the BeautifulSoup commands work on an *object*, which is not the same as a simple *string*. Throughout her book, Mitchell uses the variable name `bs` to remind us of that fact. (Note: In the first edition, Mitchell used `bsObj`, and you'll see that in many examples in this repo. Most people use `soup` for this variable name &mdash; because the library is BeautifulSoup.)
 
 Many programming languages include objects as a data type. Python does, JavaScript does, etc. An *object* is an even more powerful and complex data type than an *array* (JavaScript) or a *list* (Python) and can contain many other data types in a structured format.
 
 When you extract information from an *object* with a BeautifulSoup command, sometimes you get a simple string, and sometimes you get a Python *list* (which is very similar to an *array* in JavaScript). The way you treat that extracted information will be **different** depending on whether it is a string (*one* item) or a list (usually *more than one* item).
+
+That last paragraph is REALLY IMPORTANT, so read it again.
 
 ### How BeautifulSoup handles the object
 
@@ -205,10 +207,10 @@ Let's look at a few examples of what BeautifulSoup can do.
 Deciding the best way to extract what you want from a large HTML file requires you to dig around in the source before you write the Python/BeautifulSoup commands. In many cases, you'll see that everything you want has the same **CSS class** on it. After creating a *BeautifulSoup object* (here, as before, it is in the variable `bsObj`), this line will create a Python *list* (you can think of it as an *array*) containing all the `<td>` elements that have the class `city`.
 
 ```python
-city_list = bsObj.findAll( "td", {"class":"city"} )
+city_list = bsObj.find_all( "td", {"class":"city"} )
 ```
 
-Maybe there were 10 cities in `<td>` tags in that HTML file. Maybe there were 10,000. No matter how many, they are now in a *list* (in the variable `city_list`), and you can search them, print them, write them out to a database or a JSON file &mdash; whatever you like. Often you will want to perform the same actions on each item in the list, so you will use a *for-loop*:
+Maybe there were 10 cities in `<td>` tags in that HTML file. Maybe there were 10,000. No matter how many, they are now in a *list* (in the variable `city_list`), and you can search them, print them, write them out to a database or a JSON file &mdash; whatever you like. Often you will want to perform the same actions on each item in the list, so you will use a normal Python *for-loop*:
 
 ```python
 for city in city_list:
@@ -219,7 +221,7 @@ for city in city_list:
 
 ### Finding all vs. finding one
 
-The BeautifulSoup `findAll()` method you just saw always produces a *list*. If you know there will be only one item of the kind you want in a file, you should use the `find()` method instead.
+The BeautifulSoup `find_all()` method you just saw always produces a *list*. (Note: `findAll()` will work too.) If you know there will be only one item of the kind you want in a file, you should use the `find()` method instead.
 
 For example, maybe you are scraping the address and phone number from every page in a large website. There is only one phone number on the page, and it is enclosed in a pair of tags with the attribute `id="call"`. One line of your code gets the phone number from the current page:
 
@@ -233,14 +235,14 @@ Naturally, you don't need to loop through that result &mdash; the variable `phon
 print( phone_number.get_text() )
 ```
 
-Notice that you're always using `bsObj`. Review above if you've forgotten where that came from.
+Notice that you're always using `bsObj`. Review above if you've forgotten where that came from. (You may use `bs` instead. You may use `soup`. Pick ONE and stick with it.)
 
 ### Finding the contents of a particular attribute
 
 One last example: You've made a BeautifulSoup object from a page that has dozens of images on it. You want to capture the path to each image file on that page (perhaps so that you can download all the images). This requires two steps:
 
 ```python
-image_list = bsObj.findAll('img')
+image_list = bsObj.find_all('img')
 for image in image_list:
     print(image.attrs['src'])
 ```
@@ -249,6 +251,6 @@ First, you make a Python *list* containing all the `img` elements that exist in 
 
 Second, you loop through that list and print the contents of the `src` attribute from each `img` tag in the list.
 
-We do not need `get_text()` in this case, because the contents of the `src` attribute are nothing but text. There are never tags inside the `src` attribute.
+**IMPORTANT:** We do not need `get_text()` in this case, because the contents of the `src` attribute are nothing but text. There are never tags inside the `src` attribute. So *think* about *exactly* what you're trying to get, and what is it like inside the HTML of the page.
 
 There's a lot more to learn about BeautifulSoup, and we'll be using Mitchell's book for that. You can also [read the docs](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
