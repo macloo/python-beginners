@@ -18,13 +18,16 @@ db = scoped_session(sessionmaker(bind=engine))
 def main():
     f = open("books.csv")
     reader = csv.reader(f)
-    # read column headings in this csv
+    # name of each field (column) in this csv - don't leave any out
     for isbn, title, author, year in reader:
-        # SQL insert into table named books 
-        db.execute( "INSERT INTO books (isbn, title, author, year) VALUES (:isbn, :title, :author, :year)", {"isbn": isbn, "title": title, "author": author, "year": year} )
+        # SQL insert into table named books
+        db.execute( "INSERT INTO books (isbn, title, author, year) VALUES (:isbn, :title, :author, :year)",
+            {"isbn": isbn, "title": title, "author": author, "year": year} )
     db.commit()
     # close the file
     f.close()
 
 if __name__ == "__main__":
   main()
+
+  # end
