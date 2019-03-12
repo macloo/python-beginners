@@ -79,7 +79,7 @@ Sometimes you have to do more so that a website will allow you to scrape it. The
 
 ### Selenium, to automate the browser
 
-Mitchell discusses Selenium in **chapter 10**. We can use Selenium together with BeautifulSoup when BeautifulSoup alone is unable to get the contents we want from a web page. Two situations where this comes up: (1) JavaScript is writing the contents into the page after it opens; and (2) contents are not available until you click a button, fill a form, open a menu, etc.
+Mitchell discusses Selenium in **chapter 10**. We can use Selenium together with BeautifulSoup when BeautifulSoup alone is unable to get the contents we want from a web page. <span style="background: #ffd947;">Two situations where this comes up:</span> (1) JavaScript is writing the contents into the page after it opens; and (2) contents are not available until you click a button, fill a form, open a menu, etc.
 
 The Selenium documentation is not easy to use. **Use this:** [Getting started with Selenium](http://bit.ly/selenium-intro). You will need to install [Selenium](https://www.seleniumhq.org/) and also a driver for the web browser you want to use (Chrome is good). These are covered in the “Getting Started” doc.
 
