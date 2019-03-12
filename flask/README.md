@@ -47,8 +47,20 @@ $ virtualenv --python=/usr/local/bin/python3 env
 
 **Windows PowerShell**
 ```bash
-PS> virtualenv --python=C:\Python36\python.exe env
+PS> virtualenv --python=C:\Python37\python.exe env
 ```
+
+If you can't use \Python37\ then do this *in the Python interpreter*:
+```bash
+>>> import os
+>>> import sys
+>>> os.path.dirname(sys.executable)
+```
+
+* The next line you see will give you the full path to your Python3. Copy it.
+* Then `exit()` the Python interpreter and be at your command prompt.
+* Use that line to replace **Python37** in the command shown above, to create a new virtualenv.
+
 
 Activate the **virtualenv**:
 
@@ -73,7 +85,7 @@ PS> env\Scripts\activate.bat
 In Mac OS or Windows, at the `$` bash prompt (or Windows `PS>`), type:
 
 ```bash
-pip install Flask
+pip3 install Flask
 ```
 
 This is how you install *any* Python library that exists in the [Python Package Index](https://pypi.python.org/pypi). Pretty handy. **pip** is a tool for installing Python packages, which is what you just did.
