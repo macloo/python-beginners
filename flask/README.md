@@ -105,10 +105,17 @@ def hello():
     return "Hello World!"
 ```
 
-In Terminal, at the `$` bash prompt, type this:
+**Mac:** In Terminal, at the `$` bash prompt, type this:
 
 ```bash
 FLASK_APP=hello.py flask run
+```
+
+**Windows:** In Command Prompt, at the `>` bash prompt, type this (two separate lines):
+
+```bash
+set FLASK_APP=hello
+flask run
 ```
 
 You'll see this:
