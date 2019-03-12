@@ -51,7 +51,7 @@ PS> virtualenv --python=C:\Python37\python.exe env
 ```
 
 If you can't use \Python37\ then do this *in the Python interpreter*:
-```bash
+```python
 >>> import os
 >>> import sys
 >>> os.path.dirname(sys.executable)
@@ -115,7 +115,7 @@ You'll see this:
 
 <img src="images/flask_server_starts.png" alt="Results of FLASK_APP=hello.py flask run">
 
-Open your web browser and, in the address bar, type: `localhost:5000`
+Open a new tab in your web browser and, in the address bar, type: `localhost:5000`
 
 <img src="images/flask_in_browser.png" alt="Result in the browser" width="50%">
 
@@ -124,7 +124,7 @@ Flask includes a built-in web server, for development use. What you've done is:
 1. With the `hello.py` file, you have written a small (and essentially useless) web app in Flask.
 2. With the command `FLASK_APP=hello.py flask run`, you started the server and ran the app on it.
 
-**To shut down the server,** press Control-C in Terminal.
+**To shut down the server,** press Control-C in Terminal. (Mac people: That is *Control,* not Command.)
 
 ### Flask intro video
 
@@ -143,7 +143,7 @@ from flask import Flask
 app = Flask(__name__)
 ```
 
-**The first line** is a typical Python import statement. Flask is a Python library, and it must be imported. As always, *case matters,* so note the lowercase *f* and the uppercase *F*. (We are importing the *Flask* class from the *flask* module, and they are two different things.)
+**The first line** is a typical Python import statement. Lowercase *flask* is a Python library, and it must be imported. As always, *case matters,* so note the lowercase *f* and the uppercase *F*. (We are importing the uppercase *Flask* class from the *flask* module, and they are two different things.)
 
 **The second line,** which is new to you, begins with a new variable, `app`, which will be used in every Flask app. The value of that new variable, `Flask(__name__)`, is a new *object* that inherits from the class *Flask* &mdash; meaning that it gets all the attributes and methods built into that class, which we have imported.
 
@@ -155,9 +155,9 @@ What does `__name__` do? Every Python module has a *name,* and `__name__` used *
 if __name__ == '__main__':
 ```
 
-When that statement returns `True`, it means the program (the file) is being *run by itself,* and was not imported.
+When that statement returns `True`, it means the program (the file) is being *run by itself,* and was not imported. (We are NOT using that statement in our *hello.py* code, but this seems like a good time to explain it.)
 
-`app = Flask(__name__)` creates a Flask application object, `app`, in the current Python module. A Python *module* is just a Python file, *filename.py.*
+`app = Flask(__name__)` creates a Flask application object &mdash; `app` &mdash; in the current Python module. A Python *module* is just a Python file, *filename.py.* An object (in Python and  in other programming languages) is a data type that can include a ton of functions, methods, and attributes. Our variable `app` now has all of those from Flask. To be specific, `app` is an *instance* of a Python class named Flask, which we imported at the top of the file.
 
 ### Add a route and some action
 
