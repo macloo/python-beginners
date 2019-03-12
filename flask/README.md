@@ -2,7 +2,7 @@
 
 Flask is a Python framework for building web apps. It's small, light and simple compared with the other widely used Python framework, [Django](https://www.djangoproject.com/).
 
-[This site](http://flask.pocoo.org/) is the home of Flask.
+[This site](https://www.palletsprojects.com/p/flask/) is the home of Flask.
 
 We will install Flask in a new Python3 virtual environment. Students have already installed both Python3 and virtualenv.
 
@@ -24,7 +24,7 @@ We will install Flask in a new Python3 virtual environment. Students have alread
 
 ### Create a directory and change into it
 
-The first step is to create a new folder (directory) for all your Flask projects. Mine is:
+The first step is to create a new folder (directory) for all your Flask projects. Mine is here:
 
 ```bash
 Documents/python/flask
