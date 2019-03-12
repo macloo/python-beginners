@@ -20,7 +20,7 @@ In chapter 5, Mitchell discusses several ways to *store* the data we scrape.
 
 If you have a CSV file, you can open it in Excel. You can also fairly easily transfer it into a table in a MySQL database. Sometimes writing **your scraped data** to a plain-text file is good enough, but often it will be much better to write it to a CSV.
 
-Mitchell's [scrapeCsv.py](https://github.com/REMitchell/python-scraping/blob/master/chapter5/3-scrapeCsv.py) file shows you how to scrape from a Wikipedia table and write its contents into a CSV.
+Mitchell's [scrapeCsv.py](https://github.com/REMitchell/python-scraping/blob/master/v1/chapter5/3-scrapeCsv.py) file shows you how to scrape from a Wikipedia table and write its contents into a CSV.
 
 Here's some of the code I used in a [project](https://github.com/macloo/web-scraper-steps) to scrape information about U.S. soccer players. It creates a Python CSV object, which is used to write strings into a properly formatted CSV file:
 
@@ -101,7 +101,7 @@ Also see the **“Timing matters”** section below.
 
 Mitchell discusses headers in **chapter 12**. You'll install [Requests](http://docs.python-requests.org/en/master/), a Python library, and you'll discover your own user agent at [WhatIsMyBrowser.com](https://www.whatismybrowser.com/). Find your web browser’s **user agent** at the bottom of that page.
 
-Mitchell's sample script for sending header information is [here](https://github.com/REMitchell/python-scraping/blob/master/chapter12/1-headers.py). She uses it to go to WhatIsMyBrowser.com, but that's just an example.
+Mitchell's sample script for sending header information is [here](https://github.com/REMitchell/python-scraping/blob/master/v1/chapter12/1-headers.py). She uses it to go to WhatIsMyBrowser.com, but that's just an example.
 
 I have found I needed to use headers in a scraping script that downloaded messages from a large online forum. The site completely shut out my script until I added a full set of header data:
 
