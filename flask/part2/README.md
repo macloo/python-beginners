@@ -36,7 +36,9 @@ if __name__ == '__main__':
 
 Now we have **two routes,** not one. The first route, for `'/'`, is not very different from our first Flask app. The second route, for `'/user/<name>'`, is doing something new.
 
-1. Copy this code into a new file named `hello2.py` and run it at the bash (`$`) prompt with:
+1. Activate your virtualenv where you have installed Flask.
+
+2. Copy this code into a new file named `hello2.py` *in that folder* and run it at the bash (`$`) prompt with:
 
    ```bash
    python hello2.py
@@ -44,7 +46,7 @@ Now we have **two routes,** not one. The first route, for `'/'`, is not very dif
 
    **Note:** Because of the final two lines in this script, we do not need the longer command we ran in in the introduction. Now you're running this file in exactly the same way you've run every other `.py` file, in your *virtualenv.*
 
-2. In your browser, type `localhost:5000` into the address bar. Press Return/Enter, and the app runs.
+3. In your browser, type `localhost:5000` into the address bar. Press Return/Enter, and the app runs.
 
 This script demonstrates the following:
 
