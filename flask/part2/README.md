@@ -121,4 +121,15 @@ Imagine that a query to a database has been made, and the values of `title`, `na
 
 More details: [How To Use String Formatters in Python 3](https://www.digitalocean.com/community/tutorials/how-to-use-string-formatters-in-python-3)
 
+But, hey! There's an even *nicer* way to write these (new as of Python 3.6):
+
+```python
+personal = f'<p>Dear {title} {name}, We are pleased to inform you that your {relative} has
+   been awarded {award}.</p>'
+```
+
+The output would be the same as above: `<p>Dear Ms. Smith, We are pleased to inform you that your daughter has been awarded the Gator Greatness Prize.</p>`
+
+More details about the streamlined version: [An Intro to f-strings](https://www.blog.pythonlibrary.org/2018/03/13/python-3-an-intro-to-f-strings/)
+
 You're ready now to move on to [flask/part3_templates](../part3_templates).
