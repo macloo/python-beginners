@@ -25,8 +25,8 @@ def hello():
 
 @app.route('/user/<name>')
 def user(name):
-    # the curly braces {} hold a variable
-    # the value will replace the brace and the variable name
+    # the curly braces {} hold a variable; when it runs, 
+    # the value will replace the braces and the variable name
     personal = f'<h1>Hello, {name}!</h1>'
     return personal
 
@@ -117,7 +117,7 @@ personal = f'<p>Dear {title} {name}, We are pleased to inform you that your {rel
    been awarded {award}.</p>'
 ```
 
-Imagine that a query to a database has been made, and the values of `title`, `name`, `relative` and `award` are, respectively, `'Ms.''`, `'Smith'`, `'daughter'` and `'the Gator Greatness Prize'`. In that case, the *value* of the variable `personal` would be: `<p>Dear Ms. Smith, We are pleased to inform you that your daughter has been awarded the Gator Greatness Prize.</p>`
+Imagine that a query to a database has been made, and the values of `title`, `name`, `relative` and `award` are, respectively, `'Ms.'`, `'Smith'`, `'daughter'` and `'the Gator Greatness Prize'`. In that case, the *value* of the variable `personal` would be: `<p>Dear Ms. Smith, We are pleased to inform you that your daughter has been awarded the Gator Greatness Prize.</p>`
 
 More details: [An Intro to f-strings](https://www.blog.pythonlibrary.org/2018/03/13/python-3-an-intro-to-f-strings/)
 
