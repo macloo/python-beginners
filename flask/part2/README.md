@@ -25,7 +25,7 @@ def hello():
 
 @app.route('/user/<name>')
 def user(name):
-    # the curly braces {} hold a variable; when it runs, 
+    # the curly braces {} hold a variable; when it runs,
     # the value will replace the braces and the variable name
     personal = f'<h1>Hello, {name}!</h1>'
     return personal
@@ -111,6 +111,8 @@ personal = '<h1>Hello, ' + name + '!</h1>'
 ```
 
 The benefit might not be apparent when only one variable is inserted into the string, as seen here, but string formatters are great when you have to insert multiple variables &mdash; they save you from typing all those quotation marks and plus signs!
+
+Note that the `f` is required. It precedes the first quotation mark. The quotation marks may be single or double.
 
 ```python
 personal = f'<p>Dear {title} {name}, We are pleased to inform you that your {relative} has
