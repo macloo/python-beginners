@@ -25,9 +25,9 @@ def hello():
 
 @app.route('/user/<name>')
 def user(name):
-    # the curly braces {} are a placeholder for the value in
-    # parentheses, in format()
-    personal = '<h1>Hello, {}!</h1>'.format(name)
+    # the curly braces {} hold a variable
+    # the value will replace the brace and the variable name
+    personal = f'<h1>Hello, {name}!</h1>'
     return personal
 
 if __name__ == '__main__':
@@ -101,7 +101,7 @@ This enables you to launch Flask's built-in server and run the app simply by typ
 This might be the first time you have seen a string formatter used.
 
 ```python
-personal = '<h1>Hello, {}!</h1>'.format(name)
+personal = f'<h1>Hello, {name}!</h1>'
 ```
 
 This has nothing to do with Flask; it's just a normal part of Python3. It's the alternative to writing:
@@ -113,23 +113,12 @@ personal = '<h1>Hello, ' + name + '!</h1>'
 The benefit might not be apparent when only one variable is inserted into the string, as seen here, but string formatters are great when you have to insert multiple variables &mdash; they save you from typing all those quotation marks and plus signs!
 
 ```python
-personal = '<p>Dear {} {}, We are pleased to inform you that your {} has
-   been awarded {}.</p>'.format(title, name, relative, award)
-```
-
-Imagine that a query to a database has been made, and the values of `title`, `name`, `relative` and `award` are, respectively, `Ms.`, `Smith`, `daughter` and `the Gator Greatness Prize`. In that case, the *value* of the variable `personal` would be: `<p>Dear Ms. Smith, We are pleased to inform you that your daughter has been awarded the Gator Greatness Prize.</p>`
-
-More details: [How To Use String Formatters in Python 3](https://www.digitalocean.com/community/tutorials/how-to-use-string-formatters-in-python-3)
-
-But, hey! There's an even *nicer* way to write these (new as of Python 3.6):
-
-```python
 personal = f'<p>Dear {title} {name}, We are pleased to inform you that your {relative} has
    been awarded {award}.</p>'
 ```
 
-The output would be the same as above: `<p>Dear Ms. Smith, We are pleased to inform you that your daughter has been awarded the Gator Greatness Prize.</p>`
+Imagine that a query to a database has been made, and the values of `title`, `name`, `relative` and `award` are, respectively, `'Ms.''`, `'Smith'`, `'daughter'` and `'the Gator Greatness Prize'`. In that case, the *value* of the variable `personal` would be: `<p>Dear Ms. Smith, We are pleased to inform you that your daughter has been awarded the Gator Greatness Prize.</p>`
 
-More details about the streamlined version: [An Intro to f-strings](https://www.blog.pythonlibrary.org/2018/03/13/python-3-an-intro-to-f-strings/)
+More details: [An Intro to f-strings](https://www.blog.pythonlibrary.org/2018/03/13/python-3-an-intro-to-f-strings/)
 
 You're ready now to move on to [flask/part3_templates](../part3_templates).
