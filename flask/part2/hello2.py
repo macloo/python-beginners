@@ -9,9 +9,7 @@ def hello():
 
 @app.route('/user/<name>')
 def user(name):
-    # the curly braces {} are a placeholder for the value in
-    # parentheses, in format()
-    personal = '<h1>Hello, {}!</h1>'.format(name)
+    personal = f'<h1>Hello, {name}!</h1>'
     instruc = '<p>Change the name in the <em>browser address bar</em> and reload the page.</p>'
     return personal + instruc
 
