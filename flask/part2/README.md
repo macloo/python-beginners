@@ -123,4 +123,17 @@ Imagine that a query to a database has been made, and the values of `title`, `na
 
 More details: [An Intro to f-strings](https://www.blog.pythonlibrary.org/2018/03/13/python-3-an-intro-to-f-strings/)
 
+There's also a longer, clumsier way to do this:
+
+```python
+personal = '<h1>Hello, {}!</h1>'.format(name)
+```
+
+It's not so bad with one placeholder, but it gets ugly when more placeholders are needed:
+
+```python
+personal = '<p>Dear {} {}, We are pleased to inform you that your {} has
+   been awarded {}.</p>'.format(title, name, relative, award)
+```
+
 You're ready now to move on to [flask/part3_templates](../part3_templates).
