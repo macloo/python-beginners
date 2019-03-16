@@ -113,7 +113,7 @@ def student(idnum):
     return render_template('student.html', id=idnum)
 ```
 
-The complete code for this app is in the folder [flask/part3_templates/ex1-app](ex1-app). To run it, `cd` into the `ex1-app` directory and type this at the bash prompt (`$`) in Terminal:
+The complete code for this app is in the folder [flask/part3_templates/ex1-app](ex1-app). To run it in your activated virtualenv, `cd` into the `ex1-app` directory and type this at the bash prompt (`$`) in Terminal:
 
 ```bash
 python students2.py
@@ -191,7 +191,7 @@ The ID number is used in the link because it is sure to be unique, unlike a name
 
 The complete code for this app is in the folder [ex3-app](ex3-app).
 
-**To run the final, complete app,** `cd` into the `ex3-app` directory and type this at the bash prompt (`$`) in Terminal:
+**To run the final, complete app** in your activated virtualenv, `cd` into the `ex3-app` directory and type this at the bash prompt (`$`) in Terminal:
 
 ```bash
 python students4.py
@@ -254,7 +254,7 @@ I hope the final app in *students4.py* has demonstrated clearly why using templa
 
 Here is a [GitHub repo](https://github.com/macloo/flask_project1) and a [live website](https://weimergeeks.com/flask_proj1/awards/) for a very similar Flask app **with a much simpler data source.** If you compare the two projects, it might improve your understanding.
 
-Here is a GitHub repo containing a tutorial exercise to walk you through building a complete Flask app: [flask-exercise](https://github.com/macloo/flask-exercise). We used this in class to give students a hands-on experience with Flask templates and routes. It includes an easy way to convert any CSV file into a list of Python dictionaries.
+Here is a GitHub repo containing a **tutorial exercise** to walk you through building a complete Flask app: [flask-exercise](https://github.com/macloo/flask-exercise). We use this in class to give students a hands-on experience with Flask templates and routes. It includes an easy way to convert any CSV file into a list of Python dictionaries.
 
 * [Flask template documentation](http://jinja.pocoo.org/docs/2.10/templates/) &mdash; all the commands for the Jinja2 template syntax are here.
 * [Welcome to Jinja2](http://jinja.pocoo.org/docs/2.10/) &mdash; everything about Jinja2.
