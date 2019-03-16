@@ -4,7 +4,7 @@ This app differs from the Example 2 app in a huge way: Each route calls a new fu
 
 This Flask app is explained in the README in [flask/part3_templates](../).
 
-To run it (assuming you have Flask installed):
+To run it (assuming you are in a Python 3 virtualenv with Flask installed):
 
 ```bash
 python students4.py
