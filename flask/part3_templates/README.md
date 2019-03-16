@@ -35,7 +35,7 @@ my-flask-app
    * The *templates* folder contains only templates. These have an `.html` extension. As we will see, they contain more than just regular HTML.
 3. In addition to the *static* and *templates* folders, this app also contains `.py` files. Note that these must be *outside* the two folders named *static* and *templates*.
 
-The templates will not work if this folder structure is not exactly as described above. Your app folder can be named anything (not only *my-flask-app*), but the *static* and *templates* folders must be named and organized as shown above.
+**The templates will not work if this folder structure is not exactly as described above.** Your app folder can be named anything (not only *my-flask-app*), but the *static* and *templates* folders must be named and organized as shown above.
 
 ## Example 1: Get started with templates
 
@@ -55,7 +55,7 @@ def index():
 def student(idnum):
     # the curly braces {} are a placeholder for the value in
     # parentheses, in format()
-    personal = '<h1>Hello, student number {}!</h1>'.format(idnum)
+    personal = f'<h1>Hello, student number {idnum}!</h1>'
     instruc = '<p>Change the number in the <em>browser address bar</em> and reload the page.</p>'
     return personal + instruc
 
@@ -130,7 +130,7 @@ Inside the `<body>` in the file, you'll see this:
 {% endblock %}
 ```
 
-Each of those two lines is a Jinja2 directive. Jinja2 is the [template engine](http://jinja.pocoo.org/docs/2.10/templates/) used by Flask. If you've used PHP, you should be able to understand pretty quickly how these directives work.
+Each of those two lines is a Jinja2 directive. Jinja2 is the [template engine](https://www.palletsprojects.com/p/jinja/) used by Flask. If you've used PHP, you should be able to understand pretty quickly how these directives work.
 
 **block label** (in this case, the label is *content*; it can be anything) signifies the start of inserted material. If you have more than one **block** in your template, make sure each block has a unique label. The block labels must *match* what is used in the dependent templates that use this one.
 
@@ -189,7 +189,9 @@ The goal is to provide a list of all students (last names only) with an `<a href
 
 The ID number is used in the link because it is sure to be unique, unlike a name. We have been using a number in the route `@app.route('/student/<idnum>')` all along.
 
-The complete code for this app is in the folder [ex3-app](ex3-app). To run the final, complete app, `cd` into the `ex3-app` directory and type this at the bash prompt (`$`) in Terminal:
+The complete code for this app is in the folder [ex3-app](ex3-app).
+
+**To run the final, complete app,** `cd` into the `ex3-app` directory and type this at the bash prompt (`$`) in Terminal:
 
 ```bash
 python students4.py

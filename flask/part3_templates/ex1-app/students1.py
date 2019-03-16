@@ -1,4 +1,4 @@
-# no templates in this app - see students2.py 
+# no templates in this app - see students2.py
 
 from flask import Flask
 app = Flask(__name__)
@@ -13,7 +13,7 @@ def index():
 def student(idnum):
     # the curly braces {} are a placeholder for the value in
     # parentheses, in format()
-    personal = '<h1>Hello, student number {}!</h1>'.format(idnum)
+    personal = f'<h1>Hello, student number {idnum}!</h1>'
     instruc = '<p>Change the number in the <em>browser address bar</em> and reload the page.</p>'
     return personal + instruc
 
