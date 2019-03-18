@@ -12,7 +12,13 @@
     {% endfor %}
     </ul>
 
-<!-- Note that student_list was sent to this template by a route.
+<!-- NOTE the special Jinja2 format for the URL:
+
+    href="{{ url_for( 'student', idnum=item[0] ) }}" 
+
+    -->
+
+<!-- Note ALSO that student_list was sent to this template by a route.
      The route called a function that created an alphabetical list by
      student last name.
      The list is a list of tuples, in which item[0] is the student ID
