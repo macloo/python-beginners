@@ -169,9 +169,9 @@ Now you'll see how to write 100 web pages with no actual HTML files. Well, excep
 
 We are building on the  [ex2-app](ex2-app) example app, discussed above.
 
-Now, in the third version &mdash; the  [ex3-app](ex3-app) example app &mdash; we will make our two templates much more useful by enabling them to use data read from a separate file, *data.py*. That file contains information (name, ID, address, etc.) about 100 students (not real people).
+Now, in the third version &mdash; the  [ex3-app](ex3-app) example app &mdash; we will make our two templates much more useful by enabling them to use data from a separate file, *data.py*. That file contains a bunch of information (name, ID, address, etc.) about 100 students (not real people).
 
-Instead of working with the whole file while working out the bugs, the *students3.py* file uses just two records from the dataset. In addition to the list named DATA, two new functions have been added. These functions are outside the routes, but they are called *in* the routes.
+Instead of working with the whole file while working out the bugs, the *students3.py* file uses just two records from the dataset. In addition to the **list** named `DATA`, two new functions have been added. These functions are outside the routes, but they are called *in* the routes.
 
 ```
 get_all_students() --> used in index()
@@ -183,16 +183,23 @@ gets the following details about ONE student: name, address, photo
 
 * We still have only two routes in our Flask app.
 * We still have only two templates, plus the base template.
-* We have added data about two students in *students3.py*.
+* We have **added** data about two students in *students3.py*.
 * We have added two new Python functions (no Flask code in these):
-   * get_all_students()
-   * get_student()
+   * `get_all_students()`
+   * `get_student()`
 
-The goal is to provide a list of all students (last names only) with an `<a href="">` that contains the student's ID number. When we click any student's name, a new URL opens, showing us details and a photo for just that one student.
+The goal is to provide a list of all students (last names only), each with an `<a href="">` that contains the student's ID number.
+
+1. When we click any student's name, we send a new URL to the browser.
+2. In the Flask app, that URL runs the route decorater: `@app.route('/student/<idnum>')`
+2. That causes the Flask route function `student(idnum)` to run.
+3. That function gets the name, photo, and address for the specific student with that ID number in `DATA` &mdash; a Python list of dictionaries you can see in lines 8-11 in [students3.py](ex3-app/students3.py).
 
 The ID number is used in the link because it is sure to be unique, unlike a name. We have been using a number in the route `@app.route('/student/<idnum>')` all along.
 
 The complete code for this app is in the folder [ex3-app](ex3-app).
+
+**The complete dataset of 100 students** is used in in [students4.py](ex3-app/students4.py).
 
 **To run the final, complete app** in your activated virtualenv, `cd` into the `ex3-app` directory and type this at the bash prompt (`$`) in Terminal:
 
