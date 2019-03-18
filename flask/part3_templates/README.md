@@ -8,6 +8,7 @@ In the [Flask introduction](../) and in [flask/part2](../part2), we wrote some H
 * [Example 1: Get started with templates](#example-1-get-started-with-templates)
 * [Example 2: Using a “base” template](#example-2-using-a-base-template)
 * [Example 3: The real power of templates is revealed](#example-3-the-real-power-of-templates-is-revealed)
+   * [Proper URLs in templates](#proper-urls-in-templates)
    * [Understanding a Python dictionary](#understanding-a-python-dictionary)
    * [Data in and data out (functions)](#data-in-and-data-out-functions)
    * [Changes to the templates](#changes-to-the-templates)
@@ -207,6 +208,24 @@ The complete code for this app is in the folder [ex3-app](ex3-app).
 python students4.py
 ```
 
+### Proper URLs in templates
+
+Note that Flask templates require us to handle the URLs in `a href=` in a special way. This is NOT shown in the templates in [ex2-app](ex2-app). It *IS* shown in the templates in [ex3-app](ex3-app).
+
+Here are three examples of the correct format (in *templates* only!):
+
+```
+<!-- pointing to a FILE in the /static/ folder -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+<!-- pointing to a Flask route with a FUNCTION named index() -->
+<a href="{{ url_for('index') }}">Return to index</a>
+
+<!-- pointing to a Flask route with a FUNCTION named student(<idnum>) -->
+<a href="{{ url_for( 'student', idnum=num ) }}">{{ name }}</a>
+```
+
+
 ### Understanding a Python dictionary
 
 If the two new functions don't make sense to you, it's probably because you have not learned about Python dictionaries.
@@ -230,7 +249,7 @@ The route function `student()` calls `get_student()` and sends the ID and three 
 ```html
 <ul>
 {% for item in student_list %}
-    <li><a href="/student/{{ item[0] }}">{{ item[1] }}</a></li>
+    <li><a href="{{ url_for( 'student', idnum=item[0] ) }}">{{ item[1] }}</a></li>
 {% endfor %}
 </ul>
 ```
