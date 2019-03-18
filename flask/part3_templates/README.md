@@ -63,6 +63,8 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
+Now we will transform that (students1.py) into students2.py, as seen [in the folder named ex1-app](ex1-app).
+
 To replace the awkward HTML in the functions and use templates instead, we make one change to the **top part** of the file (where we *initialize* the app):
 
 ```python
