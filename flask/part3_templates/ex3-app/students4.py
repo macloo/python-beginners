@@ -35,7 +35,8 @@ def get_student(source, idnum):
             city = record["location"]["city"].title()
             state = record["location"]["state"].title()
             postal = str(record["location"]["postcode"])
-            address = street + ", " + city + ", " + state + " " + postal
+            # address = street + ", " + city + ", " + state + " " + postal
+            address = f'{street}, {city}, {state} {postal}'
             return name, photo, address
     # return these if id is not valid
     return "Unknown", "", "Unknown"
