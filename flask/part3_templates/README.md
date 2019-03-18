@@ -123,7 +123,8 @@ python students2.py
 
 ## Example 2: Using a “base” template
 
-A great time-saving feature of templates in Flask: We can tremendously shorten and streamline multiple template files by creating *one base template* that contains all the standard HTML. I have a base template named *base.html* in the *templates* folder in the [second version of the students app](ex2-app). Here is a direct link:  [base.html](ex2-app/templates/base.html).
+A great time-saving feature of templates in Flask: We can tremendously shorten and streamline multiple template files by creating *one base template* that contains all the standard HTML. I have a base template named *base.html* in the *templates* folder in the second version of the students app, [in the folder named ex2-app](ex2-app). Here is a direct link:
+[base.html](ex2-app/templates/base.html).
 
 Inside the `<body>` in the file, you'll see this:
 
@@ -132,11 +133,11 @@ Inside the `<body>` in the file, you'll see this:
 {% endblock %}
 ```
 
-Each of those two lines is a Jinja2 directive. Jinja2 is the [template engine](https://www.palletsprojects.com/p/jinja/) used by Flask. If you've used PHP, you should be able to understand pretty quickly how these directives work.
+Each of those two lines is a **Jinja2 directive.** Jinja2 is the [template engine](https://www.palletsprojects.com/p/jinja/) used by Flask. If you've used PHP, you should be able to understand pretty quickly how these directives work.
 
-**block label** (in this case, the label is *content*; it can be anything) signifies the start of inserted material. If you have more than one **block** in your template, make sure each block has a unique label. The block labels must *match* what is used in the dependent templates that use this one.
+**block label** (in this case, the label is *content*; it can be anything) signifies **the start of inserted material.** If you have more than one **block** in your template, make sure each block has a unique label. The block labels must *match* what is used in the dependent templates that use this one.
 
-**endblock** signifies the end of inserted material.
+**endblock** signifies **the end of inserted material.**
 
 Using this *base.html* template, we can trim our *index.html* template down to only this:
 
