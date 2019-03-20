@@ -205,7 +205,7 @@ Use your web browser to go to the web address given above to view the active app
 
 You'll find you have a new *branch* in your local repo.
 
-<img src="../images/heroku_branch.png" alt="Branch in GitHub app" width=308>
+<img src="../images/heroku_branch.png" alt="Branch in GitHub app" width=616>
 
 If you *make changes* to the app, you'll need to **push to Heroku again.** Save files and commit locally. Log into Heroku (if not already logged in), and:
 
