@@ -131,7 +131,7 @@ There are ways to do this if you use a cloud service such as [Amazon's AWS](http
 
 Most hosted web server accounts from companies such as [Reclaim Hosting](https://reclaimhosting.com/) provide **cPanel** &mdash; a set of services that you access from a simple dashboard.
 
-<img src="../images/setup_python_cpanel.png" alt="Set up Python cPanel icon" width="40%">
+<img src="../images/setup_python_cpanel.png" alt="Set up Python cPanel icon" width=212>
 
 If you find the icon above in the **cPanel** at your hosting provider, you're probably good to go. I've written [detailed instructions](http://bit.ly/flask-deploy) for how to install a Python app at Reclaim Hosting, but it's probably the same or very nearly so in any **cPanel** instance.
 
@@ -205,7 +205,7 @@ Use your web browser to go to the web address given above to view the active app
 
 You'll find you have a new *branch* in your local repo.
 
-![Branch in GitHub app](../images/heroku_branch.png)
+<img src="../images/heroku_branch.png" alt="Branch in GitHub app" width=308>
 
 If you *make changes* to the app, you'll need to **push to Heroku again.** Save files and commit locally. Log into Heroku (if not already logged in), and:
 
