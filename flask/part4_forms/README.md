@@ -27,16 +27,19 @@ We will install the **Flask-WTF** extension to help us work with forms in Flask.
 In Terminal, change into your Flask projects folder and activate your virtualenv there. Then install at the bash prompt (`$`):
 
 ```bash
-pip install Flask-WTF
+pip3 install Flask-WTF
 ```
 
 We will also install the **Flask-Bootstrap** extension to provide Bootstrap styles for our forms.
 
 ```bash
-pip install flask-bootstrap
+pip3 install Flask-Bootstrap4
 ```
 
 This installation is done only once in any virtualenv. It is assumed you already have Flask installed here.
+
+* [Flask-WTF docs](http://flask.pocoo.org/docs/1.0/patterns/wtforms/); more details in [WTForms docs](https://wtforms.readthedocs.io/en/stable/)
+* [Flask-Bootstrap docs](https://pythonhosted.org/Flask-Bootstrap/)
 
 ## Imports for forms with Flask-WTF and Flask-Bootstrap
 
@@ -68,7 +71,7 @@ Bootstrap(app)
 
 Flask allows us to set a "secret key" value. You can grab a string from a site such as [RandomKeygen](https://randomkeygen.com/). This value is used to prevent malicious hijacking of your form from an outside submission.
 
-Flask-WTF's `FlaskForm` will automatically create a secure session with CSRF (cross-site request forgery) protection if this key-value is set. Don't publish the actual key on GitHub!
+Flask-WTF's `FlaskForm` will automatically create a secure session with CSRF (cross-site request forgery) protection if this key-value is set. **Don't publish the actual key on GitHub!**
 
 You can read more about `app.config['SECRET_KEY']` in [this StackOverflow post](https://stackoverflow.com/questions/22463939/demystify-flask-app-secret-key).
 
@@ -86,7 +89,9 @@ class NameForm(FlaskForm):
     submit = SubmitField('Submit')
 ```
 
-Note that `StringField` and `SubmitField` were **imported** at the top of the file. If we needed other form fields in this form, we would need to import those. See a [list of all WTForms field types](WTForms-field-types.csv).
+[Learn more about classes in Python here.](https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes)
+
+Note that `StringField` and `SubmitField` were **imported** at the top of the file. If we needed other form fields in this form, we would need to import those also. See a [list of all WTForms field types](WTForms-field-types.csv).
 
 Note that several field types (such as `RadioField` and `SelectField`) must have an option `choices=[]` specified, after the label text. Within the list, each choice is a pair in this format: `('string1', 'string2')`.
 
@@ -100,12 +105,15 @@ Now we will use the form in a Flask route:
 @app.route('/', methods=['GET', 'POST'])
 def index():
     names = get_names(ACTORS)
-    # you must tell the variable 'form' what you named the class, above
-    # 'form' is the variable name used in this template: index.html
+    # ACTORS is a list of dictionaries for 100 movie actors, imported with -
+    # from data import ACTORS
     form = NameForm()
+    # 'form' is the variable name used in this template: index.html
+    # NameForm() is the class, explained above
     message = ""
     if form.validate_on_submit():
         name = form.name.data
+        # get the text (data) out of the form control with the name "name"
         if name in names:
             # empty the form field
             form.name.data = ""
@@ -117,7 +125,7 @@ def index():
     return render_template('index.html', names=names, form=form, message=message)
 ```
 
-The crucial line is where we assign our configured form object to a new variable:
+A crucial line is where we assign our configured form object to a new variable:
 
 ```python
 form = NameForm()
@@ -156,13 +164,13 @@ Before we break all that down and explain it, let's look at the code in the temp
 
 <img src="../images/rabbit_hat.png" alt="Drawing of magician pulling rabbit from hat">
 
-Note that in the Flask route, we passed the variable `form` to the template *index.html*:
+Note that in the Flask route function, we passed the variable `form` to the template *index.html*:
 
 ```python
 return render_template('index.html', names=names, form=form, message=message)
 ```
 
-So when you use `wtf.quick_form()`, the argument in the parentheses must be the *variable* that represents the form you created in the app.
+So when you use `wtf.quick_form()`, the argument inside the parentheses must be the *variable* that represents the form you created in the app.
 
 ```python
 form = NameForm()
@@ -175,7 +183,7 @@ We discussed the configuration of `NameForm` above.
 Before reading further, try out [a working version of this app](https://weimergeeks.com/flask_form/). The complete code for the app is in this repo in the folder *actors_app*.
 
 1. You type an actor's name into the form and submit it.
-2. If the actor's name is in the data source, the app loads a detail page for that actor.
+2. If the actor's name is in the data source (ACTORS), the app loads a detail page for that actor. (Photos of bears stand in for real photos of the actors.)
 3. Otherwise, you stay on the same page, the form is cleared, and a message tells you that actor is not in the database.
 
 ```python
@@ -205,7 +213,7 @@ First we have the route, as usual, but with a new addition for handling form dat
 @app.route('/', methods=['GET', 'POST'])
 ```
 
-Every HTML form has two possible methods, `GET` and `POST`. `GET` simply requests a response from the server. `POST`, however, sends a request with data attached in the body of the request; this is the way most forms are submitted.
+Every HTML form has two possible methods, `GET` and `POST`. `GET` simply requests a response from the server. `POST`, however, sends a request **with data attached** in the body of the request; this is the way most forms are submitted.
 
 This route needs to use both methods because when we simply open the page, no form was submitted, and we're opening it with `GET`. When we submit the form, this same page is opened with `POST` if the actor's name (the form data) was not found.
 
@@ -259,7 +267,11 @@ This if-statement is specific to this app. It checks whether the `name` (that wa
 return redirect( url_for('actor', id=id) )
 ```
 
+Thus `redirect( url_for('actor', id=id) )` is calling a different route here in the same Flask app script. [See lines 46-55 here.](actors_app/actors.py)
+
 As far as **using forms with Flask** is concerned, you don't need to worry about the actors and their ids, etc. What is important is that the route function can be used to *evaluate the data sent from the form.* We check to see whether it matched any of the actors in a list, and *a different response* will be sent based on match or no match.
+
+You could do *any* of the things that are typically done with HTML forms &mdash; handle usernames and passwords, write new data to a database, create a quiz, etc.
 
 The final line in the route function calls the template *index.html* and passes three variables to it:
 
@@ -273,17 +285,17 @@ return render_template('index.html', names=names, form=form, message=message)
 
 Adding **Flask-Bootstrap** ensures that we can build mobile-friendly forms with a minimum amount of effort.
 
-Note that it is possible to build a customized form layout using Bootstrap 3 styles in a Flask template, or to build a custom form with no Bootstrap styles. In either case, you cannot use `{{ wtf.quick_form(form) }}` but would instead write out all the form code in your Flask template as you would in a normal HTML file. To take advantage of WTForms, you would still  create the form class with `FlaskForm` in the same way as shown above.
+Note that it is possible to build a customized form layout using Bootstrap 4 styles in a Flask template, or to build a custom form with no Bootstrap styles. In either case, you cannot use `{{ wtf.quick_form(form) }}` but would instead write out all the form code in your Flask template as you would in a normal HTML file. To take advantage of WTForms, you would still  create the form class with `FlaskForm` in the same way as shown above.
 
-**IMPORTANT:** In early 2018, Bootstrap 4 replaced Bootstrap 3. The differences are significant; names and usage of styles have changed. For the time being, Flask-Bootstrap uses Bootstrap 3.3.7, so if you're writing Bootstrap styles into a Flask template, it is imperative that you use the [Bootstrap 3 documentation](https://getbootstrap.com/docs/3.3/css/).
+**IMPORTANT:** Note that you are using Bootstrap 4 if you installed with `pip3 install Flask-Bootstrap4`. In early 2018, Bootstrap 4 replaced Bootstrap 3. The differences are significant; names and usage of styles have changed. Refer to the [Bootstrap 4 documentation](https://getbootstrap.com/docs/4.3/layout/grid/) for correct usage of Bootstrap styles.
 
 ## Resources
 
-* [Sending form data](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data) &ndash; how web browsers interact with servers; request/response
+* [Sending form data](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data) &mdash; how web browsers interact with servers; request/response
 
-* [Flask-WTF documentation](https://flask-wtf.readthedocs.io/en/latest/index.html)
+* [Flask-WTF documentation](http://flask.pocoo.org/docs/1.0/patterns/wtforms/)
 
-* [Complete WTForms documentation](https://wtforms.readthedocs.io/en/latest/index.html)
+* [Complete WTForms documentation](https://wtforms.readthedocs.io/en/stable/)
 
 * [Flask-Bootstrap documentation](https://pythonhosted.org/Flask-Bootstrap/)
 
@@ -291,8 +303,6 @@ If you want to view the Bootstrap templates installed by Flask-Bootstrap, here's
 
 <img src="../images/location-flask-bootstrap.png" alt="Location of Flask-Bootstrap">
 
-<img src="../images/flask-bootstrap-templates.png" alt="Flask-Bootstrap template files" width="40%">
+<img src="../images/flask-bootstrap-templates.png" alt="Flask-Bootstrap template files" width=350>
 
-By viewing *base.html* in *templates/bootstrap,* you can find the Jinja2 directives that surround the HEAD, list of attached CSS files, footer area, etc. You can then use those directives in your own templates for finer control.
-
-Note that Flask-Bootstrap uses Bootstrap 3.x, not Bootstrap 4.
+By viewing *base.html* in *templates/bootstrap,* you can find the Jinja2 directives that surround the HEAD, list of attached CSS files, footer area, etc. You can then use those directives in your own templates for finer control. Or just [see the "Templates" section here for examples](https://pythonhosted.org/Flask-Bootstrap/basic-usage.html) of how to set up a Flask template that uses Bootstrap.
