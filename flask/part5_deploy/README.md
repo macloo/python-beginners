@@ -2,7 +2,7 @@
 
 When professionals deploy their Python web apps, nowadays they commonly deploy to a cloud service such as [Amazon's AWS](https://aws.amazon.com/) or [Heroku](https://www.heroku.com/).
 
-One thing to understand, though, is that they often do not deploy a Python executable. That is, the site they upload to a web server is not the Flask app and its associated templates, etc., but rather a traditional website with hard-coded HTML files that has been *“baked out”* from Flask.
+One thing to understand, though, is that often they do not deploy a Python executable. That is, the site they upload to a web server is not the Flask app and its associated templates, etc., but rather a traditional website with hard-coded HTML files that has been *“baked out”* from Flask.
 
 In this document, we'll learn how to do that. Then we will also learn how to install a Flask app (one that has not been “baked out”) on:
 
@@ -27,10 +27,10 @@ In this document, we'll learn how to do that. Then we will also learn how to ins
 **Frozen-Flask** is a Flask extension, so we'll need to install it. In Terminal, change into your Flask projects folder and activate your virtualenv there. Then install at the bash prompt (`$`):
 
 ```bash
-pip install Frozen-Flask
+pip3 install Frozen-Flask
 ```
 
-After installing the extension, create a new file named *freeze.py* and copy/paste this script into it:
+After installing the extension, create **a new file** inside the folder containing the Flask app you want to "freeze." Name the new file *freeze.py* and copy/paste this script into it:
 
 ```python
 from flask_frozen import Freezer
@@ -71,13 +71,11 @@ In Terminal, change into the directory for the Flask app and enter this command 
 python freeze.py
 ```
 
-**If freezing worked:** Inside your Flask app folder, you’ll now see a new folder named *build*. Open it. Inside *build*, you’ll see a folder that has the same name as your Flask route (for example, *president*). Open that folder.
+**If freezing worked:** Inside your Flask app folder, you’ll now see a new folder named *build*. Open it. Inside *build*, you’ll see all the files created by Frozen-Flask.
 
-There are all your files, created by Frozen-Flask.
+For an example, open the *pres_app* folder in this repo, find the *build* folder, and look inside. You'll see *index.html* and two folders, *static* and *president.* Inside *president,* you'll see 45 fully coded `.html` files.
 
-For an example, open the *pres_app* folder in this repo, find the *build* folder, and look inside. You'll see 45 fully coded `.html` files.
-
-The entire *build* folder can be uploaded to a web server, and the folder name can be changed (from *build* to anything), and all the pages will work.
+The entire *build* folder can be uploaded to a web server, and the folder name can be changed (from *build* to anything), and all the pages will work. (Just don't change or rename anythng inside the *build* folder.)
 
 Need to update the site? Make your edits, run *freeze.py* again, and re-deploy.
 
@@ -123,9 +121,9 @@ Read the [full documentation](http://pythonhosted.org/Frozen-Flask/) for Frozen-
 
 ## When freezing will not work, cannot work
 
-If your app depends on dynamic activity &mdash; for example, if you are using **Flask-WTF** to process a form &mdash; you will not get a fully functioning app if you freeze it.
+If your app depends on dynamic activity &mdash; for example, if you are using **Flask-WTF** to process a form &mdash; you will not get a fully functioning app if you freeze it. Similarly, if you're accessing an API to get data that changes frequently (such as currency rates or weather), you cannot freeze that app.
 
-In that case, you will need to run Python on a web server, where people are accessing your pages (and NOT freeze the app).
+In those cases, you will need to run Python on a web server, where people are accessing your pages (and NOT freeze the app).
 
 There are ways to do this if you use a cloud service such as [Amazon's AWS](https://aws.amazon.com/) or [Heroku](https://www.heroku.com/), but you don't necessarily need to go that way if you're a student and your app is not going to attract thousands of users.
 
@@ -163,11 +161,11 @@ If you use the [GitHub Desktop app](https://desktop.github.com/), you already ha
 
 Before proceeding with command-line `git`, your Flask app should be ready to deploy (all code completed and tested). You must also complete these steps:
 
-1. Install **Gunicorn**: You need to add a production-level web server to your web app. Heroku recommends [Gunicorn](http://gunicorn.org/) for Python applications. Activate the virtualenv for your app and install it with `pip install gunicorn`.
+1. Install **Gunicorn**: You need to add a production-level web server to your web app. Heroku recommends [Gunicorn](https://gunicorn.org/) for Python applications. Activate the virtualenv for your app and install it with `pip3 install gunicorn`.
 
 2. Create or update *requirements.txt*: Instructions are [here](http://bit.ly/python-reqs). Even if you created a *requirements.txt* file earlier, you must re-create it to add **Gunicorn** to the list. **This is absolutely necessary.**
 
-3. Make sure there is a *.gitignore* file in your repo and it excludes your *env/* or *venv/* folder. You should not commit virtual environment files; the *requirements.txt* file lists all the contents of your virtualenv so that it can be re-created on Heroku.
+3. Make sure there is a *.gitignore* file in your repo and it excludes your *env/* or *venv/* folder. **You must NOT commit virtual environment files** &mdash; the *requirements.txt* file lists all the contents of your virtualenv so that it can be re-created on Heroku.
 
 4. Create *Procfile*: This is a plain-text file that must be named exactly `Procfile` (uppercase P, and no file extension). Its contents declare which commands are run by the application's dynos on Heroku. Read more about *Procfile* [here](https://devcenter.heroku.com/articles/procfile).
 
@@ -181,7 +179,7 @@ web: gunicorn students:app
 
 #### Deploy to Heroku
 
-To *register* a new application with Heroku, use the `apps:create` command. **You must be in the root directory of your app.** So at the bash prompt (`$`), I am *inside* the *students-flask-app* directory, and my virtualenv is not active.
+To *register* a new application with Heroku, use the `apps:create` command. **You must be in the root directory of your app.** So at the bash prompt (`$`), I am *inside* the *students-flask-app* directory, and my virtualenv is **not active.**
 
 ```bash
 heroku apps:create students-flask
@@ -233,4 +231,4 @@ We've learned about three different options for deploying a Flask app:
 
 Depending on the characteristics of your Flask app, one of these options might be much better than the others, or they might all be equally suitable.
 
-See [more options for deploying](http://flask.pocoo.org/docs/0.12/deploying/) in the Flask documentation.
+See [more options for deploying](http://flask.pocoo.org/docs/1.0/deploying/) in the Flask documentation.
