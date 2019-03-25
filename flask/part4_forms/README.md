@@ -16,6 +16,7 @@ WTForms is “a flexible forms validation and rendering library for Python Web d
    * [Configure the form](#configure-the-form)
    * [Put the form in a route function](#put-the-form-in-a-route-function)
    * [Put the form in a template](#put-the-form-in-a-template)
+   * [A quick note about Bootstrap in Flask](#a-quick-note-about-bootstrap-in-flask)
 * [Examining the route function](#examining-the-route-function)
 * [Conclusion](#conclusion)
 * [Resources](#resources)
@@ -178,6 +179,17 @@ form = NameForm()
 
 We discussed the configuration of `NameForm` above.
 
+### A quick note about Bootstrap in Flask
+
+There's more about this in the [Resources section](#resources) at the bottom of this README &mdash; but to summarize briefly:
+
+* You pip-installed Flask-Bootstrap4 in your Flask virtualenv.
+* You wrote `from flask_bootstrap import Bootstrap` at the top of the Flask app file.
+* Below that, you wrote `Bootstrap(app)` in the Flask app file.
+* In any Flask template using Bootstrap styles in this app, the top line will be: `{% extends 'bootstrap/base.html' %}`
+
+There's [an excellent how-to video](https://www.youtube.com/watch?v=PE9ZGniSDW8) about using Bootstrap styles in Flask if you want to separate the **forms** information from the Bootstrap information in your mind. You can, of course, use Flask-Bootstrap4 *without* the forms!
+
 ## Examining the route function
 
 Before reading further, try out [a working version of this app](https://weimergeeks.com/flask_form/). The complete code for the app is in this repo in the folder *actors_app*.
@@ -298,6 +310,8 @@ Note that it is possible to build a customized form layout using Bootstrap 4 sty
 * [Complete WTForms documentation](https://wtforms.readthedocs.io/en/stable/)
 
 * [Flask-Bootstrap documentation](https://pythonhosted.org/Flask-Bootstrap/)
+
+* [About Flask-Bootstrap templates](https://pythonhosted.org/Flask-Bootstrap/basic-usage.html#templates)
 
 If you want to view the Bootstrap templates installed by Flask-Bootstrap, here's how:
 
