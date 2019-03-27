@@ -185,13 +185,13 @@ To *register* a new application with Heroku, use the `apps:create` command. **Yo
 heroku apps:create students-flask
 ```
 
-Heroku applications must have a unique name, so if yours is taken, you will need to choose another name. It does not need to match your app folder name.
+Heroku applications must have a unique name, so if yours is taken, you will need to choose another name. It does not need to match your app folder name. Here I have used *students-flask*.
 
 The command will return the **web address** of your app: https://students-flask.herokuapp.com/
 
 You'll *register* the app only *once.*
 
-Before you *push to Heroku,* make sure all changes are *committed* (in the GitHub Desktop app).
+**IMPORTANT:** Before you *push to Heroku,* make sure all changes are *committed* (in the GitHub Desktop app).
 
 Then at the bash prompt (`$`), type:
 
@@ -200,6 +200,28 @@ git push heroku master
 ```
 
 Many lines of messages from the *remote* branch on Heroku will be printed to the Terminal. Wait until you see `Verifying deploy... done.` And then ... you're back at the bash prompt (`$`).
+
+If you get this error message:
+
+```bash
+fatal: 'heroku' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+```
+
+This should fix it (use your own Heroku app name, not *students-flask*):
+
+```bash
+heroku git:remote -a students-flask
+```
+
+Now this should work:
+
+```bash
+git push heroku master
+```
 
 Use your web browser to go to the web address given above to view the active app.
 
