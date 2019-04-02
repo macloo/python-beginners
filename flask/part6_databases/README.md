@@ -14,6 +14,15 @@
   * [About using XAMPP for MySQL databases](#about-using-xampp-for-mysql-databases)
 * [Conclusion](#conclusion)
 
+In separate folders:
+
+* [Reading from a database with Flask](reading_mysql)
+* [Writing to a database with Flask](writing_mysql)
+
+Example Flask database app:
+
+* [Sock Market](https://weimergeeks.com/flask_db2/), running on a Reclaim Hosting website
+
 ## Setup for using Flask-SQLAlchemy
 
 We will install the **Flask-SQLAlchemy** extension to enable us to work with a SQL database in Flask. There are many extensions for Flask; each one adds a different set of functions and capabilities. See the [list of Flask extensions](http://flask.pocoo.org/extensions/) for more.
@@ -21,16 +30,16 @@ We will install the **Flask-SQLAlchemy** extension to enable us to work with a S
 In Terminal, change into your Flask projects folder and activate your virtualenv there. Then install at the bash prompt (`$`):
 
 ```bash
-pip install flask-sqlalchemy
+pip3 install flask-sqlalchemy
 ```
 
 We will also install **PyMySQL**, a MySQL client library for Python. Because SQLAlchemy can bridge between Python and various different SQL database systems, we need a library for the particular database system we will be using &mdash; MySQL. Here is the [PyMySQL documentation](http://pymysql.readthedocs.io/).
 
 ```bash
-pip install PyMySQL
+pip3 install PyMySQL
 ```
 
-If you're using PostgreSQL or SQLite, you will not use PyMySQL. They have their own Python libraries. Look them up.
+**IMPORTANT:** If you're using PostgreSQL or SQLite, you will not use PyMySQL. They have their own Python libraries. Look them up.
 
 ## Introduction: Basics of using a database with Flask
 
