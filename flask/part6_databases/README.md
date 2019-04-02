@@ -131,6 +131,42 @@ When we created MySQL databases at the beginning of my course, we used [XAMPP](h
 
  If you already installed the VM version, uninstall it and install the non-VM version.
 
+**There is an alternative.** If you want to create your database on your Reclaim Hosting server from the outset, and connect to it from your computer (not using XAMPP at all), *you can.* Here's how:
+
+1. Create the database at Reclaim (using phpMyAdmin) the same way you did [in Assignment 1](http://bit.ly/webapps2-1).
+2. Create at least one **table** in the database. This is necessary, even if the table is empty. Otherwise your database can't be connected to.
+3. Open or copy [host_db_test.py](host_db_test.py).
+4. Change the following lines in that file and save it.
+
+    ```
+    userpass = 'mysql+pymysql://username:password@'
+    basedir  = '127.0.0.1'
+    # keep the slash /
+    dbname   = '/databasename'
+    ```
+
+    * Replace `username` with your DATABASE username.
+    * Replace `password` with your DATABASE password.
+    * KEEP the colon (`:`) and the at sign (`@`).
+    * Replace `127.0.0.1` with YOUR WEBSITE domain name. (Example: Mine is *weimergeeks.com* &mdash; NO http:// and NO slashes.)
+    * Replace `/databasename` with YOUR DATABASE name. (Example: Mine is */weimerge_sockmarket* &mdash; KEEP the slash at the start.)
+
+5. And one more step: Go to cPanel at Reclaim (or another hosting company, if your database is there) and find **Remote MySQL** under **Databases.** Find your computer's IP address here: [ip4.me](http://ip4.me/). Copy it and paste it into the box labeled "Host." Click "Add Host."
+
+    <img src="../images/remote_mysql.png" alt="Remote MySQL" width=660>
+
+With your vitualenv **activated,** run *host_db_test.py*:
+
+```
+$ python host_db_test.py
+```
+
+Remember, it's a Flask app, so after the server starts, you'll need to open a new tab in your browser and type in: `localhost:5000`
+
+If it says **It works**, you have successfully connected to your remote MySQL database!
+
+**NOTE:** At home, at school, and in a coffee shop, your IP address will be *different.* Therefore you will need to enter a new IP address into **Remote MySQL** at each location where you work on your app locally. You WILL NOT change anything in the Flask app file (which can use the code that worked from *host_db_test.py*).
+
 ## Conclusion
 
 This has been a basic introduction to getting started with Flask-SQLAlchemy and a MySQL database.
