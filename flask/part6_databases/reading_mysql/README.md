@@ -12,6 +12,11 @@ The prerequisites for this tutorial are explained in the README in [part6_databa
 * [The Flask routes](#the-flask-routes)
 * [Conclusion](#conclusion)
 
+Example Flask database app:
+
+* [Sock Market](https://weimergeeks.com/flask_db2/), running on a Reclaim Hosting website
+* [View all code here](flask-db-read)
+
 ## Intro
 
 The MySQL database used in this tutorial has only one table:

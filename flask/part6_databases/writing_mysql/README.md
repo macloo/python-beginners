@@ -21,6 +21,11 @@ Prerequisites for this tutorial are explained in the README in [part6_databases]
    * [Add a new record to the database.](#add-a-new-record-to-the-database)
 * [Conclusion](#conclusion)
 
+Example Flask database app:
+
+* [Sock Market](https://weimergeeks.com/flask_dbw/), running on a Reclaim Hosting website
+* [View all code here](flask-db-write)
+
 ## Add, update or delete a database record
 
 The purpose of this section (and its Flask app) is to show how to write to a MySQL database using **Flask-SQLAlchemy** commands.
