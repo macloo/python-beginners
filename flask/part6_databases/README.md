@@ -148,7 +148,7 @@ When we created MySQL databases at the beginning of my course, we used [XAMPP](h
     * Replace `username` with your DATABASE username.
     * Replace `password` with your DATABASE password.
     * KEEP the colon (`:`) and the at sign (`@`).
-    * Replace `127.0.0.1` with YOUR WEBSITE domain name. (Example: Mine is *weimergeeks.com* &mdash; NO http:// and NO slashes.)
+    * Replace `127.0.0.1` with YOUR WEBSITE domain name. (Example: Mine is *weimergeeks.com* &mdash; NO http:// and NO slashes.) **IMPORTANT:** Do this ONLY for a REMOTE connection. When your app is running on the same server where the database is, keep `127.0.0.1` here.
     * Replace `/databasename` with YOUR DATABASE name. (Example: Mine is */weimerge_sockmarket* &mdash; KEEP the slash at the start.)
 
 5. And one more step: Go to cPanel at Reclaim (or another hosting company, if your database is there) and find **Remote MySQL** under **Databases.** Find your computer's IP address here: [ip4.me](http://ip4.me/). Copy it and paste it into the box labeled "Host." Click "Add Host."
