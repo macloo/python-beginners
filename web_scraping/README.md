@@ -21,6 +21,7 @@ This document covers our second week in this section of the course. It's our sec
     * [Finding elements that have a particular class](#finding-elements-that-have-a-particular-class)
     * [Finding all vs. finding one](#finding-all-vs-finding-one)
     * [Finding the contents of a particular attribute](#finding-the-contents-of-a-particular-attribute)
+* [A BeautifulSoup example](#a-beautifulsoup-example)
 
 See also, elsewhere in this repo:
 
@@ -254,3 +255,9 @@ Second, you loop through that list and print the contents of the `src` attribute
 **IMPORTANT:** We do not need `get_text()` in this case, because the contents of the `src` attribute are nothing but text. There are never tags inside the `src` attribute. So *think* about *exactly* what you're trying to get, and what is it like inside the HTML of the page.
 
 There's a lot more to learn about BeautifulSoup, and we'll be using Mitchell's book for that. You can also [read the docs](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
+
+## A BeautifulSoup example
+
+To demonstrate a whole process of thinking through a small scraping project, I made a [Jupyter Notebook](soup_practice.ipynb) that &mdash; through the comments in the code &mdash; shows how I thought about the problem step by step and tested each step, one thing at a time, to reach the solution I wanted. Open the Notebook here on GitHub to follow along and see all the steps.
+
+The code in the *final cell* of the Jupyter Notebook produces [this 51-line CSV file](movies.csv) by scraping 10 separate web pages.
