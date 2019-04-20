@@ -8,6 +8,11 @@ We will install Flask in a new Python3 virtual environment. Students have alread
 
 [Install Python3, virtualenv, Jupyter](http://bit.ly/install-python3-jupyter)
 
+There are two in-class exercises for Flask:
+
+* A Flask exercise for beginners: [GitHub repo](https://github.com/macloo/flask-exercise); [live example](https://weimergeeks.com/flask_pres/)
+* Search-Form Exercise with Flask: [GitHub repo](https://github.com/macloo/flask-pres-forms-exercise); [live example](https://presidents-flask.herokuapp.com/search)
+
 ## Contents
 
 * [Setup for Flask](#setup-for-flask)
